@@ -58,8 +58,34 @@ ApplicationWindow {
     height: 720
 
     Rectangle {
-        color: "#212126"
+        color: "#ffffff"
+        anchors.leftMargin: 0
+        anchors.topMargin: 0
         anchors.fill: parent
+        Image {
+            x: 590
+            y: 100
+            height: 360
+            visible: true
+            anchors.verticalCenterOffset: 20
+            source: "images/demo_launcher_logo.png"
+            width: opacity ? 630 : 0
+            opacity: stackView.depth > 1 ? 0 : 1
+            Behavior on opacity { NumberAnimation{} }
+        }
+    }
+
+    Rectangle {
+        id: backMenu
+        anchors.rightMargin: 740
+        anchors.leftMargin: 0
+        anchors.topMargin: 0
+        anchors.fill: parent
+        width: opacity ? 60 : 0
+        opacity: stackView.depth > 1 ? 0 : 1
+        color: opacity ? "#212126" : "#212126"
+        Behavior on opacity { NumberAnimation{} }
+
     }
 
     toolBar: BorderImage {
@@ -119,6 +145,7 @@ ApplicationWindow {
 
     StackView {
         id: stackView
+        height: 620
         anchors.fill: parent
         // Implements back key navigation
         focus: true
@@ -129,8 +156,12 @@ ApplicationWindow {
 
         initialItem: Item {
             width: 540
-            height: parent.height
+            height: 620
             ListView {
+                width: 540
+                height: 620
+                anchors.topMargin: 0
+                anchors.rightMargin: 740
                 model: pageModel
                 anchors.fill: parent
                 delegate: AndroidDelegate {
