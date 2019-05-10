@@ -16,5 +16,6 @@
         <file>images/demo_launcher_logo.png</file>
         <file>images/video-playback.png</file>
         <file>images/video-camera.png</file>
+        <file>images/new-demo.png</file>
     </qresource>
 </RCC>

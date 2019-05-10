@@ -145,7 +145,7 @@ Item {
             Image {
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.horizontalCenter: parent.horizontalCenter
-                source: "../images/video-camera.png"
+                source: "../images/new-demo.png"
             }
         }
 
@@ -157,7 +157,7 @@ Item {
             Image {
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.horizontalCenter: parent.horizontalCenter
-                source: "../images/video-playback.png"
+                source: "../images/new-demo.png"
             }
         }
         spacing: 40
@@ -176,7 +176,7 @@ Item {
             Image {
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.horizontalCenter: parent.horizontalCenter
-                source: "../images/video-camera.png"
+                source: "../images/new-demo.png"
             }
         }
 
@@ -188,7 +188,7 @@ Item {
             Image {
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.horizontalCenter: parent.horizontalCenter
-                source: "../images/video-playback.png"
+                source: "../images/new-demo.png"
             }
         }
         spacing: 40
@@ -207,7 +207,7 @@ Item {
             Image {
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.horizontalCenter: parent.horizontalCenter
-                source: "../images/video-playback.png"
+                source: "../images/new-demo.png"
             }
         }
 
@@ -219,7 +219,7 @@ Item {
             Image {
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.horizontalCenter: parent.horizontalCenter
-                source: "../images/video-camera.png"
+                source: "../images/new-demo.png"
             }
         }
         spacing: 40

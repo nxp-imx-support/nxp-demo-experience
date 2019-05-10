@@ -64,12 +64,12 @@ ApplicationWindow {
         anchors.fill: parent
         Image {
             x: 590
-            y: 100
-            height: 360
+            y: 160
+            width: 630
+            height: 340
             visible: true
             anchors.verticalCenterOffset: 20
             source: "images/demo_launcher_logo.png"
-            width: opacity ? 630 : 0
             opacity: stackView.depth > 1 ? 0 : 1
             Behavior on opacity { NumberAnimation{} }
         }
