@@ -53,60 +53,175 @@ import QtQuick.Controls 1.2
 import QtQuick.Controls.Styles 1.1
 
 Item {
-    width: parent.width
-    height: parent.height
 
-    Column {
-        spacing: 12
-        anchors.centerIn: parent
-
-        Slider {
-            anchors.margins: 20
-            style: touchStyle
-            value: 0
+    property real progress: 0
+    width: 1280
+    height: 620
+    SequentialAnimation on progress {
+        loops: Animation.Infinite
+        running: true
+        NumberAnimation {
+            from: 0
+            to: 1
+            duration: 3000
         }
-        Slider {
-            anchors.margins: 20
-            style: touchStyle
-            value: 0.5
+        NumberAnimation {
+            from: 1
+            to: 0
+            duration: 3000
         }
-        Slider {
-            anchors.margins: 20
-            style: touchStyle
-            value: 1.0
-        }
-
     }
 
     Component {
         id: touchStyle
-        SliderStyle {
-            handle: Rectangle {
-                width: 30
-                height: 30
-                radius: height
-                antialiasing: true
-                color: Qt.lighter("#468bb7", 1.2)
-            }
-
-            groove: Item {
-                implicitHeight: 50
-                implicitWidth: 400
-                Rectangle {
-                    height: 8
-                    width: parent.width
-                    anchors.verticalCenter: parent.verticalCenter
-                    color: "#444"
-                    opacity: 0.8
-                    Rectangle {
-                        antialiasing: true
-                        radius: 1
-                        color: "#468bb7"
-                        height: parent.height
-                        width: parent.width * control.value / control.maximumValue
+        ButtonStyle {
+            panel: Item {
+                implicitHeight: 240
+                implicitWidth: 240
+                BorderImage {
+                    anchors.fill: parent
+                    antialiasing: true
+                    border.bottom: 8
+                    border.top: 8
+                    border.left: 8
+                    border.right: 8
+                    anchors.margins: control.pressed ? -4 : 0
+                    source: control.pressed ? "../images/button_pressed.png" : "../images/button_default.png"
+                    Text {
+                        text: control.text
+                        anchors.centerIn: parent
+                        color: "white"
+                        font.pixelSize: 23
+                        renderType: Text.NativeRendering
                     }
                 }
             }
         }
+    }
+
+    Column {
+        x: 60
+        y: 40
+        width: 260
+        height: 560
+        spacing: 40
+
+        Button {
+            width: 260
+            height: 260
+            opacity: 1
+            visible: true
+            Image {
+                anchors.verticalCenter: parent.verticalCenter
+                anchors.horizontalCenter: parent.horizontalCenter
+                source: "../images/video-playback.png"
+            }
+        }
+
+        Button {
+            width: 260
+            height: 260
+            opacity: 1
+            visible: true
+            Image {
+                anchors.verticalCenter: parent.verticalCenter
+                anchors.horizontalCenter: parent.horizontalCenter
+                source: "../images/video-camera.png"
+            }
+        }
+
+    }
+
+    Column {
+        x: 360
+        y: 40
+        width: 260
+        height: 560
+        Button {
+            width: 260
+            height: 260
+            opacity: 1
+            visible: true
+            Image {
+                anchors.verticalCenter: parent.verticalCenter
+                anchors.horizontalCenter: parent.horizontalCenter
+                source: "../images/video-camera.png"
+            }
+        }
+
+        Button {
+            width: 260
+            height: 260
+            opacity: 1
+            visible: true
+            Image {
+                anchors.verticalCenter: parent.verticalCenter
+                anchors.horizontalCenter: parent.horizontalCenter
+                source: "../images/video-playback.png"
+            }
+        }
+        spacing: 40
+    }
+
+    Column {
+        x: 660
+        y: 40
+        width: 260
+        height: 560
+        Button {
+            width: 260
+            height: 260
+            opacity: 1
+            visible: true
+            Image {
+                anchors.verticalCenter: parent.verticalCenter
+                anchors.horizontalCenter: parent.horizontalCenter
+                source: "../images/video-camera.png"
+            }
+        }
+
+        Button {
+            width: 260
+            height: 260
+            opacity: 1
+            visible: true
+            Image {
+                anchors.verticalCenter: parent.verticalCenter
+                anchors.horizontalCenter: parent.horizontalCenter
+                source: "../images/video-playback.png"
+            }
+        }
+        spacing: 40
+    }
+
+    Column {
+        x: 960
+        y: 40
+        width: 260
+        height: 560
+        Button {
+            width: 260
+            height: 260
+            opacity: 1
+            visible: true
+            Image {
+                anchors.verticalCenter: parent.verticalCenter
+                anchors.horizontalCenter: parent.horizontalCenter
+                source: "../images/video-playback.png"
+            }
+        }
+
+        Button {
+            width: 260
+            height: 260
+            opacity: 1
+            visible: true
+            Image {
+                anchors.verticalCenter: parent.verticalCenter
+                anchors.horizontalCenter: parent.horizontalCenter
+                source: "../images/video-camera.png"
+            }
+        }
+        spacing: 40
     }
 }

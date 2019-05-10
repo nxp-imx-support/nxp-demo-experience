@@ -53,10 +53,10 @@ import QtQuick.Controls 1.2
 import QtQuick.Controls.Styles 1.1
 
 Item {
-    width: parent.width
-    height: parent.height
 
     property real progress: 0
+    width: 1280
+    height: 620
     SequentialAnimation on progress {
         loops: Animation.Infinite
         running: true
@@ -70,52 +70,6 @@ Item {
             to: 0
             duration: 3000
         }
-    }
-
-    Column {
-        spacing: 40
-        //anchors.centerIn: parent
-
-        Button {
-            text: "Press me"
-            style: touchStyle
-        }
-
-        Button {
-            style: touchStyle
-            text: "Press me too"
-        }
-
-        Row {
-            spacing: 20
-            Switch {
-                style: switchStyle
-            }
-        }
-
-    }
-
-    Column {
-        spacing: 40
-       // anchors.centerIn: parent
-
-        Button {
-            text: "Press me"
-            style: touchStyle
-        }
-
-        Button {
-            style: touchStyle
-            text: "Press me too"
-        }
-
-        Row {
-            spacing: 20
-            Switch {
-                style: switchStyle
-            }
-        }
-
     }
 
     Component {
@@ -143,5 +97,131 @@ Item {
                 }
             }
         }
+    }
+
+    Column {
+        x: 60
+        y: 40
+        width: 260
+        height: 560
+        spacing: 40
+
+        Button {
+            width: 260
+            height: 260
+            opacity: 1
+            visible: true
+            Image {
+                anchors.verticalCenter: parent.verticalCenter
+                anchors.horizontalCenter: parent.horizontalCenter
+                source: "../images/video-playback.png"
+            }
+        }
+
+        Button {
+            width: 260
+            height: 260
+            opacity: 1
+            visible: true
+            Image {
+                anchors.verticalCenter: parent.verticalCenter
+                anchors.horizontalCenter: parent.horizontalCenter
+                source: "../images/video-camera.png"
+            }
+        }
+
+    }
+
+    Column {
+        x: 360
+        y: 40
+        width: 260
+        height: 560
+        Button {
+            width: 260
+            height: 260
+            opacity: 1
+            visible: true
+            Image {
+                anchors.verticalCenter: parent.verticalCenter
+                anchors.horizontalCenter: parent.horizontalCenter
+                source: "../images/video-camera.png"
+            }
+        }
+
+        Button {
+            width: 260
+            height: 260
+            opacity: 1
+            visible: true
+            Image {
+                anchors.verticalCenter: parent.verticalCenter
+                anchors.horizontalCenter: parent.horizontalCenter
+                source: "../images/video-playback.png"
+            }
+        }
+        spacing: 40
+    }
+
+    Column {
+        x: 660
+        y: 40
+        width: 260
+        height: 560
+        Button {
+            width: 260
+            height: 260
+            opacity: 1
+            visible: true
+            Image {
+                anchors.verticalCenter: parent.verticalCenter
+                anchors.horizontalCenter: parent.horizontalCenter
+                source: "../images/video-camera.png"
+            }
+        }
+
+        Button {
+            width: 260
+            height: 260
+            opacity: 1
+            visible: true
+            Image {
+                anchors.verticalCenter: parent.verticalCenter
+                anchors.horizontalCenter: parent.horizontalCenter
+                source: "../images/video-playback.png"
+            }
+        }
+        spacing: 40
+    }
+
+    Column {
+        x: 960
+        y: 40
+        width: 260
+        height: 560
+        Button {
+            width: 260
+            height: 260
+            opacity: 1
+            visible: true
+            Image {
+                anchors.verticalCenter: parent.verticalCenter
+                anchors.horizontalCenter: parent.horizontalCenter
+                source: "../images/video-playback.png"
+            }
+        }
+
+        Button {
+            width: 260
+            height: 260
+            opacity: 1
+            visible: true
+            Image {
+                anchors.verticalCenter: parent.verticalCenter
+                anchors.horizontalCenter: parent.horizontalCenter
+                source: "../images/video-camera.png"
+            }
+        }
+        spacing: 40
     }
 }
