@@ -1,5 +1,7 @@
 /****************************************************************************
 **
+** Copyright (C) 2019 NXP
+**
 ** Copyright (C) 2016 The Qt Company Ltd.
 ** Contact: https://www.qt.io/licensing/
 **
