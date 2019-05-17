@@ -24,3 +24,9 @@ HEADERS += \
     src/qtquickcontrolsapplication.h \
     utils.h
 
+HEADERS += \
+    demo.h
+
+SOURCES += \
+    demo.cpp
+

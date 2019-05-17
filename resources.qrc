@@ -17,7 +17,11 @@
         <file>images/video-playback.png</file>
         <file>images/video-camera.png</file>
         <file>images/new-demo.png</file>
+        <file>src/main.cpp</file>
+        <file>src/qtquickcontrolsapplication.h</file>
+        <file>demos/demos.json</file>
         <file>images/bigbuck.png</file>
         <file>images/minisas-to-csi.png</file>
+
     </qresource>
 </RCC>
