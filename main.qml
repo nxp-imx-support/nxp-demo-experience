@@ -1,5 +1,7 @@
 /****************************************************************************
 **
+** Copyright (C) 2019 NXP
+**
 ** Copyright (C) 2016 The Qt Company Ltd.
 ** Contact: https://www.qt.io/licensing/
 **
@@ -83,6 +85,18 @@ ApplicationWindow {
         anchors.fill: parent
         width: opacity ? 60 : 0
         opacity: stackView.depth > 1 ? 0 : 1
+        color: opacity ? "#212126" : "#212126"
+        Behavior on opacity { NumberAnimation{} }
+    }
+
+    Rectangle {
+        id: backtext
+        anchors.rightMargin: 0
+        anchors.leftMargin: 940
+        anchors.topMargin: 0
+        anchors.fill: parent
+        width: opacity ? 60 : 0
+        opacity: stackView.depth > 1 ? 1 : 0
         color: opacity ? "#212126" : "#212126"
         Behavior on opacity { NumberAnimation{} }
 
