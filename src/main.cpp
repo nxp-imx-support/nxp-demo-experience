@@ -52,6 +52,7 @@
 
 #include <QtGui/QGuiApplication>
 #include <QtQml/QQmlApplicationEngine>
+#include <demo.h>
 
 int main(int argc, char *argv[])
 {

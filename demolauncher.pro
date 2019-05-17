@@ -15,3 +15,9 @@ RESOURCES += \
 DISTFILES += \
     content/bottomDelegate.qml
 
+HEADERS += \
+    demo.h
+
+SOURCES += \
+    demo.cpp
+
