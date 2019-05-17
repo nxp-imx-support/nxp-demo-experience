@@ -102,7 +102,7 @@ Item {
     }
 
     Column {
-        x: 60
+        x: 40
         y: 40
         width: 260
         height: 560

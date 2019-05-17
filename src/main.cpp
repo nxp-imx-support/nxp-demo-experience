@@ -52,11 +52,14 @@
 
 #include <QtGui/QGuiApplication>
 #include <QtQml/QQmlApplicationEngine>
+<<<<<<< HEAD
 #include <demo.h>
+#include "utils.h"
 
 int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
+    qmlRegisterType<Utils>("Utils", 1, 0, "Utils");
 
     QQmlApplicationEngine engine(QUrl("qrc:/main.qml"));
     if (engine.rootObjects().isEmpty())
