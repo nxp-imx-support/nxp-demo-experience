@@ -53,6 +53,7 @@
 import QtQuick 2.2
 import QtQuick.Controls 1.2
 import QtQuick.Controls.Styles 1.1
+import Utils 1.0
 
 Item {
 
@@ -72,6 +73,11 @@ Item {
             to: 0
             duration: 3000
         }
+    }
+
+    Utils {
+        id: utils
+        objectName: "utils"
     }
 
     Component {
@@ -102,12 +108,14 @@ Item {
     }
 
     Column {
-        x: 60
+        //column1 is visible by default in the modelPage.qml
+        id: column1
+        x: 40
         y: 40
         width: 260
         height: 560
         spacing: 40
-
+        visible: true
         Button {
             width: 260
             height: 260
@@ -117,6 +125,13 @@ Item {
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.horizontalCenter: parent.horizontalCenter
                 source: "../images/video-playback.png"
+            }
+            onClicked: {
+                titleText.text = qsTr("PLAYBACK")
+                informativeText.text = qsTr("This example open a Big Buck Bunny HD video for about 30 seconds.")
+                launchButton.visible = 1
+                contentImage.visible = 1
+                contentImage.source = "../images/bigbuck.png"
             }
         }
 
@@ -130,15 +145,27 @@ Item {
                 anchors.horizontalCenter: parent.horizontalCenter
                 source: "../images/video-camera.png"
             }
+            onClicked: {
+                titleText.text = qsTr("CAMERA")
+                informativeText.text = qsTr("This example will test the camera available in /dev/video0, showing the first 200 frames and then closing. So please, be sure to connect the MINISAS-TO-CSI daughter card to the MIPI-CSI interface and change the DTB file to 'fsl-imx8qxp-mek-mipi-ov5640.dtb'. For more details, visit the <a href=\"https://community.nxp.com/docs/DOC-343216\">i.MX Camera Use Cases</a> documentation.")
+                launchButton.visible = 0
+                fakeButton.visible = 1
+                contentImage.visible = 1
+                contentImage.source = "../images/minisas-to-csi.png"
+            }
         }
 
     }
 
     Column {
-        x: 360
+        //If necessary, change it for 'visible: true'
+        id: column2
+        x: 340
         y: 40
         width: 260
         height: 560
+        visible: true
+
         Button {
             width: 260
             height: 260
@@ -166,10 +193,14 @@ Item {
     }
 
     Column {
-        x: 660
+        //If necessary, change it for 'visible: true'
+        id: column3
+        x: 640
         y: 40
         width: 260
         height: 560
+        visible: true
+
         Button {
             width: 260
             height: 260
@@ -197,33 +228,85 @@ Item {
     }
 
     Column {
+        id: textColumn
         x: 960
         y: 40
-        width: 260
+        width: 280
         height: 560
-        Button {
-            width: 260
-            height: 260
-            opacity: 1
-            visible: true
-            Image {
-                anchors.verticalCenter: parent.verticalCenter
-                anchors.horizontalCenter: parent.horizontalCenter
-                source: "../images/new-demo.png"
-            }
+        Text {
+            id: titleText
+            y: 0
+            width: 280
+            height: 20
+            color: "#ffffff"
+            text: qsTr("VIDEO")
+            font.bold: true
+            font.pixelSize: 16
+            horizontalAlignment: Text.AlignLeft
+        }
+
+        Text {
+            id: informativeText
+            y: 10
+            width: 280
+            height: 240
+            color: "#ffffff"
+            text: qsTr("This section shows some Multimedia features, such as Video Playback, Camera enablement, and others.")
+            wrapMode: Text.WordWrap
+            font.bold: false
+            horizontalAlignment: Text.AlignLeft
+            font.pixelSize: 14
+        }
+
+        Image {
+            id: contentImage
+            x: 50
+            width: 200
+            height: 200
+            visible: false
         }
 
         Button {
-            width: 260
-            height: 260
-            opacity: 1
-            visible: true
-            Image {
-                anchors.verticalCenter: parent.verticalCenter
-                anchors.horizontalCenter: parent.horizontalCenter
-                source: "../images/new-demo.png"
+            id: launchButton
+            x: 120
+            y: 520
+            width: 160
+            height: 40
+            text: "LAUNCH"
+            visible: false
+            onClicked: utils.callDemo();
+            style: ButtonStyle {
+                label: Text {
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                    font.pixelSize: 14
+                    text: control.text
+                    color: "blue"
+                    font.bold: true
+                }
             }
         }
-        spacing: 40
+        Button {
+            id: fakeButton
+            x: 120
+            y: 520
+            width: 160
+            height: 40
+            text: qsTr("LAUNCH")
+            visible: false
+            onClicked: utils.callDemo2();
+            style: ButtonStyle {
+                label: Text {
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                    font.pixelSize: 14
+                    text: control.text
+                    color: "blue"
+                    font.bold: true
+                }
+            }
+        }
+
+        spacing: 20
     }
 }
