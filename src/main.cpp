@@ -52,17 +52,38 @@
 
 #include <QtGui/QGuiApplication>
 #include <QtQml/QQmlApplicationEngine>
-<<<<<<< HEAD
+#include <QFile>
+#include <QJsonParseError>
+#include <QDebug>
+#include <QJsonObject>
+#include <QJsonArray>
+#include <QVariant>
+#include <QQmlContext>
 #include <demo.h>
 #include "utils.h"
+#include "mainwindow.h"
 
 int main(int argc, char *argv[])
 {
+
     QGuiApplication app(argc, argv);
     qmlRegisterType<Utils>("Utils", 1, 0, "Utils");
+    qmlRegisterType<Mainwindow>("Mainwindow", 1, 0, "Mainwindow");
 
     QQmlApplicationEngine engine(QUrl("qrc:/main.qml"));
+
     if (engine.rootObjects().isEmpty())
         return -1;
+
+    QObject * root = engine.rootObjects().first();
+    auto mainwindow = root->findChild<Mainwindow *>("mainwindow");
+
+    mainwindow->engineMain = &engine;
+
+    QObject * stackView = root->findChild<QObject *>("stackView");
+    mainwindow->stackView = stackView;
+
+    mainwindow->goToMainmenu();
+
     return app.exec();
 }

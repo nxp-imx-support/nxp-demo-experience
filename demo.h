@@ -8,10 +8,12 @@
 class Demo
 {
 public:
-    Demo(const QString &name, const QString &executable, const QString &source, const QString &icon,
+    Demo(const QString &name, const QString &firstmenu, const QString &secondmenu, const QString &executable, const QString &source, const QString &icon,
          const QString &screenshot, const QString &compatible, const QString &description);
 
     QString name() const;
+    QString firstmenu() const;
+    QString secondmenu() const;
     QString executable() const;
     QString source() const;
     QString icon() const;
@@ -22,6 +24,8 @@ public:
 private:
 
     QString m_name;
+    QString m_firstmenu;
+    QString m_secondmenu;
     QString m_executable;
     QString m_source;
     QString m_icon;
@@ -38,6 +42,8 @@ class DemoModel : public QAbstractListModel
 public:
     enum DemoRoles {
         NameRole = Qt::UserRole + 1,
+        FirstmenuRole,
+        SecondmenuRole,
         ExecutableRole,
         SourceRole,
         IconRole,

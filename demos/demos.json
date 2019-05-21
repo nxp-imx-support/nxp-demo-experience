@@ -75,7 +75,8 @@
         }]
     }]
     },
-    {"ai/ml":[{
+    {"Artificial Inteligence":[{
+        "Machine Learning":[{
             "name": "Live face recognition",
             "executable": "/home/root/aidemos/face_recognition",
             "source": "",
@@ -92,6 +93,25 @@
             "screenshot": "image_rec_screenshot.png",
             "compatible": "imx8mm",
             "description": "Description of Images recognition"
+        }],
+        "Deep Learning":[{
+            "name": "Deep Learning 1",
+            "executable": "/home/root/aidemos/face_recognition",
+            "source": "",
+            "icon": "face_rec_icon.png",
+            "screenshot": "face_rec_screenshot.png",
+            "compatible": "imx8mm",
+            "description": "Description of Live face recognition"
+        },
+        {
+            "name": "Deep learning 2",
+            "executable": "/home/root/aidemos/image_recognition",
+            "source": "",
+            "icon": "image_rec_icon.png",
+            "screenshot": "image_rec_screenshot.png",
+            "compatible": "imx8mm",
+            "description": "Description of Images recognition"
         }]
+    }]
     }
 ]}

@@ -22,6 +22,6 @@
         <file>demos/demos.json</file>
         <file>images/bigbuck.png</file>
         <file>images/minisas-to-csi.png</file>
-
+        <file>content/submenu.qml</file>
     </qresource>
 </RCC>
