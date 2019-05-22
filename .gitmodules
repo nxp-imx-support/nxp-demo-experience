@@ -1,0 +1,3 @@
+[submodule "demos"]
+	path = demos
+	url = https://nxa19976@bitbucket.sw.nxp.com/scm/~nxa19976/imx-demo-launcher-demos-list.git
