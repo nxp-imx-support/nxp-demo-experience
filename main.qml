@@ -53,11 +53,18 @@
 import QtQuick 2.2
 import QtQuick.Controls 1.2
 import "content"
+import Mainwindow 1.0
 
 ApplicationWindow {
+    property alias stackView: stackView
     visible: true
     width: 1280
     height: 720
+
+    Mainwindow {
+        id: mainwindow
+        objectName: "mainwindow"
+    }
 
     Rectangle {
         color: "#ffffff"
@@ -109,6 +116,7 @@ ApplicationWindow {
         height: 100
         Rectangle {
             id: backButton
+            objectName: "backButton"
             width: opacity ? 60 : 0
             anchors.left: parent.left
             anchors.leftMargin: 20
@@ -141,24 +149,9 @@ ApplicationWindow {
         }
     }
 
-    ListModel {
-        id: pageModel
-        ListElement {
-            title: "Video"
-            page: "content/videoPage.qml"
-        }
-        ListElement {
-            title: "GPU"
-            page: "content/gpuPage.qml"
-        }
-        ListElement {
-            title: "AI/ML"
-            page: "content/aimlPage.qml"
-        }
-    }
-
     StackView {
         id: stackView
+        objectName: "stackView"
         height: 620
         anchors.fill: parent
         // Implements back key navigation
@@ -179,8 +172,8 @@ ApplicationWindow {
                 model: pageModel
                 anchors.fill: parent
                 delegate: AndroidDelegate {
-                    text: title
-                    onClicked: stackView.push(Qt.resolvedUrl(page))
+                    text: modelData //title
+                    onClicked: mainwindow.goToSubmenu(modelData)
                 }
             }
         }

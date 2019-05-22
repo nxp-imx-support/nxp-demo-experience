@@ -15,12 +15,15 @@ RESOURCES += \
 DISTFILES += \
     content/bottomDelegate.qml \
     content/modelPage.qml \
+    content/submenu.qml \
     demo/video/videoPlayback.sh
 
 SOURCES += \
+    mainwindow.cpp \
     utils.cpp
 
 HEADERS += \
+    mainwindow.h \
     src/qtquickcontrolsapplication.h \
     utils.h
 

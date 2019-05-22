@@ -1,7 +1,7 @@
 #include "demo.h"
 
-Demo::Demo(const QString &name, const QString &executable, const QString &source, const QString &icon, const QString &screenshot,const QString &compatible,
-           const QString &description) : m_name(name), m_executable(executable), m_source(source), m_icon(icon), m_screenshot(screenshot), m_compatible(compatible), m_description(description)
+Demo::Demo(const QString &name, const QString &firstmenu, const QString &secondmenu, const QString &executable, const QString &source, const QString &icon, const QString &screenshot,const QString &compatible,
+           const QString &description) : m_name(name), m_firstmenu(firstmenu), m_secondmenu(secondmenu), m_executable(executable), m_source(source), m_icon(icon), m_screenshot(screenshot), m_compatible(compatible), m_description(description)
 {
 
 }
@@ -9,6 +9,16 @@ Demo::Demo(const QString &name, const QString &executable, const QString &source
 QString Demo::name() const
 {
     return m_name;
+}
+
+QString Demo::firstmenu() const
+{
+    return m_firstmenu;
+}
+
+QString Demo::secondmenu() const
+{
+    return m_secondmenu;
 }
 
 QString Demo::executable() const
@@ -39,6 +49,11 @@ QString Demo::compatible() const
 QString Demo::description() const
 {
     return m_description;
+}
+
+DemoModel::DemoModel(QObject *parent)
+    : QAbstractListModel(parent)
+{
 }
 
 void DemoModel::remove()
@@ -82,6 +97,10 @@ QVariant DemoModel::data(const QModelIndex & index, int role) const {
     const Demo &demo = m_demos[index.row()];
     if (role == NameRole)
         return demo.name();
+    else if (role == FirstmenuRole)
+        return demo.firstmenu();
+    else if (role == SecondmenuRole)
+        return demo.secondmenu();
     else if (role == ExecutableRole)
         return demo.executable();
     else if (role == SourceRole)
@@ -100,6 +119,8 @@ QVariant DemoModel::data(const QModelIndex & index, int role) const {
 QHash<int, QByteArray> DemoModel::roleNames() const {
     QHash<int, QByteArray> roles;
     roles[NameRole] = "name";
+    roles[FirstmenuRole] = "firstmenu";
+    roles[SecondmenuRole] = "secondmenu";
     roles[ExecutableRole] = "executable";
     roles[SourceRole] = "source";
     roles[IconRole] = "icon";
