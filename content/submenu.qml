@@ -101,23 +101,169 @@ Item {
         }
     }
 
-    Column {
-        x: 40
-        y: 40
-        width: 260
-        height: 560
-        spacing: 40
+    GridView {
+        id: gridView
+        objectName: "gridView"
+        x: 0
+        y: 0
+        width: 940
+        height: 620
+        contentHeight: 559
+        cacheBuffer: 300
 
-        Button {
-            width: 260
-            height: 260
-            opacity: 1
-            visible: true
-            Image {
-                anchors.verticalCenter: parent.verticalCenter
-                anchors.horizontalCenter: parent.horizontalCenter
-                source: "../images/new-demo.png"
+        model: ListModel {
+            ListElement {
+                name: "Grey"
+                colorCode: "grey"
+            }
+
+            ListElement {
+                name: "Red"
+                colorCode: "red"
+            }
+
+            ListElement {
+                name: "Blue"
+                colorCode: "blue"
+            }
+
+            ListElement {
+                name: "Green"
+                colorCode: "green"
+            }
+
+            ListElement {
+                name: "Green"
+                colorCode: "green"
+            }
+            ListElement {
+                name: "Green"
+                colorCode: "green"
+            }
+            ListElement {
+                name: "Green"
+                colorCode: "green"
+            }
+
+            ListElement {
+                name: "Green"
+                colorCode: "green"
+            }
+
+            ListElement {
+                name: "Green"
+                colorCode: "green"
+            }
+
+            ListElement {
+                name: "Green"
+                colorCode: "green"
             }
         }
+        delegate: Item {
+
+            Column {
+                x: 40
+                y: 40
+                Rectangle {
+                    width: 260
+                    height: 260
+                    color: colorCode
+                    anchors.horizontalCenter: parent.horizontalCenter
+
+                    Button {
+                        width: 260
+                        height: 260
+                        opacity: 1
+                        visible: true
+                        Image {
+                            y: 5
+                            objectName: "demoImage"
+                            anchors.verticalCenter: parent.verticalCenter
+                            anchors.horizontalCenter: parent.horizontalCenter
+                            source: "../images/video-playback.png"
+                        }
+                        onClicked: {
+                            titleText.text = qsTr("PLAYBACK")
+                            informativeText.text = qsTr("This example open a Big Buck Bunny HD video for about 30 seconds.")
+                            launchButton.visible = 1
+                            contentImage.visible = 1
+                            contentImage.source = "../images/bigbuck.png"
+                        }
+                    }
+                }
+
+                Text {
+                    text: name
+                    objectName: "demoText"
+                    font.bold: true
+                    anchors.horizontalCenter: parent.horizontalCenter
+                }
+            }
+        }
+        cellHeight: 300
+        cellWidth: 300
+    }
+
+    Column {
+        id: textColumn
+        x: 960
+        y: 40
+        width: 280
+        height: 560
+        Text {
+            id: titleText
+            y: 0
+            width: 280
+            height: 20
+            color: "#ffffff"
+            text: qsTr("VIDEO")
+            font.bold: true
+            font.pixelSize: 16
+            horizontalAlignment: Text.AlignLeft
+        }
+
+        Text {
+            id: informativeText
+            y: 10
+            width: 280
+            height: 240
+            color: "#ffffff"
+            text: qsTr("This section shows some Multimedia features, such as Video Playback, Camera enablement, and others.")
+            wrapMode: Text.WordWrap
+            font.bold: false
+            horizontalAlignment: Text.AlignLeft
+            font.pixelSize: 14
+        }
+
+        Image {
+            id: contentImage
+            x: 50
+            width: 200
+            height: 200
+            visible: false
+        }
+
+        Button {
+            id: launchButton
+            x: 120
+            y: 520
+            width: 160
+            height: 40
+            text: "LAUNCH"
+            visible: false
+            onClicked: utils.callDemo();
+            style: ButtonStyle {
+                label: Text {
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                    font.pixelSize: 14
+                    text: control.text
+                    color: "blue"
+                    font.bold: true
+                }
+            }
+        }
+        spacing: 20
     }
 }
