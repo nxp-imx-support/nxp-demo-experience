@@ -74,8 +74,8 @@ void Mainwindow::loadJsonData()
 {
     QFile jsonFile;
     QJsonParseError jsonError1;
-    QJsonArray ja, ja1;
-    QJsonValue jv, jv1, jv2, jv3;
+    QJsonArray ja, ja1, ja2;
+    QJsonValue jv, jv1, jv2, jv3, jv4;
     QJsonObject jo, jo1, jo2;
 
     jsonFile.setFileName("demos/demos.json");
@@ -94,26 +94,29 @@ void Mainwindow::loadJsonData()
 
             jv1 = ja.at(i);
 
-            firstLevel = jv[i].toObject().keys().takeFirst();
+            //firstLevel = jv[i].toObject().keys().takeFirst();
+            firstLevel = jv1.toObject().keys().takeFirst();
             firstLevelMenu.append(firstLevel);
 
             jo1 = jv1.toObject();
             jv2 = jo1.value(firstLevel);
-            jo2 = jv2[0].toObject();
+            ja1 = jv2.toArray();
+            jv3 = ja1.at(0);
+            jo2 = jv3.toObject();
 
             for(int j = 0; j < jo2.count(); j++){
                 secondLevel = jo2.keys().takeAt(j);
                 secondLevelMenu.append(secondLevel);
 
-                jv3 = jo2.value(secondLevel);
-                ja1 = jv3.toArray();
+                jv4 = jo2.value(secondLevel);
+                ja2 = jv4.toArray();
 
-                for(int k = 0; k < ja1.count(); k++){
+                for(int k = 0; k < ja2.count(); k++){
                     // Register the demo as demo object
-                    modelDemo->addDemo(Demo(ja1[k].toObject()["name"].toString(), firstLevel,
-                    secondLevel, ja1[k].toObject()["executable"].toString(), ja1[k].toObject()["source"].toString(),
-                    ja1[k].toObject()["icon"].toString(), ja1[k].toObject()["screenshot"].toString(), ja1[k].toObject()["compatible"].toString(),
-                    ja1[k].toObject()["description"].toString()));
+                    modelDemo->addDemo(Demo(ja2[k].toObject()["name"].toString(), firstLevel,
+                    secondLevel, ja2[k].toObject()["executable"].toString(), ja2[k].toObject()["source"].toString(),
+                    ja2[k].toObject()["icon"].toString(), ja2[k].toObject()["screenshot"].toString(), ja2[k].toObject()["compatible"].toString(),
+                    ja2[k].toObject()["description"].toString()));
 
                 }
 
