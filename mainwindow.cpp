@@ -63,7 +63,7 @@ void Mainwindow::goToSubmenu(QString itemName)
         } else {
             //Sub menu. Go to demos
             QMetaObject::invokeMethod(stackView, "push",
-                Q_ARG(QVariant, QVariant(QUrl("qrc:/content/submenu.qml"))));
+                Q_ARG(QVariant, QVariant(QUrl("qrc:/content/demoPage.qml"))));
 
         }
     }

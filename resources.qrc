@@ -2,9 +2,6 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>content/AndroidDelegate.qml</file>
-        <file>content/videoPage.qml</file>
-        <file>content/gpuPage.qml</file>
-        <file>content/aimlPage.qml</file>
         <file>images/button_default.png</file>
         <file>images/button_pressed.png</file>
         <file>images/navigation_next_item.png</file>
@@ -19,9 +16,8 @@
         <file>images/new-demo.png</file>
         <file>src/main.cpp</file>
         <file>src/qtquickcontrolsapplication.h</file>
-        <file>demos/demos.json</file>
         <file>images/bigbuck.png</file>
         <file>images/minisas-to-csi.png</file>
-        <file>content/submenu.qml</file>
+        <file>content/demoPage.qml</file>
     </qresource>
 </RCC>

@@ -154,12 +154,6 @@ ApplicationWindow {
         objectName: "stackView"
         height: 620
         anchors.fill: parent
-        // Implements back key navigation
-        focus: true
-        Keys.onReleased: if (event.key === Qt.Key_Back && stackView.depth > 1) {
-                             stackView.pop();
-                             event.accepted = true;
-                         }
 
         initialItem: Item {
             width: 540

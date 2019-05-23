@@ -4,18 +4,14 @@ TARGET = demolauncher
 include(src/src.pri)
 
 OTHER_FILES += \
-    main.qml \
-    content/videoPage.qml \
-    content/gpuPage.qml \
-    content/aimlPage.qml
+    main.qml
 
 RESOURCES += \
     resources.qrc
 
 DISTFILES += \
     content/bottomDelegate.qml \
-    content/modelPage.qml \
-    content/submenu.qml \
+    content/demoPage.qml \
     demo/video/videoPlayback.sh
 
 SOURCES += \
