@@ -21,20 +21,16 @@ Mainwindow::Mainwindow (QObject* parent) : QObject(parent)
 {
 
     loadJsonData();
-
 }
 
 void Mainwindow::goToMainmenu()
 {
-    qDebug() << "Going to mainmenu";
+
     engineMain->rootContext()->setContextProperty("pageModel", QVariant::fromValue(firstLevelMenu));
 }
 
 void Mainwindow::goToSubmenu(QString itemName)
 {
-
-    qDebug() << "Going to submenu: " + itemName;
-    // Check if item is from main or sub menu
 
     if (firstLevelMenu.contains(itemName)) {
         // Main menu. Go to sub menu
@@ -54,6 +50,31 @@ void Mainwindow::goToSubmenu(QString itemName)
     }
 }
 
+void Mainwindow::goToDemo(QString submenuItem)
+{
+
+    currentSubMenu = submenuItem;
+    currentModelDemo->remove();
+
+    QModelIndex index;
+    QList<Demo> demoList = modelDemo->demoData(index);
+    for(int i = 0; i < modelDemo->rowCount(); i++){
+        index = modelDemo->index(i,0);
+
+
+        if ((currentMainMenu == demoList[i].firstmenu()) || (currentSubMenu == demoList[i].secondmenu())){
+
+            currentModelDemo->addDemo(Demo(demoList[i].name(), demoList[i].firstmenu(),
+                                      demoList[i].secondmenu(), demoList[i].executable(), demoList[i].source(),
+                                      demoList[i].icon(), demoList[i].screenshot(), demoList[i].compatible(),
+                                      demoList[i].description()));
+
+        }
+
+    }
+
+    engineMain->rootContext()->setContextProperty("demoModel", QVariant::fromValue(currentModelDemo));
+}
 
 void Mainwindow::loadJsonData()
 {
