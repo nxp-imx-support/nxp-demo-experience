@@ -85,6 +85,7 @@ Item {
             text: modelData //title
             onClicked: {
                 stackView.push(Qt.resolvedUrl("demoPage.qml"))
+                mainwindow.goToDemo(modelData)
             }
         }
     }

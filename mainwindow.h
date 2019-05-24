@@ -20,6 +20,7 @@ public:
     void loadJsonData();
     Q_INVOKABLE void goToSubmenu(QString);
     Q_INVOKABLE void goToMainmenu();
+    Q_INVOKABLE void goToDemo(QString);
 
     QStringList firstLevelMenu;
     QStringList secondLevelMenu;
@@ -28,6 +29,10 @@ public:
 private:
 
     DemoModel *modelDemo = new DemoModel;
+    DemoModel *currentModelDemo = new DemoModel;
+
+    QString currentMainMenu;
+    QString currentSubMenu;
 
 };
 

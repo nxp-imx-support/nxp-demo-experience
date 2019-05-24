@@ -111,55 +111,7 @@ Item {
         contentHeight: 559
         cacheBuffer: 300
 
-        model: ListModel {
-            ListElement {
-                name: "Grey"
-                colorCode: "grey"
-            }
-
-            ListElement {
-                name: "Red"
-                colorCode: "red"
-            }
-
-            ListElement {
-                name: "Blue"
-                colorCode: "blue"
-            }
-
-            ListElement {
-                name: "Green"
-                colorCode: "green"
-            }
-
-            ListElement {
-                name: "Green"
-                colorCode: "green"
-            }
-            ListElement {
-                name: "Green"
-                colorCode: "green"
-            }
-            ListElement {
-                name: "Green"
-                colorCode: "green"
-            }
-
-            ListElement {
-                name: "Green"
-                colorCode: "green"
-            }
-
-            ListElement {
-                name: "Green"
-                colorCode: "green"
-            }
-
-            ListElement {
-                name: "Green"
-                colorCode: "green"
-            }
-        }
+        model: demoModel
         delegate: Item {
 
             Column {
