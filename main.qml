@@ -79,7 +79,7 @@ ApplicationWindow {
             visible: true
             anchors.verticalCenterOffset: 20
             source: "images/demo_launcher_logo.png"
-            opacity: stackView.depth > 1 ? 0 : 1
+            opacity: stackView.depth > 2 ? 0 : 1
             Behavior on opacity { NumberAnimation{} }
         }
     }
@@ -91,7 +91,7 @@ ApplicationWindow {
         anchors.topMargin: 0
         anchors.fill: parent
         width: opacity ? 60 : 0
-        opacity: stackView.depth > 1 ? 0 : 1
+        opacity: stackView.depth > 2 ? 0 : 1
         color: opacity ? "#212126" : "#212126"
         Behavior on opacity { NumberAnimation{} }
     }
@@ -103,7 +103,7 @@ ApplicationWindow {
         anchors.topMargin: 0
         anchors.fill: parent
         width: opacity ? 60 : 0
-        opacity: stackView.depth > 1 ? 1 : 0
+        opacity: stackView.depth > 2 ? 1 : 0
         color: opacity ? "#212126" : "#212126"
         Behavior on opacity { NumberAnimation{} }
 
@@ -167,7 +167,10 @@ ApplicationWindow {
                 anchors.fill: parent
                 delegate: AndroidDelegate {
                     text: modelData //title
-                    onClicked: mainwindow.goToSubmenu(modelData)
+                    onClicked: {
+                        stackView.push(Qt.resolvedUrl("content/subMenuPage.qml"))
+                        mainwindow.goToSubmenu(modelData)
+                    }
                 }
             }
         }

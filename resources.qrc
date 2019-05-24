@@ -19,5 +19,6 @@
         <file>images/bigbuck.png</file>
         <file>images/minisas-to-csi.png</file>
         <file>content/demoPage.qml</file>
+        <file>content/subMenuPage.qml</file>
     </qresource>
 </RCC>

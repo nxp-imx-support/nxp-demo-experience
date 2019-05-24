@@ -28,44 +28,29 @@ void Mainwindow::goToMainmenu()
 {
     qDebug() << "Going to mainmenu";
     engineMain->rootContext()->setContextProperty("pageModel", QVariant::fromValue(firstLevelMenu));
-
 }
 
 void Mainwindow::goToSubmenu(QString itemName)
 {
 
     qDebug() << "Going to submenu: " + itemName;
+    // Check if item is from main or sub menu
 
-    if (itemName == "Back"){
-        goToMainmenu();
+    if (firstLevelMenu.contains(itemName)) {
+        // Main menu. Go to sub menu
+        QList<Demo> demoList = modelDemo->demoData();
+        secondLevelMenuFiltered.clear();
+        foreach(Demo demo, demoList){
 
-    } else {
-
-        // Check if item is from main or sub menu
-
-        if (firstLevelMenu.contains(itemName)) {
-            // Main menu. Go to sub menu
-            QList<Demo> demoList = modelDemo->demoData();
-            secondLevelMenuFiltered.clear();
-            secondLevelMenuFiltered.append("Back");
-            foreach(Demo demo, demoList){
-
-                if (demo.firstmenu() == itemName) {
-                    qDebug() << demo.name();
-                    secondLevelMenuFiltered.append(demo.secondmenu());
-                }
+            if (demo.firstmenu() == itemName) {
+                qDebug() << demo.name();
+                secondLevelMenuFiltered.append(demo.secondmenu());
             }
-
-            secondLevelMenuFiltered.removeDuplicates();
-
-            engineMain->rootContext()->setContextProperty("pageModel", QVariant::fromValue(secondLevelMenuFiltered));
-
-        } else {
-            //Sub menu. Go to demos
-            QMetaObject::invokeMethod(stackView, "push",
-                Q_ARG(QVariant, QVariant(QUrl("qrc:/content/demoPage.qml"))));
-
         }
+
+        secondLevelMenuFiltered.removeDuplicates();
+        engineMain->rootContext()->setContextProperty("subPageModel", QVariant::fromValue(secondLevelMenuFiltered));
+
     }
 }
 

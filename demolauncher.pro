@@ -12,6 +12,7 @@ RESOURCES += \
 DISTFILES += \
     content/bottomDelegate.qml \
     content/demoPage.qml \
+    content/subMenuPage.qml \
     demo/video/videoPlayback.sh
 
 SOURCES += \
