@@ -67,17 +67,22 @@ ApplicationWindow {
     }
 
     Rectangle {
+        id: rectangle
         color: "#ffffff"
         anchors.leftMargin: 0
         anchors.topMargin: 0
         anchors.fill: parent
         Image {
-            x: 590
-            y: 160
-            width: 630
-            height: 340
+            x: -100
+            anchors.rightMargin: 45
+            anchors.bottomMargin: 0
+            anchors.leftMargin: -45
+            anchors.topMargin: 0
+            anchors.fill: parent
+            transformOrigin: Item.Right
+            scale: 0.5
+            fillMode: Image.PreserveAspectFit
             visible: true
-            anchors.verticalCenterOffset: 20
             source: "images/demo_launcher_logo.png"
             opacity: stackView.depth > 2 ? 0 : 1
             Behavior on opacity { NumberAnimation{} }
@@ -176,3 +181,12 @@ ApplicationWindow {
         }
     }
 }
+
+
+
+
+
+/*##^## Designer {
+    D{i:3;anchors_x:590;anchors_y:160}
+}
+ ##^##*/
