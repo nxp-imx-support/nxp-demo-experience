@@ -111,18 +111,18 @@ Item {
                         objectName: "demoImage"
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.horizontalCenter: parent.horizontalCenter
-                        source: "../images/default-icon.png"
+                        source: icon ? icon : "file:demos/icon/default-icon.png"
                     }
                     MouseArea {
                         id: buttonMouse
                         anchors.fill: parent
                         anchors.margins: -5
                         onClicked: {
-                            titleText.text = qsTr("PLAYBACK")
-                            informativeText.text = qsTr("This example open a Big Buck Bunny HD video for about 30 seconds.")
+                            titleText.text = name
+                            informativeText.text = description
                             launchButton.visible = 1
                             contentImage.visible = 1
-                            contentImage.source = "../images/bigbuck.png"
+                            contentImage.source = "file:demos/screenshot/" + screenshot
                         }
                     }
                 }
@@ -152,7 +152,7 @@ Item {
             width: 280
             height: 20
             color: "#ffffff"
-            text: qsTr("VIDEO")
+            text: qsTr("Select a demo ...")
             font.bold: true
             font.pixelSize: 16
             horizontalAlignment: Text.AlignLeft
@@ -164,7 +164,7 @@ Item {
             width: 280
             height: 240
             color: "#ffffff"
-            text: qsTr("This section shows some Multimedia features, such as Video Playback, Camera enablement, and others.")
+            text: qsTr("")
             wrapMode: Text.WordWrap
             font.bold: false
             horizontalAlignment: Text.AlignLeft
