@@ -80,23 +80,7 @@ Item {
             panel: Item {
                 implicitHeight: 240
                 implicitWidth: 240
-                BorderImage {
-                    anchors.fill: parent
-                    antialiasing: true
-                    border.bottom: 8
-                    border.top: 8
-                    border.left: 8
-                    border.right: 8
-                    anchors.margins: control.pressed ? -4 : 0
-                    source: control.pressed ? "../images/button_pressed.png" : "../images/button_default.png"
-                    Text {
-                        text: control.text
-                        anchors.centerIn: parent
-                        color: "white"
-                        font.pixelSize: 23
-                        renderType: Text.NativeRendering
-                    }
-                }
+
             }
         }
     }
@@ -108,7 +92,7 @@ Item {
         y: 0
         width: 940
         height: 620
-        contentHeight: 559
+        contentHeight: 560
         cacheBuffer: 300
 
         model: demoModel
@@ -120,21 +104,19 @@ Item {
                 Rectangle {
                     width: 260
                     height: 260
-                    color: colorCode
-                    anchors.horizontalCenter: parent.horizontalCenter
-
-                    Button {
-                        width: 260
-                        height: 260
-                        opacity: 1
-                        visible: true
-                        Image {
-                            y: 5
-                            objectName: "demoImage"
-                            anchors.verticalCenter: parent.verticalCenter
-                            anchors.horizontalCenter: parent.horizontalCenter
-                            source: "../images/video-playback.png"
-                        }
+                    antialiasing: true
+                    color: buttonMouse.pressed ? "#126ee8" : "transparent"
+                    opacity: buttonMouse.pressed ? 0.4 : 1
+                    Image {
+                        objectName: "demoImage"
+                        anchors.verticalCenter: parent.verticalCenter
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        source: "../images/default-icon.png"
+                    }
+                    MouseArea {
+                        id: buttonMouse
+                        anchors.fill: parent
+                        anchors.margins: -5
                         onClicked: {
                             titleText.text = qsTr("PLAYBACK")
                             informativeText.text = qsTr("This example open a Big Buck Bunny HD video for about 30 seconds.")
@@ -148,6 +130,7 @@ Item {
                 Text {
                     text: name
                     objectName: "demoText"
+                    color: "#126ee8"
                     font.bold: true
                     anchors.horizontalCenter: parent.horizontalCenter
                 }
@@ -211,7 +194,7 @@ Item {
                     verticalAlignment: Text.AlignVCenter
                     font.pixelSize: 14
                     text: control.text
-                    color: "blue"
+                    color: "#126ee8"
                     font.bold: true
                 }
             }
