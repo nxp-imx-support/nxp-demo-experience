@@ -11,7 +11,6 @@
         <file>images/textinput.png</file>
         <file>images/toolbar.png</file>
         <file>images/demo_launcher_logo.png</file>
-        <file>images/video-playback.png</file>
         <file>images/video-camera.png</file>
         <file>images/new-demo.png</file>
         <file>src/main.cpp</file>
@@ -20,5 +19,6 @@
         <file>images/minisas-to-csi.png</file>
         <file>content/demoPage.qml</file>
         <file>content/subMenuPage.qml</file>
+        <file>images/default-icon.png</file>
     </qresource>
 </RCC>
