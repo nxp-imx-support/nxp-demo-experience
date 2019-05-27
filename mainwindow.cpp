@@ -13,6 +13,7 @@
 #include <QJsonObject>
 #include <QJsonArray>
 #include <QMetaObject>
+#include <QHostInfo>
 
 #include "mainwindow.h"
 #include "demo.h"
@@ -84,6 +85,13 @@ void Mainwindow::loadJsonData()
     QJsonValue jv, jv1, jv2, jv3, jv4;
     QJsonObject jo, jo1, jo2;
 
+    QString board = QHostInfo::localHostName().toLocal8Bit();
+
+    // If Demo Launcher is not running on i.MX board, set it to 7ulp
+    if (!board.contains("imx"))
+        board = "imx7ulpevk";
+
+    qDebug() << board;
     jsonFile.setFileName("demos/demos.json");
     jsonFile.open(QIODevice::ReadOnly | QIODevice::Text);
     QJsonDocument jsonDocument = QJsonDocument::fromJson(jsonFile.readAll(),&jsonError1);
@@ -100,7 +108,6 @@ void Mainwindow::loadJsonData()
 
             jv1 = ja.at(i);
 
-            //firstLevel = jv[i].toObject().keys().takeFirst();
             firstLevel = jv1.toObject().keys().takeFirst();
             firstLevelMenu.append(firstLevel);
 
@@ -118,11 +125,13 @@ void Mainwindow::loadJsonData()
                 ja2 = jv4.toArray();
 
                 for(int k = 0; k < ja2.count(); k++){
-                    // Register the demo as demo object
-                    modelDemo->addDemo(Demo(ja2[k].toObject()["name"].toString(), firstLevel,
-                    secondLevel, ja2[k].toObject()["executable"].toString(), ja2[k].toObject()["source"].toString(),
-                    ja2[k].toObject()["icon"].toString(), ja2[k].toObject()["screenshot"].toString(), ja2[k].toObject()["compatible"].toString(),
-                    ja2[k].toObject()["description"].toString()));
+                    if (ja2[k].toObject()["compatible"].toString().contains(board)){
+                        // Register the demo as demo object
+                        modelDemo->addDemo(Demo(ja2[k].toObject()["name"].toString(), firstLevel,
+                        secondLevel, ja2[k].toObject()["executable"].toString(), ja2[k].toObject()["source"].toString(),
+                        ja2[k].toObject()["icon"].toString(), ja2[k].toObject()["screenshot"].toString(), ja2[k].toObject()["compatible"].toString(),
+                        ja2[k].toObject()["description"].toString()));
+                    }
 
                 }
 
