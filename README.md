@@ -4,11 +4,11 @@
 
 To clone the i.MX Demo Launcher QT Application, use the following command:
 
-git clone https://nxa19976@bitbucket.sw.nxp.com/scm/~nxa34353/i.mx-demo-launcher.git
+git clone https://bitbucket.sw.nxp.com/scm/imxs/i.mx-demo-launcher.git
 
 After, update the demos list with the commands below: 
 
 cd i.mx-demo-launcher
 
-git submodule init
+git submodule init  
 git submodule update
