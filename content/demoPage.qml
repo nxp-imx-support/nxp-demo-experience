@@ -111,7 +111,7 @@ Item {
                         objectName: "demoImage"
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.horizontalCenter: parent.horizontalCenter
-                        source: icon ? icon : "file:demos/icon/default-icon.png"
+                        source: icon ? "file:" + icon : "file:demos/icon/default-icon.png"
                     }
                     MouseArea {
                         id: buttonMouse

@@ -79,7 +79,7 @@ void Mainwindow::goToDemo(QString submenuItem)
 
 void Mainwindow::loadJsonData()
 {
-    QFile jsonFile;
+    QFile jsonFile, iconFile;
     QJsonParseError jsonError1;
     QJsonArray ja, ja1, ja2;
     QJsonValue jv, jv1, jv2, jv3, jv4;
@@ -99,7 +99,7 @@ void Mainwindow::loadJsonData()
         qDebug() << jsonError1.errorString();
     jsonFile.close();
     jo = jsonDocument.object();
-    QString firstLevel, secondLevel, demoName;
+    QString firstLevel, secondLevel, demoName, iconFileName;
 
     jv = jo.value("demos");
     ja = jv.toArray();
@@ -124,12 +124,21 @@ void Mainwindow::loadJsonData()
 
                 for(int k = 0; k < ja2.count(); k++){
                     if (ja2[k].toObject()["compatible"].toString().contains(board)){
+
                         // Register the demo as demo object
                         firstLevelMenu.append(firstLevel);
                         secondLevelMenu.append(secondLevel);
+
+                        // Check if icon file exists, if not leave it blank to show default icon
+                        iconFileName = "demos/icon/" + ja2[k].toObject()["icon"].toString();
+                        iconFile.setFileName(iconFileName);
+                        qDebug() << iconFileName;
+                        if (!iconFile.exists() || ja2[k].toObject()["icon"].toString().isEmpty())
+                            iconFileName = "";
+
                         modelDemo->addDemo(Demo(ja2[k].toObject()["name"].toString(), firstLevel,
                         secondLevel, ja2[k].toObject()["executable"].toString(), ja2[k].toObject()["source"].toString(),
-                        ja2[k].toObject()["icon"].toString(), ja2[k].toObject()["screenshot"].toString(), ja2[k].toObject()["compatible"].toString(),
+                        iconFileName, ja2[k].toObject()["screenshot"].toString(), ja2[k].toObject()["compatible"].toString(),
                         ja2[k].toObject()["description"].toString()));
                     }
 
