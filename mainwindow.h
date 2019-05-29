@@ -4,6 +4,7 @@
 #include <QtGui/QGuiApplication>
 #include <QtQml/QQmlApplicationEngine>
 #include <QObject>
+#include <QProcess>
 #include "demo.h"
 
 class Mainwindow : public QObject
@@ -21,6 +22,7 @@ public:
     Q_INVOKABLE void goToSubmenu(QString);
     Q_INVOKABLE void goToMainmenu();
     Q_INVOKABLE void goToDemo(QString);
+    Q_INVOKABLE void callDemo(QString command);
 
     QStringList firstLevelMenu;
     QStringList secondLevelMenu;
@@ -33,6 +35,8 @@ private:
 
     QString currentMainMenu;
     QString currentSubMenu;
+
+    QProcess *launchDemo_process;
 
 };
 

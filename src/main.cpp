@@ -60,14 +60,12 @@
 #include <QVariant>
 #include <QQmlContext>
 #include <demo.h>
-#include "utils.h"
 #include "mainwindow.h"
 
 int main(int argc, char *argv[])
 {
 
     QGuiApplication app(argc, argv);
-    qmlRegisterType<Utils>("Utils", 1, 0, "Utils");
     qmlRegisterType<Mainwindow>("Mainwindow", 1, 0, "Mainwindow");
 
     QQmlApplicationEngine engine(QUrl("qrc:/main.qml"));

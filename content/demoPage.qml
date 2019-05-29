@@ -53,9 +53,10 @@
 import QtQuick 2.2
 import QtQuick.Controls 1.2
 import QtQuick.Controls.Styles 1.1
+import Mainwindow 1.0
 
 Item {
-
+    property string execText: ""
     property real progress: 0
     width: 1280
     height: 620
@@ -120,6 +121,7 @@ Item {
                         onClicked: {
                             titleText.text = name
                             informativeText.text = description
+                            execText = executable
                             launchButton.visible = 1
                             contentImage.visible = 1
                             contentImage.source = "file:demos/screenshot/" + screenshot
@@ -187,7 +189,9 @@ Item {
             height: 40
             text: "LAUNCH"
             visible: false
-            onClicked: utils.callDemo();
+            onClicked: {
+                mainwindow.callDemo(execText);
+            }
             style: ButtonStyle {
                 label: Text {
                     horizontalAlignment: Text.AlignHCenter

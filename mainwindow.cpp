@@ -22,6 +22,18 @@ Mainwindow::Mainwindow (QObject* parent) : QObject(parent)
 {
 
     loadJsonData();
+    launchDemo_process = new QProcess();
+}
+
+void Mainwindow::callDemo(QString command)
+{
+    if(launchDemo_process->state() == launchDemo_process->NotRunning) {
+        launchDemo_process->start("setsid ./" + command);
+    }
+    else {
+        QString temp = "kill -TERM -" + QString::number(launchDemo_process->pid());
+        system(temp.toStdString().c_str());
+    }
 }
 
 void Mainwindow::goToMainmenu()

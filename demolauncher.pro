@@ -16,13 +16,11 @@ DISTFILES += \
     demo/video/videoPlayback.sh
 
 SOURCES += \
-    mainwindow.cpp \
-    utils.cpp
+    mainwindow.cpp
 
 HEADERS += \
     mainwindow.h \
-    src/qtquickcontrolsapplication.h \
-    utils.h
+    src/qtquickcontrolsapplication.h
 
 HEADERS += \
     demo.h
