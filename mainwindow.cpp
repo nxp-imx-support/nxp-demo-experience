@@ -109,7 +109,6 @@ void Mainwindow::loadJsonData()
             jv1 = ja.at(i);
 
             firstLevel = jv1.toObject().keys().takeFirst();
-            firstLevelMenu.append(firstLevel);
 
             jo1 = jv1.toObject();
             jv2 = jo1.value(firstLevel);
@@ -119,7 +118,6 @@ void Mainwindow::loadJsonData()
 
             for(int j = 0; j < jo2.count(); j++){
                 secondLevel = jo2.keys().takeAt(j);
-                secondLevelMenu.append(secondLevel);
 
                 jv4 = jo2.value(secondLevel);
                 ja2 = jv4.toArray();
@@ -127,6 +125,8 @@ void Mainwindow::loadJsonData()
                 for(int k = 0; k < ja2.count(); k++){
                     if (ja2[k].toObject()["compatible"].toString().contains(board)){
                         // Register the demo as demo object
+                        firstLevelMenu.append(firstLevel);
+                        secondLevelMenu.append(secondLevel);
                         modelDemo->addDemo(Demo(ja2[k].toObject()["name"].toString(), firstLevel,
                         secondLevel, ja2[k].toObject()["executable"].toString(), ja2[k].toObject()["source"].toString(),
                         ja2[k].toObject()["icon"].toString(), ja2[k].toObject()["screenshot"].toString(), ja2[k].toObject()["compatible"].toString(),
@@ -134,7 +134,8 @@ void Mainwindow::loadJsonData()
                     }
 
                 }
-
+                firstLevelMenu.removeDuplicates();
+                secondLevelMenu.removeDuplicates();
             }
 
         }
