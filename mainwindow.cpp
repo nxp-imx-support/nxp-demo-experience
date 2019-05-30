@@ -28,7 +28,7 @@ Mainwindow::Mainwindow (QObject* parent) : QObject(parent)
 void Mainwindow::callDemo(QString command)
 {
     if(launchDemo_process->state() == launchDemo_process->NotRunning) {
-        launchDemo_process->start("setsid ./" + command);
+        launchDemo_process->start("setsid ./.imx-launcher/scripts/" + command);
     }
     else {
         QString temp = "kill -TERM -" + QString::number(launchDemo_process->pid());
@@ -104,7 +104,7 @@ void Mainwindow::loadJsonData()
         board = "imx7ulpevk";
 
     qDebug() << board;
-    jsonFile.setFileName("demos/demos.json");
+    jsonFile.setFileName(".imx-launcher/demos.json");
     jsonFile.open(QIODevice::ReadOnly | QIODevice::Text);
     QJsonDocument jsonDocument = QJsonDocument::fromJson(jsonFile.readAll(),&jsonError1);
     if (jsonError1.error != QJsonParseError::NoError)
@@ -142,7 +142,7 @@ void Mainwindow::loadJsonData()
                         secondLevelMenu.append(secondLevel);
 
                         // Check if icon file exists, if not leave it blank to show default icon
-                        iconFileName = "demos/icon/" + ja2[k].toObject()["icon"].toString();
+                        iconFileName = ".imx-launcher/icon/" + ja2[k].toObject()["icon"].toString();
                         iconFile.setFileName(iconFileName);
                         qDebug() << iconFileName;
                         if (!iconFile.exists() || ja2[k].toObject()["icon"].toString().isEmpty())

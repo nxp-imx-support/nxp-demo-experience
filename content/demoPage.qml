@@ -112,7 +112,7 @@ Item {
                         objectName: "demoImage"
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.horizontalCenter: parent.horizontalCenter
-                        source: icon ? "file:" + icon : "file:demos/icon/default-icon.png"
+                        source: icon ? "file:" + icon : "file:.imx-launcher/icon/default-icon.png"
                     }
                     MouseArea {
                         id: buttonMouse
@@ -124,7 +124,7 @@ Item {
                             execText = executable
                             launchButton.visible = 1
                             contentImage.visible = 1
-                            contentImage.source = "file:demos/screenshot/" + screenshot
+                            contentImage.source = "file:.imx-launcher/screenshot/" + screenshot
                         }
                     }
                 }
