@@ -57,6 +57,7 @@ import Mainwindow 1.0
 
 Item {
     property string execText: ""
+    property alias launchButton: launchButton
     property real progress: 0
     width: 1280
     height: 620
@@ -183,6 +184,7 @@ Item {
 
         Button {
             id: launchButton
+            objectName: "launchButton"
             x: 120
             y: 520
             width: 160

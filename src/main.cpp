@@ -76,6 +76,7 @@ int main(int argc, char *argv[])
     QObject * root = engine.rootObjects().first();
     auto mainwindow = root->findChild<Mainwindow *>("mainwindow");
 
+    mainwindow->root = root;
     mainwindow->engineMain = &engine;
 
     QObject * stackView = root->findChild<QObject *>("stackView");

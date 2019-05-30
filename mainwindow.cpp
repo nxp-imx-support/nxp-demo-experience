@@ -27,12 +27,16 @@ Mainwindow::Mainwindow (QObject* parent) : QObject(parent)
 
 void Mainwindow::callDemo(QString command)
 {
+    QObject * launchButton = root->findChild<QObject *>("launchButton");
+
     if(launchDemo_process->state() == launchDemo_process->NotRunning) {
         launchDemo_process->start("setsid ./.imx-launcher/scripts/" + command);
+        launchButton->setProperty("text", "FINISH");
     }
     else {
         QString temp = "kill -TERM -" + QString::number(launchDemo_process->pid());
         system(temp.toStdString().c_str());
+        launchButton->setProperty("text", "LAUNCH");
     }
 }
 

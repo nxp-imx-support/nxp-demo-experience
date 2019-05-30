@@ -17,6 +17,8 @@ public:
 
     QQmlApplicationEngine *engineMain;
     QObject *stackView;
+    QObject *launchButton;
+    QObject *root;
 
     void loadJsonData();
     Q_INVOKABLE void goToSubmenu(QString);
