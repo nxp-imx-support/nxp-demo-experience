@@ -1,3 +1,11 @@
+/****************************************************************************
+**
+** Copyright (C) 2019 NXP
+**
+** SPDX-License-Identifier: GPL-2.0+
+**
+****************************************************************************/
+
 #include "demo.h"
 
 Demo::Demo(const QString &name, const QString &firstmenu, const QString &secondmenu, const QString &executable, const QString &source, const QString &icon, const QString &screenshot,const QString &compatible,
