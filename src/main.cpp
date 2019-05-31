@@ -64,10 +64,8 @@
 
 int main(int argc, char *argv[])
 {
-
     QGuiApplication app(argc, argv);
     qmlRegisterType<Mainwindow>("Mainwindow", 1, 0, "Mainwindow");
-
     QQmlApplicationEngine engine(QUrl("qrc:/main.qml"));
 
     if (engine.rootObjects().isEmpty())
@@ -75,13 +73,11 @@ int main(int argc, char *argv[])
 
     QObject * root = engine.rootObjects().first();
     auto mainwindow = root->findChild<Mainwindow *>("mainwindow");
-
     mainwindow->root = root;
     mainwindow->engineMain = &engine;
 
     QObject * stackView = root->findChild<QObject *>("stackView");
     mainwindow->stackView = stackView;
-
     mainwindow->goToMainmenu();
 
     return app.exec();

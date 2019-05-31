@@ -82,7 +82,6 @@ Item {
             panel: Item {
                 implicitHeight: 240
                 implicitWidth: 240
-
             }
         }
     }
@@ -96,10 +95,8 @@ Item {
         height: 620
         contentHeight: 560
         cacheBuffer: 300
-
         model: demoModel
         delegate: Item {
-
             Column {
                 x: 40
                 y: 40
@@ -129,7 +126,6 @@ Item {
                         }
                     }
                 }
-
                 Text {
                     text: name
                     objectName: "demoText"
@@ -160,7 +156,6 @@ Item {
             font.pixelSize: 16
             horizontalAlignment: Text.AlignLeft
         }
-
         Text {
             id: informativeText
             y: 10
@@ -173,7 +168,6 @@ Item {
             horizontalAlignment: Text.AlignLeft
             font.pixelSize: 14
         }
-
         Image {
             id: contentImage
             x: 50
@@ -181,7 +175,6 @@ Item {
             height: 200
             visible: false
         }
-
         Button {
             id: launchButton
             objectName: "launchButton"

@@ -62,7 +62,6 @@ public:
 
     DemoModel(QObject *parent = nullptr);
 
-
     void addDemo(const Demo &demo);
 
     int rowCount(const QModelIndex & parent = QModelIndex()) const;
@@ -78,6 +77,7 @@ signals:
 
 protected:
     QHash<int, QByteArray> roleNames() const;
+
 private:
     QList<Demo> m_demos;
 

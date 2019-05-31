@@ -62,15 +62,14 @@ QString Demo::description() const
 DemoModel::DemoModel(QObject *parent)
     : QAbstractListModel(parent)
 {
+
 }
 
 void DemoModel::remove()
 {
-
     int a = rowCount();
     if (rowCount() <= 0)
         return;
-
 
     for (int i = 0; i < a; i++){
         emit beginRemoveRows(QModelIndex(), 0, 0);
@@ -78,7 +77,6 @@ void DemoModel::remove()
         emit endRemoveRows();
         emit countChanged(m_demos.count());
     }
-
 }
 
 void DemoModel::addDemo(const Demo &demo)
@@ -88,17 +86,20 @@ void DemoModel::addDemo(const Demo &demo)
     endInsertRows();
 }
 
-int DemoModel::rowCount(const QModelIndex & parent) const {
+int DemoModel::rowCount(const QModelIndex & parent) const
+{
     Q_UNUSED(parent);
     return m_demos.count();
 }
 
-QList<Demo> DemoModel::demoData(const QModelIndex & parent) const {
+QList<Demo> DemoModel::demoData(const QModelIndex & parent) const
+{
     Q_UNUSED(parent);
     return m_demos;
 }
 
-QVariant DemoModel::data(const QModelIndex & index, int role) const {
+QVariant DemoModel::data(const QModelIndex & index, int role) const
+{
     if (index.row() < 0 || index.row() >= m_demos.count())
         return QVariant();
 
@@ -124,7 +125,8 @@ QVariant DemoModel::data(const QModelIndex & index, int role) const {
     return QVariant();
 }
 
-QHash<int, QByteArray> DemoModel::roleNames() const {
+QHash<int, QByteArray> DemoModel::roleNames() const
+{
     QHash<int, QByteArray> roles;
     roles[NameRole] = "name";
     roles[FirstmenuRole] = "firstmenu";

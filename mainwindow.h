@@ -29,6 +29,7 @@ public:
     QObject *root;
 
     void loadJsonData();
+
     Q_INVOKABLE void goToSubmenu(QString);
     Q_INVOKABLE void goToMainmenu();
     Q_INVOKABLE void goToDemo(QString);
@@ -49,6 +50,5 @@ private:
     QProcess *launchDemo_process;
 
 };
-
 
 #endif // MAINWINDOW_H

@@ -55,7 +55,6 @@ import QtQuick.Controls 1.2
 import QtQuick.Controls.Styles 1.1
 
 Item {
-
     property real progress: 0
     width: 1280
     height: 620
@@ -90,4 +89,3 @@ Item {
         }
     }
 }
-

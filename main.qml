@@ -111,7 +111,6 @@ ApplicationWindow {
         opacity: stackView.depth > 2 ? 1 : 0
         color: opacity ? "#212126" : "#212126"
         Behavior on opacity { NumberAnimation{} }
-
     }
 
     toolBar: BorderImage {
@@ -143,7 +142,6 @@ ApplicationWindow {
                 onClicked: stackView.pop()
             }
         }
-
         Text {
             font.pixelSize: 42
             Behavior on x { NumberAnimation{ easing.type: Easing.OutCubic} }
@@ -159,7 +157,6 @@ ApplicationWindow {
         objectName: "stackView"
         height: 620
         anchors.fill: parent
-
         initialItem: Item {
             width: 540
             height: 620
@@ -181,12 +178,3 @@ ApplicationWindow {
         }
     }
 }
-
-
-
-
-
-/*##^## Designer {
-    D{i:3;anchors_x:590;anchors_y:160}
-}
- ##^##*/
