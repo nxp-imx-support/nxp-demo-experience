@@ -53,6 +53,7 @@
 #include <QtGui/QGuiApplication>
 #include <QtQml/QQmlApplicationEngine>
 #include <QFile>
+#include <QScreen>
 #include <QJsonParseError>
 #include <QDebug>
 #include <QJsonObject>
@@ -73,12 +74,30 @@ int main(int argc, char *argv[])
 
     QObject * root = engine.rootObjects().first();
     auto mainwindow = root->findChild<Mainwindow *>("mainwindow");
+
+    QScreen *screen = app.primaryScreen();
+
+    mainwindow->setWidth(screen->geometry().width());
+    mainwindow->setHeight(screen->geometry().height());
+
+    qDebug().noquote() << "Name             : " << screen->name();
+    qDebug().noquote() << "DevicePixelRatio : " << screen->devicePixelRatio();
+    qDebug().noquote() << "Width            : " << screen->geometry().width();
+    qDebug().noquote() << "Height           : " << screen->geometry().height();
+    qDebug().noquote() << "Size             : " << screen->geometry().size();
+
     mainwindow->root = root;
     mainwindow->engineMain = &engine;
 
     QObject * stackView = root->findChild<QObject *>("stackView");
     mainwindow->stackView = stackView;
     mainwindow->goToMainmenu();
+
+
+
+
+
+
 
     return app.exec();
 }

@@ -90,6 +90,23 @@ void Mainwindow::goToDemo(QString submenuItem)
     engineMain->rootContext()->setContextProperty("demoModel", QVariant::fromValue(currentModelDemo));
 }
 
+int Mainwindow::getWidth()
+{
+    return _width;
+}
+int Mainwindow::getHeight()
+{
+    return _height;
+}
+void Mainwindow::setWidth(int width)
+{
+    _width = width;
+}
+void Mainwindow::setHeight(int height)
+{
+    _height = height;
+}
+
 void Mainwindow::loadJsonData()
 {
     QFile jsonFile, iconFile;

@@ -52,11 +52,13 @@ import QtQuick 2.2
 
 Item {
     id: root
-    width: 540
-    height: 70
+    width: applicationWindow.width * 0.422
+    height: applicationWindow.height * 0.097
 
     property alias text: textitem.text
     signal clicked
+
+
 
     Rectangle {
         anchors.fill: parent
@@ -67,24 +69,25 @@ Item {
     Text {
         id: textitem
         color: "white"
-        font.pixelSize: 32
+        font.pointSize: 16
         text: modelData
         anchors.verticalCenter: parent.verticalCenter
         anchors.left: parent.left
-        anchors.leftMargin: 30
+        anchors.leftMargin: 10
+        horizontalAlignment: Text.AlignLeft
     }
 
     Rectangle {
         anchors.left: parent.left
         anchors.right: parent.right
-        anchors.margins: 15
+        anchors.margins: 5
         height: 1
         color: "#424246"
     }
 
     Image {
         anchors.right: parent.right
-        anchors.rightMargin: 20
+        anchors.rightMargin: 10
         anchors.verticalCenter: parent.verticalCenter
         source: "../images/navigation_next_item.png"
     }
