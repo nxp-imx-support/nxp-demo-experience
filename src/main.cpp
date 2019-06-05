@@ -77,8 +77,10 @@ int main(int argc, char *argv[])
 
     QScreen *screen = app.primaryScreen();
 
-    mainwindow->setWidth(screen->geometry().width());
-    mainwindow->setHeight(screen->geometry().height());
+    if (screen->geometry().width() < 1280 || screen->geometry().height() < 720){
+        mainwindow->setWidth(screen->geometry().width());
+        mainwindow->setHeight(screen->geometry().height());
+    }
 
     qDebug().noquote() << "Name             : " << screen->name();
     qDebug().noquote() << "DevicePixelRatio : " << screen->devicePixelRatio();
@@ -92,12 +94,6 @@ int main(int argc, char *argv[])
     QObject * stackView = root->findChild<QObject *>("stackView");
     mainwindow->stackView = stackView;
     mainwindow->goToMainmenu();
-
-
-
-
-
-
 
     return app.exec();
 }
