@@ -56,10 +56,17 @@ import "content"
 import Mainwindow 1.0
 
 ApplicationWindow {
+    id: applicationWindow
+    property int width_imp:  mainwindow.getWidth()
+    property int height_imp: mainwindow.getHeight()
     property alias stackView: stackView
     visible: true
-    width: 1280
-    height: 720
+    width: width_imp
+    height: height_imp
+
+    function convertDoubleToInt (x) {
+        return x < 0 ? Math.ceil(x) : Math.floor(x);
+    }
 
     Mainwindow {
         id: mainwindow
@@ -91,23 +98,26 @@ ApplicationWindow {
 
     Rectangle {
         id: backMenu
-        anchors.rightMargin: 740
+        anchors.rightMargin: convertDoubleToInt(parent.width * 0.58)
         anchors.leftMargin: 0
         anchors.topMargin: 0
-        anchors.fill: parent
-        width: opacity ? 60 : 0
+        width: opacity ? convertDoubleToInt(applicationWindow.width * 0.047) : 0
         opacity: stackView.depth > 2 ? 0 : 1
         color: opacity ? "#212126" : "#212126"
+        anchors.right: parent.right
+        anchors.bottom: parent.bottom
+        anchors.left: parent.left
+        anchors.top: parent.top
         Behavior on opacity { NumberAnimation{} }
     }
 
     Rectangle {
         id: backtext
         anchors.rightMargin: 0
-        anchors.leftMargin: 940
+        anchors.leftMargin: convertDoubleToInt(parent.width * 0.734)
         anchors.topMargin: 0
         anchors.fill: parent
-        width: opacity ? 60 : 0
+        width: opacity ? convertDoubleToInt(applicationWindow.width * 0.047) : 0
         opacity: stackView.depth > 2 ? 1 : 0
         color: opacity ? "#212126" : "#212126"
         Behavior on opacity { NumberAnimation{} }
@@ -116,18 +126,18 @@ ApplicationWindow {
     toolBar: BorderImage {
         border.bottom: 8
         source: "images/toolbar.png"
-        width: parent.width
-        height: 100
+        width: applicationWindow.width
+        height: applicationWindow.height/7
         Rectangle {
             id: backButton
             objectName: "backButton"
-            width: opacity ? 60 : 0
+            width: opacity ? convertDoubleToInt(applicationWindow.width * 0.047) : 0
             anchors.left: parent.left
             anchors.leftMargin: 20
             opacity: stackView.depth > 1 ? 1 : 0
             anchors.verticalCenter: parent.verticalCenter
             antialiasing: true
-            height: 60
+            height: convertDoubleToInt(applicationWindow.height * 0.083)
             radius: 4
             color: backmouse.pressed ? "#222" : "transparent"
             Behavior on opacity { NumberAnimation{} }
@@ -143,7 +153,7 @@ ApplicationWindow {
             }
         }
         Text {
-            font.pixelSize: 42
+            font.pointSize: 32
             Behavior on x { NumberAnimation{ easing.type: Easing.OutCubic} }
             x: backButton.x + backButton.width + 20
             anchors.verticalCenter: parent.verticalCenter
@@ -155,16 +165,16 @@ ApplicationWindow {
     StackView {
         id: stackView
         objectName: "stackView"
-        height: 620
+        height: parent.height - toolBar.height
         anchors.fill: parent
         initialItem: Item {
-            width: 540
-            height: 620
+            width: parent.height/2
+            height: parent.height-toolBar.height
             ListView {
-                width: 540
-                height: 620
+                width: parent.width
+                height: parent.height
                 anchors.topMargin: 0
-                anchors.rightMargin: 740
+                anchors.rightMargin: convertDoubleToInt(parent.width * 0.58)
                 model: pageModel
                 anchors.fill: parent
                 delegate: AndroidDelegate {
@@ -178,3 +188,4 @@ ApplicationWindow {
         }
     }
 }
+

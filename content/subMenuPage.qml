@@ -55,9 +55,16 @@ import QtQuick.Controls 1.2
 import QtQuick.Controls.Styles 1.1
 
 Item {
+    id: element
     property real progress: 0
-    width: 1280
-    height: 620
+    property int width_imp:  applicationWindow.width
+    property int height_imp: applicationWindow.height - 100
+    width: width_imp
+    height: height_imp
+
+    function convertDoubleToInt (x) {
+        return x < 0 ? Math.ceil(x) : Math.floor(x);
+    }
     SequentialAnimation on progress {
         loops: Animation.Infinite
         running: true
@@ -74,10 +81,10 @@ Item {
     }
 
     ListView {
-        width: 540
-        height: 620
+        width: convertDoubleToInt(0.42 * element.width)
+        height: convertDoubleToInt(0.86 * element.height)
         anchors.topMargin: 0
-        anchors.rightMargin: 740
+        anchors.rightMargin: convertDoubleToInt(0.58 * element.width)
         model: subPageModel
         anchors.fill: parent
         delegate: AndroidDelegate {
