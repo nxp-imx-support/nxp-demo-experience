@@ -37,7 +37,7 @@ void Mainwindow::callDemo(QString command)
     QObject * launchButton = root->findChild<QObject *>("launchButton");
 
     if(launchDemo_process->state() == launchDemo_process->NotRunning) {
-        launchDemo_process->start("setsid ./.imx-launcher/scripts/" + command);
+        launchDemo_process->start("setsid " + command);
         launchButton->setProperty("text", "FINISH");
     } else {
         QString temp = "kill -TERM -" + QString::number(launchDemo_process->pid());
