@@ -137,12 +137,10 @@ Item {
                 }
                 Text {
                     text: name
-                    width:  convertDoubleToInt(0.234 * demoPage.width)
-                    height:  convertDoubleToInt(0.0322 * demoPage.height)
                     objectName: "demoText"
                     color: "#126ee8"
                     font.bold: true
-                    font.pointSize: 8
+                    font.pointSize: width_imp < 1280 ? 8 : 12
                     wrapMode: Text.WordWrap
                     horizontalAlignment: Text.AlignHCenter
                     anchors.horizontalCenter: parent.horizontalCenter
@@ -167,7 +165,7 @@ Item {
             color: "#ffffff"
             text: qsTr("Select a demo ...")
             font.bold: true
-            font.pointSize: 8
+            font.pointSize: width_imp < 1280 ? 8 : 12
             wrapMode: Text.WordWrap
             horizontalAlignment: Text.AlignLeft
         }
@@ -175,19 +173,19 @@ Item {
             id: informativeText
             y:  convertDoubleToInt(titleText.bottom)
             width:  convertDoubleToInt(0.22 * demoPage.width)
-            height: convertDoubleToInt(0.38 * demoPage.height)
+            height: convertDoubleToInt(0.43 * demoPage.height)
             color: "#ffffff"
             text: qsTr("")
             wrapMode: Text.WordWrap
             font.bold: false
-            horizontalAlignment: Text.AlignLeft
-            font.pointSize: 6
+            horizontalAlignment: Text.AlignJustify
+            font.pointSize: width_imp < 1280 ? 6 : 10
         }
         Image {
             id: contentImage
             x: convertDoubleToInt(0.039 * demoPage.width)
             width:  convertDoubleToInt(0.156 * demoPage.width)
-            height:  convertDoubleToInt(0.0322 * demoPage.height)
+            height:  convertDoubleToInt(0.156 * demoPage.width)
             visible: false
         }
         Button {
@@ -206,7 +204,7 @@ Item {
                 label: Text {
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
-                    font.pointSize: 8
+                    font.pointSize: width_imp < 1280 ? 6 : 10
                     wrapMode: Text.WordWrap
                     text: control.text
                     color: "#126ee8"
