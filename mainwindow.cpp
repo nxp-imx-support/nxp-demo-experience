@@ -31,14 +31,14 @@ Mainwindow::Mainwindow (QObject* parent) : QObject(parent)
     loadJsonData();
     launchDemo_process = new QProcess();
     launchButton = new QObject();
+    QObject::connect(launchDemo_process, SIGNAL(started()), this, SLOT(startDemo()));
+    QObject::connect(launchDemo_process, SIGNAL(finished(int,QProcess::ExitStatus)), this, SLOT(finishDemo(int,QProcess::ExitStatus)));
+
 }
 
 void Mainwindow::callDemo(QString command)
 {
     launchButton = root->findChild<QObject *>("launchButton");
-
-    QObject::connect(launchDemo_process, SIGNAL(started()), this, SLOT(startDemo()));
-    QObject::connect(launchDemo_process, SIGNAL(finished(int,QProcess::ExitStatus)), this, SLOT(finishDemo(int,QProcess::ExitStatus)));
 
     if(launchDemo_process->state() == launchDemo_process->NotRunning) {
         launchDemo_process->start("setsid " + command);
