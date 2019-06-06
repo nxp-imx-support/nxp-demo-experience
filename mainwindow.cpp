@@ -30,11 +30,15 @@ Mainwindow::Mainwindow (QObject* parent) : QObject(parent)
 {
     loadJsonData();
     launchDemo_process = new QProcess();
+    launchButton = new QObject();
 }
 
 void Mainwindow::callDemo(QString command)
 {
-    QObject * launchButton = root->findChild<QObject *>("launchButton");
+    launchButton = root->findChild<QObject *>("launchButton");
+
+    QObject::connect(launchDemo_process, SIGNAL(started()), this, SLOT(startDemo()));
+    QObject::connect(launchDemo_process, SIGNAL(finished(int,QProcess::ExitStatus)), this, SLOT(finishDemo(int,QProcess::ExitStatus)));
 
     if(launchDemo_process->state() == launchDemo_process->NotRunning) {
         launchDemo_process->start("setsid " + command);
@@ -42,8 +46,17 @@ void Mainwindow::callDemo(QString command)
     } else {
         QString temp = "kill -TERM -" + QString::number(launchDemo_process->pid());
         system(temp.toStdString().c_str());
-        launchButton->setProperty("text", "LAUNCH");
     }
+}
+
+void Mainwindow::startDemo()
+{
+    qDebug() << "Loading Demo...";
+}
+
+void Mainwindow::finishDemo(int exitCode, QProcess::ExitStatus exitStatus)
+{
+    launchButton->setProperty("text", "LAUNCH");
 }
 
 void Mainwindow::goToMainmenu()

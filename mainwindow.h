@@ -56,6 +56,11 @@ private:
 
     QProcess *launchDemo_process;
 
+private slots:
+
+    void startDemo();
+    void finishDemo(int exitCode, QProcess::ExitStatus exitStatus);
+
 };
 
 #endif // MAINWINDOW_H
