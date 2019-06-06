@@ -173,7 +173,7 @@ Item {
             id: informativeText
             y:  convertDoubleToInt(titleText.bottom)
             width:  convertDoubleToInt(0.22 * demoPage.width)
-            height: convertDoubleToInt(0.43 * demoPage.height)
+            height: width_imp < 1280 ? convertDoubleToInt(0.38 * demoPage.height) : convertDoubleToInt(0.43 * demoPage.height)
             color: "#ffffff"
             text: qsTr("")
             wrapMode: Text.WordWrap
