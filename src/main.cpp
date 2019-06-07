@@ -78,8 +78,8 @@ int main(int argc, char *argv[])
     QScreen *screen = app.primaryScreen();
 
     if (screen->geometry().width() < 1280 || screen->geometry().height() < 720){
-        mainwindow->setWidth(screen->geometry().width());
-        mainwindow->setHeight(screen->geometry().height());
+        mainwindow->setWidth(screen->geometry().width() - 6); //Discount 6 pixels for xwayland borders
+        mainwindow->setHeight(screen->geometry().height() - 65); //Discount 65 pixels for xwayland header and borders
     }
 
     qDebug().noquote() << "Name             : " << screen->name();
