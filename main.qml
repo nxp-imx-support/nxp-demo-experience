@@ -76,18 +76,17 @@ ApplicationWindow {
     Rectangle {
         id: rectangle
         color: "#ffffff"
-        anchors.leftMargin: 0
-        anchors.topMargin: 0
-        anchors.fill: parent
+        anchors.right: parent.right
+        anchors.bottom: parent.bottom
+        anchors.left: parent.left
+        anchors.top: parent.top
         Image {
-            x: -100
-            anchors.rightMargin: 45
-            anchors.bottomMargin: 0
-            anchors.leftMargin: -45
-            anchors.topMargin: 0
-            anchors.fill: parent
-            transformOrigin: Item.Right
-            scale: 0.5
+            anchors.right: parent.right
+            anchors.bottom: parent.bottom
+            anchors.left: parent.left
+            anchors.top: parent.top
+            anchors.leftMargin: convertDoubleToInt(parent.width * 0.42)
+            scale: 0.8
             fillMode: Image.PreserveAspectFit
             visible: true
             source: "images/demo_launcher_logo.png"
