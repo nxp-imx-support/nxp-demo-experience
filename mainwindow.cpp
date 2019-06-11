@@ -22,6 +22,7 @@
 #include <QJsonArray>
 #include <QMetaObject>
 #include <QHostInfo>
+#include <QDir>
 
 #include "mainwindow.h"
 #include "demo.h"
@@ -100,6 +101,7 @@ void Mainwindow::goToDemo(QString submenuItem)
         }
     }
 
+    engineMain->rootContext()->setContextProperty("homeDir", QDir::homePath());
     engineMain->rootContext()->setContextProperty("demoModel", QVariant::fromValue(currentModelDemo));
 }
 
@@ -134,7 +136,7 @@ void Mainwindow::loadJsonData()
         board = "imx7ulpevk";
 
     qDebug() << board;
-    jsonFile.setFileName(".imx-launcher/demos.json");
+    jsonFile.setFileName(QDir::homePath() + "/.imx-launcher/demos.json");
     jsonFile.open(QIODevice::ReadOnly | QIODevice::Text);
     QJsonDocument jsonDocument = QJsonDocument::fromJson(jsonFile.readAll(),&jsonError1);
 
@@ -168,7 +170,7 @@ void Mainwindow::loadJsonData()
                     secondLevelMenu.append(secondLevel);
 
                     // Check if icon file exists, if not leave it blank to show default icon
-                    iconFileName = ".imx-launcher/icon/" + ja2[k].toObject()["icon"].toString();
+                    iconFileName = QDir::homePath() + "/.imx-launcher/icon/" + ja2[k].toObject()["icon"].toString();
                     iconFile.setFileName(iconFileName);
                     qDebug() << iconFileName;
 
