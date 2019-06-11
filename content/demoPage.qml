@@ -107,7 +107,7 @@ Item {
         delegate: Item {
             Column {
                 x: convertDoubleToInt(0.03125 * demoPage.width)
-                y: convertDoubleToInt(0.0645 * demoPage.height)
+                y: -convertDoubleToInt(0.0245 * demoPage.height)
                 Rectangle {
                     width:  convertDoubleToInt(demoPage.width * 0.203)
                     height:  convertDoubleToInt(demoPage.height * 0.42)
