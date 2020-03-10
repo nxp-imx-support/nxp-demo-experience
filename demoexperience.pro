@@ -1,5 +1,5 @@
 QT += qml quick
-TARGET = demolauncher
+TARGET = demoexperience
 
 include(src/src.pri)
 
