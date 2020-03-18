@@ -1,0 +1,73 @@
+GIT
+  remote: https://github.com/asciidoctor/asciidoctor-pdf.git
+  revision: b47f53cf2f7a019cb3bcd3f691c4c52aeed6d9cc
+  specs:
+    asciidoctor-pdf (1.5.0.alpha.17.dev)
+      asciidoctor (>= 1.5.0)
+      prawn (>= 1.3.0, < 2.3.0)
+      prawn-icon (= 1.4.0)
+      prawn-svg (>= 0.21.0, < 0.28.0)
+      prawn-table (= 0.2.2)
+      prawn-templates (>= 0.0.3, <= 0.1.1)
+      safe_yaml (~> 1.0.4)
+      thread_safe (~> 0.3.6)
+      treetop (= 1.5.3)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    Ascii85 (1.0.3)
+    addressable (2.5.2)
+      public_suffix (>= 2.0.2, < 4.0)
+    afm (0.2.2)
+    asciidoctor (1.5.7.1)
+    coderay (1.1.2)
+    css_parser (1.6.0)
+      addressable
+    hashery (2.1.2)
+    multi_json (1.13.1)
+    pdf-core (0.7.0)
+    pdf-reader (2.1.0)
+      Ascii85 (~> 1.0.0)
+      afm (~> 0.2.1)
+      hashery (~> 2.0)
+      ruby-rc4
+      ttfunk
+    polyglot (0.3.5)
+    prawn (2.2.2)
+      pdf-core (~> 0.7.0)
+      ttfunk (~> 1.5)
+    prawn-icon (1.4.0)
+      prawn (>= 1.1.0, < 3.0.0)
+    prawn-svg (0.27.1)
+      css_parser (~> 1.3)
+      prawn (>= 0.11.1, < 3)
+    prawn-table (0.2.2)
+      prawn (>= 1.3.0, < 3.0.0)
+    prawn-templates (0.1.1)
+      pdf-reader (~> 2.0)
+      prawn (~> 2.2)
+    public_suffix (3.0.2)
+    pygments.rb (1.2.1)
+      multi_json (>= 1.0.0)
+    rake (12.3.1)
+    ruby-rc4 (0.1.5)
+    safe_yaml (1.0.4)
+    thread_safe (0.3.6)
+    treetop (1.5.3)
+      polyglot (~> 0.3)
+    ttfunk (1.5.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  asciidoctor
+  asciidoctor-pdf!
+  coderay
+  pygments.rb
+  rake
+  thread_safe
+
+BUNDLED WITH
+   1.13.3

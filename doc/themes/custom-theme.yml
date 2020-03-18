@@ -1,0 +1,282 @@
+################################################################################
+# Copyright (c) 2019, NXP Semiconductors
+################################################################################
+font:
+  catalog:
+    Noto Serif:
+      normal: notoserif-regular-subset.ttf
+      bold: notoserif-bold-subset.ttf
+      italic: notoserif-italic-subset.ttf
+      bold_italic: notoserif-bold_italic-subset.ttf
+    M+ 1mn:
+      normal: mplus1mn-regular-subset.ttf
+      bold: mplus1mn-bold-subset.ttf
+      italic: mplus1mn-italic-subset.ttf
+      bold_italic: mplus1mn-bold_italic-subset.ttf
+################################################################################
+page:
+  background_color: ffffff
+  layout: portrait
+  initial_zoom: FitH
+  margin: [0.5in, 0.75in, 0.75in, 0.75in]
+  margin_inner: 0.75in
+  margin_outer: 0.59in
+  size: A4
+################################################################################
+base:
+  align: justify
+  font_color: 333333
+  font_family: Noto Serif
+  font_size: 9
+  line_height_length: 10
+  line_height: $base_line_height_length / $base_font_size
+  font_size_large: round($base_font_size * 1)
+  font_size_small: round($base_font_size * 0.85)
+  font_size_min: $base_font_size * 0.75
+  font_style: normal
+  border_color: eeeeee
+  border_radius: 4
+  border_width: 0.5
+################################################################################
+role:
+  big:
+    font_size: $base_font_size_large
+  small:
+    font_size: $base_font_size_small
+################################################################################
+vertical_rhythm: $base_line_height_length
+horizontal_rhythm: $base_line_height_length
+vertical_spacing: $vertical_rhythm
+################################################################################
+link:
+  font_color: 428bca
+# literal is currently used for inline monospaced in prose and table cells
+################################################################################
+literal:
+  font_color: 30913d
+  font_family: M+ 1mn
+################################################################################
+button:
+  content: "[\u2009%s\u2009]"
+  font_style: bold
+################################################################################
+key:
+  background_color: f5f5f5
+  border_color: cccccc
+  border_offset: 1.5
+  border_radius: 2
+  border_width: 0.375
+  font_family: $literal_font_family
+  separator: "\u202f+\u202f"
+################################################################################
+mark:
+  background_color: ffff00
+  border_offset: 0.5
+################################################################################
+menu:
+  caret_content: " <font size=\"1.15em\"><color rgb=\"b12146\">\u203a</color></font> "
+################################################################################
+heading:
+  align: left
+  font_color: $base_font_color
+  font_family: $base_font_family
+  font_style: bold
+  h1_font_size: floor($base_font_size * 2.6)
+  h2_font_size: floor($base_font_size * 2.15)
+  h3_font_size: round($base_font_size * 1.7)
+  h4_font_size: $base_font_size_large
+  h5_font_size: $base_font_size
+  h6_font_size: $base_font_size_small
+  line_height: 1
+  margin_top: $vertical_rhythm * 0.4
+  margin_bottom: $vertical_rhythm * 0.9
+  min_height_after: $base_line_height_length * 1.5
+################################################################################
+title_page:
+  align: right
+  logo:
+    top: 10%
+  title:
+    top: 55%
+    font_size: $heading_h1_font_size
+    font_color: 999999
+    line_height: 0.9
+  subtitle:
+    font_size: $heading_h3_font_size
+    font_style: bold_italic
+    line_height: 1
+  authors:
+    margin_top: $base_font_size * 1.25
+    font_size: $base_font_size_large
+    font_color: 181818
+  revision:
+    margin_top: $base_font_size * 1.25  
+################################################################################
+block:
+  margin_top: 0
+  margin_bottom: $vertical_rhythm
+################################################################################
+caption:
+  align: left
+  font_size: $base_font_size * 0.95
+  font_style: italic
+  margin_inside: $vertical_rhythm / 3
+  #margin_inside: $vertical_rhythm / 4
+  margin_outside: 0
+################################################################################
+lead:
+  font_size: $base_font_size_large
+  line_height: 1.4
+################################################################################
+abstract:
+  font_color: 5c6266
+  font_size: $lead_font_size
+  line_height: $lead_line_height
+  font_style: italic
+  first_line_font_style: bold
+  title:
+    align: center
+    font_color: $heading_font_color
+    font_family: $heading_font_family
+    font_size: $heading_h4_font_size
+    font_style: $heading_font_style
+################################################################################
+admonition:
+  column_rule_color: $base_border_color
+  column_rule_width: $base_border_width
+  padding: [0, $horizontal_rhythm, 0, $horizontal_rhythm]
+  label:
+    text_transform: uppercase
+    font_style: bold
+################################################################################
+blockquote:
+  font_color: $base_font_color
+  font_size: $base_font_size_large
+  border_color: $base_border_color
+  border_width: 5
+  padding: [0, $horizontal_rhythm, $block_margin_bottom * -0.75, $horizontal_rhythm + $blockquote_border_width / 2]
+  cite_font_size: $base_font_size_small
+  cite_font_color: 999999
+################################################################################
+code:
+  font_color: $base_font_color
+  font_family: $literal_font_family
+  font_size: ceil($base_font_size)
+  padding: $code_font_size
+  line_height: 1.25
+  line_gap: 3.8
+  background_color: BEBEBE
+  border_color: $base_font_color
+  border_radius: $base_border_radius
+  border_width: 0.5
+################################################################################
+conum:
+  font_family: $literal_font_family
+  font_color: $literal_font_color
+  font_size: $base_font_size
+  line_height: 4 / 3
+  glyphs: circled
+################################################################################
+example:
+  border_color: $base_border_color
+  border_radius: $base_border_radius
+  border_width: 0.75
+  background_color: ffffff
+  padding: [$vertical_rhythm, $horizontal_rhythm, 0, $horizontal_rhythm]
+################################################################################
+image:
+  align: left
+################################################################################
+prose:
+  margin_top: $block_margin_top
+  margin_bottom: $block_margin_bottom
+################################################################################
+sidebar:
+  background_color: eeeeee
+  border_color: e1e1e1
+  border_radius: $base_border_radius
+  border_width: $base_border_width
+  padding: [$vertical_rhythm, $vertical_rhythm * 1.25, 0, $vertical_rhythm * 1.25]
+  title:
+    align: center
+    font_color: $heading_font_color
+    font_family: $heading_font_family
+    font_size: $heading_h4_font_size
+    font_style: $heading_font_style
+################################################################################
+thematic_break:
+  border_color: $base_border_color
+  border_style: solid
+  border_width: $base_border_width
+  margin_top: $vertical_rhythm * 0.5
+  margin_bottom: $vertical_rhythm * 1.5
+################################################################################
+description_list:
+  term_font_style: bold
+  term_spacing: $vertical_rhythm / 4
+  description_indent: $horizontal_rhythm * 1.25
+################################################################################
+outline_list:
+  indent: $horizontal_rhythm * 1.5
+  item_spacing: $vertical_rhythm / 2
+################################################################################
+table:
+  background_color: $page_background_color
+  border_color: dddddd
+  border_width: $base_border_width
+  cell_padding: 3
+  head:
+    font_style: bold
+    border_bottom_width: $base_border_width * 2.5
+  body:
+    stripe_background_color: f9f9f9
+  foot:
+    background_color: f0f0f0
+################################################################################
+toc:
+  indent: $horizontal_rhythm
+  line_height: 1.4
+  dot_leader:
+    font_color: a9a9a9
+#################################################################################
+footnotes:
+  height: 0.75in
+  line-height: 1
+  recto:
+    right:
+      content: '{section-or-chapter-title} | *{page-number}*'
+  verso:
+    left:
+      content: '*{page-number}* | {chapter-title}'
+#################################################################################
+header:
+  font_color: 787877
+  font_size: $base_font_size_small
+  font-family: Noto Serif
+  height: 0.5in
+  line-height: 1
+  recto:
+    center:
+      content: '© 2019 NXP Semiconductor Rev {revnumber} {docdate}'
+  verso:
+    center:
+      content: '© 2019 NXP Semiconductor Rev {revnumber} {docdate}'
+#################################################################################
+footer:
+  font_color: 787877
+  font_size: $base_font_size_small
+  font-family: Noto Serif
+  border_color: dddddd
+  border_width: 5
+  height: $base_line_height_length * 2.5
+  line_height: 1
+  padding: 1
+  vertical_align: top
+  recto:
+    right:
+      content: '{chapter-title} © 2019 NXP Semiconductor, Inc. All rights reserved | {page-number}'
+  verso:
+    right:
+      content: '{chapter-title} © 2019 NXP Semiconductor, Inc. All rights reserved | {page-number}'
+#################################################################################
+

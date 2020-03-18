@@ -1,0 +1,24 @@
+= NXP Demo Experience Documentation
+:title-logo-image: image:../../themes/media/nxplogo.png[pdfwidth=40%, align=right]
+© 2019-2020 NXP Semiconductors, Inc. All rights reserved.
+REV 2.0, March, 2020
+:doctype: book
+:reproducible:
+:toc2:
+:toclevels: 5
+:source-highlighter: coderay
+:numbered:
+:icons: font
+:autofit-option:
+:imagesdir: chapters/media/
+
+include::chapters/1-introduction.adoc[]
+include::chapters/2-qt5_setup.adoc[]
+include::chapters/3-how_to_build.adoc[]
+include::chapters/4-how_to_add_new_demo.adoc[]
+
+== Appendix: Supported Demo List
+
+include::chapters/5-audio_demo_list.adoc[]
+include::chapters/6-gpu_demo_list.adoc[]
+include::chapters/7-multimedia_demo_list.adoc[]
