@@ -1,0 +1,37 @@
+////
+  Copyright NXP 2019
+  Author: Marco Franchi <marco.franchi@nxp.com>
+////
+
+[[multimedia_demo_list]]
+=== Multimedia
+
+==== GStreamer
+
+===== Gstreamer Video Test Source
+
+This is a simple GStreamer pipeline able to play the Video Test Source example. Check the pipelines used in this test below:
+For i.MX 7ULP EVK:
+```
+gst-launch-1.0 videotestsrc ! imxvideoconvert_g2d ! waylandsink window-width=480 window-height=360
+```
+For i.MX 8:
+```
+gst-launch-1.0 videotestsrc ! video/x-raw, width=1280,height=720 ! glimagesink
+```
+
+===== GStreamer Video Playback
+
+This is GStreamer playback example, which reproduces a HD video though a H.264 decode process:
+```
+gst-launch-1.0 filesrc location=file.mp4 ! decodebin ! imxvideoconvert_g2d ! glimagesink
+```
+
+===== GStreamer Camera Preview
+
+This is a simple GStreamer pipeline able to create a camera preview example. Note that this example only works with the correct DTS file and needs a IMXTOCSI acessory connected to the board.
+```
+gst-launch-1.0 v4l2src device=/dev/video0 ! video/x-raw,width=1280,height=720 ! queue ! glimagesink
+```
+
+<<<

@@ -1,0 +1,52 @@
+////
+  Copyright NXP 2020
+  Author: Rogerio Silva <rogerio.silva@nxp.com>
+  Author: Marco Franchi <marco.franchi@nxp.com>
+////
+
+[[how_to_build]]
+== How to build NXP Demo Experience
+
+To build using Yocto:
+
+1 - Follow the its instructions in the warrior branch:
+
+----
+https://source.codeaurora.org/external/imx/meta-fsl-bsp-release/tree/imx/README?h=warrior-4.19.35-1.1.0_ga
+----
+
+2 - Setup
+
+----
+DISTRO=fsl-imx-xwayland MACHINE=imx7ulpevk source fsl-setup-release.sh -b build-xwayland
+----
+
+3 - Add on your conf/local.conf
+
+----
+IMAGE_INSTALL_append += "qtquickcontrols-qmlplugins "
+CORE_IMAGE_EXTRA_INSTALL += "imx-launcher"
+----
+
+4 - Download the meta-imx-demos:
+
+On source folder, download the meta-imx-demos meta layer:
+
+----
+cd ../sources
+git clone https://source.codeaurora.org/external/imxsupport/meta-imx-demos
+----
+
+5 - Add the new meta layer to conf/bblayers.conf adding the following line:
+
+----
+BBLAYERS += " ${BSPDIR}/sources/meta-imx-demos "
+----
+
+6 - Back to build folder, run bitbake:
+
+----
+bitbake imx-image-full
+----
+
+<<<

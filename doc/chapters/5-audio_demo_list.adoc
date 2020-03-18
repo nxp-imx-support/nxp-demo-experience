@@ -1,0 +1,19 @@
+////
+  Copyright NXP 2019
+  Author: Marco Franchi <marco.franchi@nxp.com>
+////
+
+[[audio_demo_list]]
+=== Audio
+
+==== Audio Playback
+
+===== Audio Record
+
+This test records an audio file from Headphone input with a 10 second duration. Make sure a Headphone is connected to the board.
+
+===== Audio Play
+
+This test plays the audio file recorded on the 'Audio Record' test. Make sure a Headphone is connected to the board. Need to run the 'Audio Record' test first.
+
+<<<

@@ -1,0 +1,30 @@
+////
+  Copyright NXP 2019
+  Author: Marco Franchi <marco.franchi@nxp.com>
+////
+
+include::variables.txt[]
+
+[[introduction]]
+== Introduction
+
+This page describes all the demos supported by the {DEMO_LAUNCHER}[i.MX Demo Launcher] application.
+The user can modify the `JSON` file to set the demos according to its requirements.
+
+Project bitbucket page - https://bitbucket.sw.nxp.com/projects/IMXS/repos/imx-demo-launcher-demos-list/browse
+
+Download - git clone https://bitbucket.sw.nxp.com/scm/imxs/imx-demo-launcher-demos-list.git
+
+=== Application Resolution
+
+The i.MX Demo Launcher was designed to support HD resolution (1280x720). However, the i.MX 7ULP EVK only
+supports 640x480 resolution. So, by default, when the user runs the application, it checks the resolution
+and if it is less then HD, the Demo Launcher will be opened in 640x480.
+
+=== Supported Devices
+
+* {7ULP_LONG}
+* {QXP_LONG}
+* {MQ_LONG}
+
+<<<
