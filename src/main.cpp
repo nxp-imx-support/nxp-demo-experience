@@ -82,6 +82,11 @@ int main(int argc, char *argv[])
         mainwindow->setHeight(screen->geometry().height() - 65); //Discount 65 pixels for xwayland header and borders
     }
 
+    if (screen->geometry().width() < screen->geometry().height()){
+        mainwindow->setHeight(screen->geometry().width() - 6); //Discount 6 pixels for xwayland borders
+        mainwindow->setWidth(screen->geometry().height() - 65); //Discount 65 pixels for xwayland header and borders
+    }
+
     qDebug().noquote() << "Name             : " << screen->name();
     qDebug().noquote() << "DevicePixelRatio : " << screen->devicePixelRatio();
     qDebug().noquote() << "Width            : " << screen->geometry().width();
