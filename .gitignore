@@ -105,4 +105,4 @@ venv.bak/
 output
 
 # Qt
-.pro.user
+*.pro.user
