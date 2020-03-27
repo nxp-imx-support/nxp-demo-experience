@@ -13,12 +13,12 @@ REV 2.0, March, 2020
 :imagesdir: chapters/media/
 
 include::chapters/1-introduction.adoc[]
-include::chapters/2-qt5_setup.adoc[]
+include::chapters/2-demo_list.adoc[]
 include::chapters/3-how_to_build.adoc[]
-include::chapters/4-how_to_add_new_demo.adoc[]
+include::chapters/4-running_demo_experience.adoc[]
+include::chapters/5-how_to_add_new_demo.adoc[]
 
-== Appendix: Supported Demo List
+== Appendix:
 
-include::chapters/5-audio_demo_list.adoc[]
-include::chapters/6-gpu_demo_list.adoc[]
-include::chapters/7-multimedia_demo_list.adoc[]
+include::chapters/6-qt5_setup.adoc[]
+include::chapters/7-source_code_overview.adoc[]

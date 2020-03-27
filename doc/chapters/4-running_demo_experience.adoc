@@ -1,0 +1,7 @@
+////
+  Copyright NXP 2020
+  Author: Marco Franchi <marco.franchi@nxp.com>
+////
+
+[[running_demo_experience]]
+== Running NXP Demo Experience

@@ -3,7 +3,7 @@
   Author: Marco Franchi <marco.franchi@nxp.com>
 ////
 
-[[How to Add a New Demo]]
+[[add_new_demo]]
 == How to Add a New Demo
 
 Add the new demo on file `demos.json`.
