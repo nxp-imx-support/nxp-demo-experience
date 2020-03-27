@@ -1,9 +1,9 @@
 ////
-  Copyright NXP 2019
+  Copyright NXP 2019-2020
   Author: Marco Franchi <marco.franchi@nxp.com>
 ////
 
-include::variables.txt[]
+include::variables_v2.txt[]
 
 [[introduction]]
 == Introduction
@@ -26,5 +26,16 @@ and if it is less then HD, the Demo Launcher will be opened in 640x480.
 * {7ULP_LONG}
 * {QXP_LONG}
 * {MQ_LONG}
+
+=== Release History
+
+.Release history
+[width="100%",cols="25,25,50",options="header"]
+|===
+|Version   |Release Data    |Description
+|v2.0	   |Apr 2020		|Warrior support
+|v1.0      |Mai 2019	    |Initial release.
+|===
+
 
 <<<

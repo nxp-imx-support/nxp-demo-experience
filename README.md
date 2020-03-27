@@ -39,3 +39,20 @@ $ bundle install
 $ ./doc-generator
 ```
 
+## Release Details
+
+In order to track all the BSP, devices, and demos supported, please, check the ```doc/chapters/variables``` files, according to the version release:
+
+### V2.0:
+
+Supported Devices:
+. i.MX 8MM EVK B0
+. i.MX 8QXP MEK B0
+. i.MX 7ULP EVK A0
+
+BSP:
+. L4.19.35_1.0.0
+
+Yocto Release:
+. Thud
+. Warrior

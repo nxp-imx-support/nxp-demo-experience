@@ -1,7 +1,9 @@
 ////
-  Copyright NXP 2019
+  Copyright NXP 2020
   Author: Marco Franchi <marco.franchi@nxp.com>
 ////
+
+:NAME: NXP Demo Experience
 
 :MM_SHORT: imx8mmevk
 :MQ_SHORT: imx8mqevk
@@ -15,10 +17,10 @@
 :QXP_LONG: i.MX 8QXP MEK B0
 :7ULP_LONG: i.MX 7ULP EVK A0
 
-:LINUX_LATEST: L4.14.78_1.0.0-GA
+:LINUX_LATEST: L4.19.35_1.0.0
 :LINUX_LATEST_LINK: https://www.nxp.com/support/developer-resources/software-development-tools/i.mx-developer-resources/i.mx-software-and-development-tool:IMX_SW
-
-:DEMO_LAUNCHER: https://bitbucket.sw.nxp.com/projects/IMXS/repos/i.mx-demo-launcher/browse
+:YOCTO_RELEASE: Warrior
+:DEMO_EXPERIENCE: https://bitbucket.sw.nxp.com/projects/IMXS/repos/nxp-demo-experience/browse
 :BLOOM: https://source.codeaurora.org/external/imx/cafatgithub/gtec-demo-framework/tree/DemoApps/GLES2/Bloom?h=5.3.0
 :BLUR: https://source.codeaurora.org/external/imx/cafatgithub/gtec-demo-framework/tree/DemoApps/GLES2/Blur?h=5.3.0
 :DFGRAPHICSBASIC2D: https://source.codeaurora.org/external/imx/cafatgithub/gtec-demo-framework/tree/DemoApps/GLES2/DFGraphicsBasic2D?h=5.3.0
