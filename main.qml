@@ -172,7 +172,7 @@ ApplicationWindow {
             x: backButton.x + backButton.width + 20
             anchors.verticalCenter: parent.verticalCenter
             color: "Black"
-            text: "i.MX Demo Launcher"
+            text: "NXP Demo Experience"
             font.family: "Avenir LT std"
         }
     }
