@@ -138,6 +138,7 @@ Item {
                 Text {
                     text: name
                     objectName: "demoText"
+                    font.family: "Avenir LT std"
                     color: "#126ee8"
                     font.bold: true
                     font.pointSize: width_imp < 1280 ? 8 : 12
@@ -164,6 +165,7 @@ Item {
             height:  convertDoubleToInt(0.0322 * demoPage.height)
             color: "#ffffff"
             text: qsTr("Select a demo ...")
+            font.family: "Avenir LT std"
             font.bold: true
             font.pointSize: width_imp < 1280 ? 8 : 12
             wrapMode: Text.WordWrap
@@ -176,6 +178,7 @@ Item {
             height: width_imp < 1280 ? convertDoubleToInt(0.38 * demoPage.height) : convertDoubleToInt(0.43 * demoPage.height)
             color: "#ffffff"
             text: qsTr("")
+            font.family: "Avenir LT std"
             wrapMode: Text.WordWrap
             font.bold: false
             horizontalAlignment: Text.AlignJustify
@@ -209,6 +212,7 @@ Item {
                     text: control.text
                     color: "#126ee8"
                     font.bold: true
+                    font.family: "Avenir LT std"
                 }
             }
         }

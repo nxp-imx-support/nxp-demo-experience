@@ -61,12 +61,21 @@
 #include <QVariant>
 #include <QQmlContext>
 #include <demo.h>
+#include <QFontDatabase>
+#include <QFont>
 #include "mainwindow.h"
+
+void loadFonts(){
+    QFontDatabase::addApplicationFont(QStringLiteral(":/fonts/AvenirLTStd-Book.otf"));
+    QFontDatabase::addApplicationFont(QStringLiteral(":/fonts/AvenirLTStd-Medium.otf"));
+    QFontDatabase::addApplicationFont(QStringLiteral(":/fonts/AvenirLTStd-Roman.otf"));
+}
 
 int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
     qmlRegisterType<Mainwindow>("Mainwindow", 1, 0, "Mainwindow");
+    loadFonts();
     QQmlApplicationEngine engine(QUrl("qrc:/main.qml"));
 
     if (engine.rootObjects().isEmpty())

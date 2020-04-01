@@ -13,5 +13,8 @@
         <file>src/qtquickcontrolsapplication.h</file>
         <file>content/demoPage.qml</file>
         <file>content/subMenuPage.qml</file>
+        <file>fonts/AvenirLTStd-Book.otf</file>
+        <file>fonts/AvenirLTStd-Medium.otf</file>
+        <file>fonts/AvenirLTStd-Roman.otf</file>
     </qresource>
 </RCC>
