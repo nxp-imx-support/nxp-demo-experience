@@ -102,7 +102,22 @@ ApplicationWindow {
         anchors.topMargin: 0
         width: opacity ? convertDoubleToInt(applicationWindow.width * 0.047) : 0
         opacity: stackView.depth > 2 ? 0 : 1
-        color: opacity ? "#212126" : "#212126"
+        color: "#FFFFFF"
+        anchors.right: parent.right
+        anchors.bottom: parent.bottom
+        anchors.left: parent.left
+        anchors.top: parent.top
+        Behavior on opacity { NumberAnimation{} }
+    }
+
+    Rectangle {
+        id: separator
+        anchors.rightMargin: convertDoubleToInt(parent.width * 0.62)
+        anchors.leftMargin: convertDoubleToInt(parent.width * 0.375)
+        anchors.topMargin: 0
+        width: opacity ? convertDoubleToInt(applicationWindow.width * 0.033) : 0
+        opacity: stackView.depth > 2 ? 0 : 1
+        color: "#f9b500"
         anchors.right: parent.right
         anchors.bottom: parent.bottom
         anchors.left: parent.left
@@ -156,8 +171,9 @@ ApplicationWindow {
             Behavior on x { NumberAnimation{ easing.type: Easing.OutCubic} }
             x: backButton.x + backButton.width + 20
             anchors.verticalCenter: parent.verticalCenter
-            color: "white"
+            color: "Black"
             text: "i.MX Demo Launcher"
+            font.family: "Avenir LT std"
         }
     }
 

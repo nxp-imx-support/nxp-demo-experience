@@ -62,13 +62,13 @@ Item {
 
     Rectangle {
         anchors.fill: parent
-        color: "#11ffffff"
+        color: "#FFFFFF"
         visible: mouse.pressed
     }
 
     Text {
         id: textitem
-        color: "white"
+        color: "Black"
         font.pointSize: 16
         text: modelData
         anchors.verticalCenter: parent.verticalCenter
@@ -82,7 +82,7 @@ Item {
         anchors.right: parent.right
         anchors.margins: 5
         height: 1
-        color: "#424246"
+        color: "#FFFFFF"
     }
 
     Image {

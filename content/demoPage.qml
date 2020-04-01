@@ -112,7 +112,7 @@ Item {
                     width:  convertDoubleToInt(demoPage.width * 0.203)
                     height:  convertDoubleToInt(demoPage.height * 0.42)
                     antialiasing: true
-                    color: buttonMouse.pressed ? "#126ee8" : "transparent"
+                    color: buttonMouse.pressed ? "#003da5" : "transparent"
                     opacity: buttonMouse.pressed ? 0.4 : 1
                     Image {
                         objectName: "demoImage"
@@ -139,7 +139,7 @@ Item {
                     text: name
                     objectName: "demoText"
                     font.family: "Avenir LT std"
-                    color: "#126ee8"
+                    color: "#003da5"
                     font.bold: true
                     font.pointSize: width_imp < 1280 ? 8 : 12
                     wrapMode: Text.WordWrap
@@ -163,7 +163,7 @@ Item {
             y: 0
             width:  convertDoubleToInt(0.22 * demoPage.width)
             height:  convertDoubleToInt(0.0322 * demoPage.height)
-            color: "#ffffff"
+            color: "#000000"
             text: qsTr("Select a demo ...")
             font.family: "Avenir LT std"
             font.bold: true
@@ -176,7 +176,7 @@ Item {
             y:  convertDoubleToInt(titleText.bottom)
             width:  convertDoubleToInt(0.22 * demoPage.width)
             height: width_imp < 1280 ? convertDoubleToInt(0.38 * demoPage.height) : convertDoubleToInt(0.43 * demoPage.height)
-            color: "#ffffff"
+            color: "#000000"
             text: qsTr("")
             font.family: "Avenir LT std"
             wrapMode: Text.WordWrap
@@ -198,7 +198,7 @@ Item {
             y: convertDoubleToInt(0.838 * demoPage.height)
             width:  convertDoubleToInt(0.125 * demoPage.width)
             height:  convertDoubleToInt(0.0645 * demoPage.height)
-            text: "LAUNCH"
+            text: "Launch"
             visible: false
             onClicked: {
                 mainwindow.callDemo(execText);
@@ -210,7 +210,7 @@ Item {
                     font.pointSize: width_imp < 1280 ? 6 : 10
                     wrapMode: Text.WordWrap
                     text: control.text
-                    color: "#126ee8"
+                    color: "#003da5"
                     font.bold: true
                     font.family: "Avenir LT std"
                 }
