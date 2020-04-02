@@ -86,21 +86,28 @@ int main(int argc, char *argv[])
 
     QScreen *screen = app.primaryScreen();
 
-    if (screen->geometry().width() < 1280 || screen->geometry().height() < 720){
-        mainwindow->setWidth(screen->geometry().width() - 6); //Discount 6 pixels for xwayland borders
-        mainwindow->setHeight(screen->geometry().height() - 65); //Discount 65 pixels for xwayland header and borders
-    }
-
     if (screen->geometry().width() < screen->geometry().height()){
-        mainwindow->setHeight(screen->geometry().width() - 6); //Discount 6 pixels for xwayland borders
-        mainwindow->setWidth(screen->geometry().height() - 65); //Discount 65 pixels for xwayland header and borders
+        // Portrait orientation
+        mainwindow->setWidth(int(screen->geometry().width()));
+        mainwindow->setHeight(int(screen->geometry().width()/1.77)); //1.77 is 16:9 aspect ratio
+    } else {
+        // Landscape orientation
+        if (screen->geometry().width() < 1280 || screen->geometry().height() < 720){
+            mainwindow->setWidth(screen->geometry().width() - 6); //Discount 6 pixels for xwayland borders
+            mainwindow->setHeight(screen->geometry().height() - 65); //Discount 65 pixels for xwayland header and borders
+        }else{
+            mainwindow->setWidth(int(screen->geometry().width()/1.5));
+            mainwindow->setHeight(int(screen->geometry().height()/1.5));
+        }
     }
 
-    qDebug().noquote() << "Name             : " << screen->name();
-    qDebug().noquote() << "DevicePixelRatio : " << screen->devicePixelRatio();
-    qDebug().noquote() << "Width            : " << screen->geometry().width();
-    qDebug().noquote() << "Height           : " << screen->geometry().height();
-    qDebug().noquote() << "Size             : " << screen->geometry().size();
+    qDebug().noquote() << "Name               : " << screen->name();
+    qDebug().noquote() << "DevicePixelRatio   : " << screen->devicePixelRatio();
+    qDebug().noquote() << "Width              : " << screen->geometry().width();
+    qDebug().noquote() << "Height             : " << screen->geometry().height();
+    qDebug().noquote() << "Size               : " << screen->geometry().size();
+    qDebug().noquote() << "Application Width  : " << mainwindow->getWidth();
+    qDebug().noquote() << "Application Height : " << mainwindow->getHeight();
 
     mainwindow->root = root;
     mainwindow->engineMain = &engine;

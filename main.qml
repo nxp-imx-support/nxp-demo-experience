@@ -57,12 +57,16 @@ import Mainwindow 1.0
 
 ApplicationWindow {
     id: applicationWindow
-    property int width_imp:  mainwindow.getWidth()
+    property int width_imp: mainwindow.getWidth()
     property int height_imp: mainwindow.getHeight()
     property alias stackView: stackView
     visible: true
     width: width_imp
     height: height_imp
+    maximumWidth: width_imp
+    maximumHeight: height_imp
+    minimumWidth: width_imp
+    minimumHeight: height_imp
 
     function convertDoubleToInt (x) {
         return x < 0 ? Math.ceil(x) : Math.floor(x);
