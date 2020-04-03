@@ -112,22 +112,19 @@ ApplicationWindow {
         anchors.left: parent.left
         anchors.top: parent.top
         Behavior on opacity { NumberAnimation{} }
+
+        Rectangle {
+            id: separator
+            width: opacity ? convertDoubleToInt(applicationWindow.width * 0.005) : 0
+            opacity: stackView.depth > 2 ? 0 : 1
+            color: "#f9b500"
+            anchors.right: parent.right
+            anchors.bottom: parent.bottom
+            anchors.top: parent.top
+            Behavior on opacity { NumberAnimation{} }
+        }
     }
 
-    Rectangle {
-        id: separator
-        anchors.rightMargin: convertDoubleToInt(parent.width * 0.62)
-        anchors.leftMargin: convertDoubleToInt(parent.width * 0.375)
-        anchors.topMargin: 0
-        width: opacity ? convertDoubleToInt(applicationWindow.width * 0.033) : 0
-        opacity: stackView.depth > 2 ? 0 : 1
-        color: "#f9b500"
-        anchors.right: parent.right
-        anchors.bottom: parent.bottom
-        anchors.left: parent.left
-        anchors.top: parent.top
-        Behavior on opacity { NumberAnimation{} }
-    }
 
     Rectangle {
         id: backtext

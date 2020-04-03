@@ -81,7 +81,7 @@ Item {
     Rectangle {
         // Item separation line
         anchors.left: parent.left
-        anchors.right: parent.right
+        anchors.right: parent.right - convertDoubleToInt(applicationWindow.width * 0.005)
         anchors.margins: 5
         height: 1
         color: "#FFFFFF"
