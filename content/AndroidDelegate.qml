@@ -74,7 +74,7 @@ Item {
         text: modelData
         anchors.verticalCenter: parent.verticalCenter
         anchors.left: parent.left
-        anchors.leftMargin: 10
+        anchors.leftMargin: 30
         horizontalAlignment: Text.AlignLeft
     }
 
