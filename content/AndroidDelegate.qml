@@ -69,7 +69,8 @@ Item {
     Text {
         id: textitem
         color: "Black"
-        font.pointSize: 16
+        font.family: "Avenir LT std"
+        font.pointSize: convertDoubleToInt(applicationWindow.width * 0.025)
         text: modelData
         anchors.verticalCenter: parent.verticalCenter
         anchors.left: parent.left
@@ -78,6 +79,7 @@ Item {
     }
 
     Rectangle {
+        // Item separation line
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.margins: 5
@@ -90,6 +92,8 @@ Item {
         anchors.rightMargin: 10
         anchors.verticalCenter: parent.verticalCenter
         source: "../images/navigation_next_item.png"
+        fillMode: Image.PreserveAspectFit
+        width: convertDoubleToInt(applicationWindow.width * 0.03)
     }
 
     MouseArea {

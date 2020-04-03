@@ -171,7 +171,7 @@ ApplicationWindow {
             }
         }
         Text {
-            font.pointSize: 32
+            font.pointSize: convertDoubleToInt(applicationWindow.width * 0.035)
             Behavior on x { NumberAnimation{ easing.type: Easing.OutCubic} }
             x: backButton.x + backButton.width + 20
             anchors.verticalCenter: parent.verticalCenter
