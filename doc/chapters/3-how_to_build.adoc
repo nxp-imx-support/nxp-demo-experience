@@ -25,7 +25,7 @@ DISTRO=fsl-imx-xwayland MACHINE=imx7ulpevk source fsl-setup-release.sh -b build-
 
 ----
 IMAGE_INSTALL_append += "qtquickcontrols-qmlplugins "
-CORE_IMAGE_EXTRA_INSTALL += "imx-launcher"
+CORE_IMAGE_EXTRA_INSTALL += "nxp-demo-experience"
 ----
 
 4 - Download the meta-imx-demos:
@@ -34,13 +34,13 @@ On source folder, download the meta-imx-demos meta layer:
 
 ----
 cd ../sources
-git clone https://source.codeaurora.org/external/imxsupport/meta-imx-demos
+git clone https://source.codeaurora.org/external/imxsupport/meta-nxp-demo-experience
 ----
 
 5 - Add the new meta layer to conf/bblayers.conf adding the following line:
 
 ----
-BBLAYERS += " ${BSPDIR}/sources/meta-imx-demos "
+BBLAYERS += " ${BSPDIR}/sources/meta-nxp-demo-experience "
 ----
 
 6 - Back to build folder, run bitbake:

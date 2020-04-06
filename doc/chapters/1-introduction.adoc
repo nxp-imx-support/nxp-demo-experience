@@ -8,16 +8,16 @@ include::variables_v2.txt[]
 [[introduction]]
 == Introduction
 
-This page describes all the demos supported by the {DEMO_LAUNCHER}[i.MX Demo Launcher] application.
+This page describes all the demos supported by the {NXP_DEMO_EXPERIENCE}[NXP Demo Experience] application.
 The user can modify the `JSON` file to set the demos according to its requirements.
 
-Project bitbucket page - https://bitbucket.sw.nxp.com/projects/IMXS/repos/imx-demo-launcher-demos-list/browse
+Project bitbucket page - https://source.codeaurora.org/external/imxsupport/nxp-demo-experience-demos-list
 
-Download - git clone https://bitbucket.sw.nxp.com/scm/imxs/imx-demo-launcher-demos-list.git
+Download - git clone https://source.codeaurora.org/external/imxsupport/nxp-demo-experience-demos-list
 
 === Application Resolution
 
-The i.MX Demo Launcher was designed to support HD resolution (1280x720). However, the i.MX 7ULP EVK only
+The NXP Demo Experience was designed to support HD resolution (1280x720). However, the i.MX 7ULP EVK only
 supports 640x480 resolution. So, by default, when the user runs the application, it checks the resolution
 and if it is less then HD, the Demo Launcher will be opened in 640x480.
 
