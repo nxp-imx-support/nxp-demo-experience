@@ -40,7 +40,7 @@ git clone https://source.codeaurora.org/external/imxsupport/meta-nxp-demo-experi
 5 - Add the new meta layer to conf/bblayers.conf adding the following line:
 
 ----
-BBLAYERS += " ${BSPDIR}/sources/meta-nxp-demo-experience "
+BBLAYERS += "${BSPDIR}/sources/meta-nxp-demo-experience"
 ----
 
 6 - Back to build folder, run bitbake:
