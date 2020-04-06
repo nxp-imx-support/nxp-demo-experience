@@ -34,7 +34,7 @@ On source folder, download the meta-imx-demos meta layer:
 
 ----
 cd ../sources
-git clone https://source.codeaurora.org/external/imxsupport/meta-nxp-demo-experience
+git clone -b v2.0 https://source.codeaurora.org/external/imxsupport/meta-nxp-demo-experience
 ----
 
 5 - Add the new meta layer to conf/bblayers.conf adding the following line:
