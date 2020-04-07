@@ -139,42 +139,89 @@ ApplicationWindow {
     }
 
     toolBar: BorderImage {
-        border.bottom: 8
-        source: "images/toolbar.png"
         width: applicationWindow.width
         height: applicationWindow.height/7
+
         Rectangle {
-            id: backButton
-            objectName: "backButton"
-            width: opacity ? convertDoubleToInt(applicationWindow.width * 0.047) : 0
-            anchors.left: parent.left
-            anchors.leftMargin: 20
-            opacity: stackView.depth > 1 ? 1 : 0
-            anchors.verticalCenter: parent.verticalCenter
-            antialiasing: true
-            height: convertDoubleToInt(applicationWindow.height * 0.083)
-            radius: 4
-            color: backmouse.pressed ? "#222" : "transparent"
-            Behavior on opacity { NumberAnimation{} }
-            Image {
+            id: toolBarBack
+            color: "white"
+            anchors.fill: parent
+
+            Rectangle {
+                id: backButton
+                objectName: "backButton"
+                width: opacity ? convertDoubleToInt(applicationWindow.width * 0.047) : 0
+                anchors.left: parent.left
+                anchors.leftMargin: 20
+                opacity: stackView.depth > 1 ? 1 : 0
                 anchors.verticalCenter: parent.verticalCenter
-                source: "images/navigation_previous_item.png"
+                antialiasing: true
+                height: convertDoubleToInt(applicationWindow.height * 0.083)
+                radius: 4
+                color: backmouse.pressed ? "#222" : "transparent"
+                Behavior on opacity { NumberAnimation{} }
+                Image {
+                    anchors.verticalCenter: parent.verticalCenter
+                    source: "images/navigation_previous_item.png"
+                }
+                MouseArea {
+                    id: backmouse
+                    anchors.fill: parent
+                    anchors.margins: -10
+                    onClicked: stackView.pop()
+                }
             }
-            MouseArea {
-                id: backmouse
-                anchors.fill: parent
-                anchors.margins: -10
-                onClicked: stackView.pop()
+            Text {
+                font.pointSize: convertDoubleToInt(applicationWindow.width * 0.035)
+                Behavior on x { NumberAnimation{ easing.type: Easing.OutCubic} }
+                x: backButton.x + backButton.width + 20
+                anchors.verticalCenter: parent.verticalCenter
+                color: "Black"
+                text: "NXP Demo Experience"
+                font.family: "Avenir LT std"
             }
-        }
-        Text {
-            font.pointSize: convertDoubleToInt(applicationWindow.width * 0.035)
-            Behavior on x { NumberAnimation{ easing.type: Easing.OutCubic} }
-            x: backButton.x + backButton.width + 20
-            anchors.verticalCenter: parent.verticalCenter
-            color: "Black"
-            text: "NXP Demo Experience"
-            font.family: "Avenir LT std"
+
+            Rectangle{
+                id: stripe1
+                anchors.bottom: parent.bottom
+                color: "#f9b500"
+                anchors.left: parent.left
+                width: convertDoubleToInt(applicationWindow.width * 0.2923)
+                height: convertDoubleToInt(applicationWindow.height * 0.008)
+            }
+
+            Rectangle{
+                id: stripe2
+                anchors.bottom: parent.bottom
+                color: "#928647"
+                anchors.left: stripe1.right
+                width: convertDoubleToInt(applicationWindow.width * 0.081)
+                height: convertDoubleToInt(applicationWindow.height * 0.008)
+            }
+            Rectangle{
+                id: stripe3
+                anchors.bottom: parent.bottom
+                color: "#7bb1db"
+                anchors.left: stripe2.right
+                width: convertDoubleToInt(applicationWindow.width * 0.2367)
+                height: convertDoubleToInt(applicationWindow.height * 0.008)
+            }
+            Rectangle{
+                id: stripe4
+                anchors.bottom: parent.bottom
+                color: "#6d9b46"
+                anchors.left: stripe3.right
+                width: convertDoubleToInt(applicationWindow.width * 0.1397)
+                height: convertDoubleToInt(applicationWindow.height * 0.008)
+            }
+            Rectangle{
+                id: stripe5
+                anchors.bottom: parent.bottom
+                color: "#c9d200"
+                anchors.left: stripe4.right
+                anchors.right: parent.right
+                height: convertDoubleToInt(applicationWindow.height * 0.008)
+            }
         }
     }
 
