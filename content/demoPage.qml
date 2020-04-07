@@ -54,6 +54,7 @@ import QtQuick 2.2
 import QtQuick.Controls 1.2
 import QtQuick.Controls.Styles 1.1
 import Mainwindow 1.0
+import QtGraphicalEffects 1.12
 
 Item {
     id: demoPage
@@ -115,11 +116,23 @@ Item {
                     color: buttonMouse.pressed ? "#003da5" : "transparent"
                     opacity: buttonMouse.pressed ? 0.4 : 1
                     Image {
+                        id: demoImage
                         objectName: "demoImage"
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.horizontalCenter: parent.horizontalCenter
                         anchors.fill: parent
                         source: icon ? "file:" + icon : "file:" + homeDir + "/.nxp-demo-experience/icon/default-icon.png"
+                        scale: 0.8
+                        visible: false
+                        smooth: true
+                    }
+                    ColorOverlay{
+                        // Icon color
+                        anchors.fill: demoImage
+                        source:demoImage
+                        color:"#7bb1db"
+                        scale: 0.8
+                        smooth: true
                     }
                     MouseArea {
                         id: buttonMouse
