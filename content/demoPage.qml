@@ -119,7 +119,7 @@ Item {
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.horizontalCenter: parent.horizontalCenter
                         anchors.fill: parent
-                        source: icon ? "file:" + icon : "file:" + homeDir + "/.imx-launcher/icon/default-icon.png"
+                        source: icon ? "file:" + icon : "file:" + homeDir + "/.nxp-demo-experience/icon/default-icon.png"
                     }
                     MouseArea {
                         id: buttonMouse
@@ -131,7 +131,7 @@ Item {
                             execText = executable
                             launchButton.visible = 1
                             contentImage.visible = 1
-                            contentImage.source = "file:" + homeDir + "/.imx-launcher/screenshot/" + screenshot
+                            contentImage.source = "file:" + homeDir + "/.nxp-demo-experience/screenshot/" + screenshot
                         }
                     }
                 }
