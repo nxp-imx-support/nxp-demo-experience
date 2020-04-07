@@ -154,10 +154,15 @@ Item {
 
     Column {
         id: textColumn
-        x: convertDoubleToInt(parent.width*0.75)
+        x: convertDoubleToInt(parent.width*0.70)
         y: convertDoubleToInt(parent.left + 0.064 * parent.height)
         width:  convertDoubleToInt(0.22 * demoPage.width)
-        height:  convertDoubleToInt(0.0645 * demoPage.height)
+        height:  convertDoubleToInt(0.1 * demoPage.height)
+        Text {
+            id: spacer
+            text: qsTr(" ")
+            height: 5
+        }
         Text {
             id: titleText
             y: 0
@@ -165,6 +170,7 @@ Item {
             height:  convertDoubleToInt(0.0322 * demoPage.height)
             color: "#000000"
             text: qsTr("Select a demo ...")
+            font.pixelSize: 23
             font.family: "Avenir LT std"
             font.bold: true
             font.pointSize: width_imp < 1280 ? 8 : 12
@@ -174,10 +180,11 @@ Item {
         Text {
             id: informativeText
             y:  convertDoubleToInt(titleText.bottom)
-            width:  convertDoubleToInt(0.22 * demoPage.width)
+            width:  convertDoubleToInt(0.28 * demoPage.width)
             height: width_imp < 1280 ? convertDoubleToInt(0.38 * demoPage.height) : convertDoubleToInt(0.43 * demoPage.height)
             color: "#000000"
             text: qsTr("")
+            font.pixelSize: 19
             font.family: "Avenir LT std"
             wrapMode: Text.WordWrap
             font.bold: false
