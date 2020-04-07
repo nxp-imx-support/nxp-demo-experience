@@ -59,7 +59,7 @@ import QtGraphicalEffects 1.12
 Item {
     id: demoPage
     property string execText: ""
-    property alias launchButton: launchButton
+   // property alias launchButton: launchButton
     property real progress: 0
     property int width_imp:  applicationWindow.width
     property int height_imp: applicationWindow.height - 100
@@ -100,29 +100,29 @@ Item {
         objectName: "gridView"
         x: 0
         y: 0
-        width:  convertDoubleToInt(parent.width*0.73)
+        width:  convertDoubleToInt(parent.width*0.6)
         height: parent.height
         contentHeight:  convertDoubleToInt(parent.height * 0.9032)
         cacheBuffer: 300
         model: demoModel
         delegate: Item {
             Column {
-                x: convertDoubleToInt(0.03125 * demoPage.width)
-                y: -convertDoubleToInt(0.0245 * demoPage.height)
+                x: convertDoubleToInt(0.025 * demoPage.width)
+                y: convertDoubleToInt(0.0245 * demoPage.height)
                 Rectangle {
-                    width:  convertDoubleToInt(demoPage.width * 0.203)
-                    height:  convertDoubleToInt(demoPage.height * 0.42)
+                    width:  convertDoubleToInt(demoPage.width * 0.18)
+                    height:  convertDoubleToInt(demoPage.height * 0.4)
+                    anchors.horizontalCenter: parent.horizontalCenter
                     antialiasing: true
                     color: buttonMouse.pressed ? "#003da5" : "transparent"
                     opacity: buttonMouse.pressed ? 0.4 : 1
                     Image {
                         id: demoImage
                         objectName: "demoImage"
-                        anchors.verticalCenter: parent.verticalCenter
                         anchors.horizontalCenter: parent.horizontalCenter
-                        anchors.fill: parent
+                        width: parent.width * 0.8
+                        height: parent.height * 0.8
                         source: icon ? "file:" + icon : "file:" + homeDir + "/.nxp-demo-experience/icon/default-icon.png"
-                        scale: 0.8
                         visible: false
                         smooth: true
                     }
@@ -131,7 +131,6 @@ Item {
                         anchors.fill: demoImage
                         source:demoImage
                         color:"#7bb1db"
-                        scale: 0.8
                         smooth: true
                     }
                     MouseArea {
@@ -147,95 +146,120 @@ Item {
                             contentImage.source = "file:" + homeDir + "/.nxp-demo-experience/screenshot/" + screenshot
                         }
                     }
-                }
-                Text {
-                    text: name
-                    objectName: "demoText"
-                    font.family: "Avenir LT std"
-                    color: "#003da5"
-                    font.bold: true
-                    font.pointSize: width_imp < 1280 ? 8 : 12
-                    wrapMode: Text.WordWrap
-                    horizontalAlignment: Text.AlignHCenter
-                    anchors.horizontalCenter: parent.horizontalCenter
+                    Text {
+                        text: name
+                        objectName: "demoText"
+                        font.family: "Avenir LT std"
+                        color: "#003da5"
+                        font.bold: true
+                        font.pointSize: convertDoubleToInt(applicationWindow.width * 0.012)
+                        wrapMode: Text.WordWrap
+                        horizontalAlignment: Text.AlignHCenter
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        anchors.bottom: parent.bottom
+                    }
                 }
             }
         }
-        cellHeight:  convertDoubleToInt(0.4838 * demoPage.height)
-        cellWidth:  convertDoubleToInt(0.234 * demoPage.width)
+        cellHeight:  convertDoubleToInt(0.46 * demoPage.height)
+        cellWidth:  convertDoubleToInt(0.18 * demoPage.width)
     }
 
     Column {
         id: textColumn
-        x: convertDoubleToInt(parent.width*0.70)
+        anchors.left: gridView.right
         y: convertDoubleToInt(parent.left + 0.064 * parent.height)
-        width:  convertDoubleToInt(0.22 * demoPage.width)
+        anchors.right: parent.right
         height:  convertDoubleToInt(0.1 * demoPage.height)
-        Text {
-            id: spacer
-            text: qsTr(" ")
-            height: 5
-        }
-        Text {
-            id: titleText
-            y: 0
-            width:  convertDoubleToInt(0.22 * demoPage.width)
-            height:  convertDoubleToInt(0.0322 * demoPage.height)
-            color: "#000000"
-            text: qsTr("Select a demo ...")
-            font.pixelSize: 23
-            font.family: "Avenir LT std"
-            font.bold: true
-            font.pointSize: width_imp < 1280 ? 8 : 12
-            wrapMode: Text.WordWrap
-            horizontalAlignment: Text.AlignLeft
-        }
-        Text {
-            id: informativeText
-            y:  convertDoubleToInt(titleText.bottom)
-            width:  convertDoubleToInt(0.28 * demoPage.width)
-            height: width_imp < 1280 ? convertDoubleToInt(0.38 * demoPage.height) : convertDoubleToInt(0.43 * demoPage.height)
-            color: "#000000"
-            text: qsTr("")
-            font.pixelSize: 19
-            font.family: "Avenir LT std"
-            wrapMode: Text.WordWrap
-            font.bold: false
-            horizontalAlignment: Text.AlignJustify
-            font.pointSize: width_imp < 1280 ? 6 : 10
-        }
-        Image {
-            id: contentImage
-            x: convertDoubleToInt(0.039 * demoPage.width)
-            width:  convertDoubleToInt(0.156 * demoPage.width)
-            height:  convertDoubleToInt(0.156 * demoPage.width)
-            visible: false
-        }
-        Button {
-            id: launchButton
-            objectName: "launchButton"
-            x: convertDoubleToInt(0.093 * demoPage.width)
-            y: convertDoubleToInt(0.838 * demoPage.height)
-            width:  convertDoubleToInt(0.125 * demoPage.width)
-            height:  convertDoubleToInt(0.0645 * demoPage.height)
-            text: "Launch"
-            visible: false
-            onClicked: {
-                mainwindow.callDemo(execText);
+        Rectangle{
+            id:titleRect
+            anchors.top: parent.top
+            anchors.left: parent.left
+            anchors.right: parent.right
+            height: convertDoubleToInt(0.14 * demoPage.height)
+
+            Text {
+                id: titleText
+                y: 0
+                anchors.left: parent.left
+                anchors.right: parent.right
+                anchors.top: parent.top
+                anchors.bottom: parent.bottom
+                color: "#000000"
+                text: qsTr("Select a demo ...")
+                font.family: "Avenir LT std"
+                font.bold: true
+                font.pointSize: convertDoubleToInt(applicationWindow.width * 0.017)
+                wrapMode: Text.WordWrap
+                horizontalAlignment: Text.AlignLeft
+                verticalAlignment: Text.AlignVCenter
             }
-            style: ButtonStyle {
-                label: Text {
-                    horizontalAlignment: Text.AlignHCenter
-                    verticalAlignment: Text.AlignVCenter
-                    font.pointSize: width_imp < 1280 ? 6 : 10
-                    wrapMode: Text.WordWrap
-                    text: control.text
-                    color: "#003da5"
-                    font.bold: true
-                    font.family: "Avenir LT std"
+        }
+
+        Rectangle
+        {
+            id:infoRect
+            anchors.top: titleRect.bottom
+            anchors.left: parent.left
+            height: convertDoubleToInt(0.5 * demoPage.height)
+            Text {
+                id: informativeText
+                y:  convertDoubleToInt(titleText.bottom)
+                width:  convertDoubleToInt(0.36 * demoPage.width)
+                color: "#000000"
+                text: qsTr("")
+                font.family: "Avenir LT std"
+                wrapMode: Text.WordWrap
+                font.bold: false
+                horizontalAlignment: Text.AlignLeft
+                font.pointSize: convertDoubleToInt(applicationWindow.width * 0.012)
+            }
+        }
+
+        Rectangle{
+            id:imageRect
+            anchors.top: infoRect.bottom
+            width: convertDoubleToInt(0.156 * demoPage.width)
+            height:  convertDoubleToInt(0.156 * demoPage.width)
+            Image {
+                id: contentImage
+                anchors.fill: parent
+                visible: false
+                anchors.centerIn: parent
+            }
+        }
+
+        Rectangle{
+            id:buttonRect
+            anchors.left: imageRect.right
+            anchors.right: parent.right
+            anchors.bottom: imageRect.bottom
+            height: 60
+            Button {
+                id: launchButton
+                objectName: "launchButton"
+                anchors.centerIn: parent
+                width:  convertDoubleToInt(0.125 * demoPage.width)
+                height:  convertDoubleToInt(0.0645 * demoPage.height)
+                text: "Launch"
+                visible: false
+                onClicked: {
+                    mainwindow.callDemo(execText);
+                }
+                style: ButtonStyle {
+                    label: Text {
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                        font.pointSize: convertDoubleToInt(applicationWindow.width * 0.01)
+                        wrapMode: Text.WordWrap
+                        text: control.text
+                        color: "#003da5"
+                        font.bold: true
+                        font.family: "Avenir LT std"
+                    }
                 }
             }
         }
-        spacing: 20
+
     }
 }
