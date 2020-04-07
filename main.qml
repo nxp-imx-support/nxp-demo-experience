@@ -134,7 +134,7 @@ ApplicationWindow {
         anchors.fill: parent
         width: opacity ? convertDoubleToInt(applicationWindow.width * 0.047) : 0
         opacity: stackView.depth > 2 ? 1 : 0
-        color: opacity ? "#212126" : "#212126"
+        color: "#ffffff"
         Behavior on opacity { NumberAnimation{} }
     }
 
