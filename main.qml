@@ -230,7 +230,19 @@ ApplicationWindow {
         objectName: "stackView"
         height: parent.height - toolBar.height
         anchors.fill: parent
+
+        Rectangle{
+            id:rect1
+            height: applicationWindow.height * (0.097/6)
+            color: "transparent"
+            anchors.top: parent.top
+            anchors.left: parent.left
+            anchors.right: parent.right
+        }
+
+
         initialItem: Item {
+            anchors.top: rect1.bottom
             width: parent.height/2
             height: parent.height-toolBar.height
             ListView {

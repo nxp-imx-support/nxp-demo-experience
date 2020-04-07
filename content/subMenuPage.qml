@@ -61,6 +61,7 @@ Item {
     property int height_imp: applicationWindow.height - 100
     width: width_imp
     height: height_imp
+    anchors.top: rect1.bottom
 
     function convertDoubleToInt (x) {
         return x < 0 ? Math.ceil(x) : Math.floor(x);
