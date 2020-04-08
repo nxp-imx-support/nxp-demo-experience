@@ -99,7 +99,7 @@ Item {
         id: gridView
         objectName: "gridView"
         x: 0
-        y: 0
+        y: convertDoubleToInt(demoPage.height * 0.02)
         width:  convertDoubleToInt(parent.width*0.6)
         height: parent.height
         contentHeight:  convertDoubleToInt(parent.height * 0.9032)
@@ -116,47 +116,65 @@ Item {
                     antialiasing: true
                     color: buttonMouse.pressed ? "#003da5" : "transparent"
                     opacity: buttonMouse.pressed ? 0.4 : 1
-                    Image {
-                        id: demoImage
-                        objectName: "demoImage"
-                        anchors.horizontalCenter: parent.horizontalCenter
-                        width: parent.width * 0.8
+                    Rectangle{
+                        id: imageRect2
+                        anchors.top: parent.top
+                        anchors.left: parent.left
+                        anchors.right: parent.right
                         height: parent.height * 0.8
-                        source: icon ? "file:" + icon : "file:" + homeDir + "/.nxp-demo-experience/icon/default-icon.png"
-                        visible: false
-                        smooth: true
-                    }
-                    ColorOverlay{
-                        // Icon color
-                        anchors.fill: demoImage
-                        source:demoImage
-                        color:"#7bb1db"
-                        smooth: true
-                    }
-                    MouseArea {
-                        id: buttonMouse
-                        anchors.fill: parent
-                        anchors.margins: -5
-                        onClicked: {
-                            titleText.text = name
-                            informativeText.text = description
-                            execText = executable
-                            launchButton.visible = 1
-                            contentImage.visible = 1
-                            contentImage.source = "file:" + homeDir + "/.nxp-demo-experience/screenshot/" + screenshot
+
+                        Image {
+                            id: demoImage
+                            objectName: "demoImage"
+                            anchors.horizontalCenter: parent.horizontalCenter
+                            anchors.verticalCenter: parent.verticalCenter
+                            width: parent.width * 0.8
+                            source: icon ? "file:" + icon : "file:" + homeDir + "/.nxp-demo-experience/icon/default-icon.svg"
+                            visible: false
+                            fillMode: Image.PreserveAspectFit
                         }
+                        ColorOverlay{
+                            // Icon color
+                            anchors.fill: demoImage
+                            source:demoImage
+                            color:"#7bb1db"
+                            smooth: true
+                            antialiasing: true
+                        }
+                        MouseArea {
+                            id: buttonMouse
+                            anchors.fill: parent
+                            anchors.margins: -5
+                            onClicked: {
+                                titleText.text = name
+                                informativeText.text = description
+                                execText = executable
+                                launchButton.visible = 1
+                                contentImage.visible = 1
+                                contentImage.source = "file:" + homeDir + "/.nxp-demo-experience/screenshot/" + screenshot
+                            }
+                        }
+
                     }
-                    Text {
-                        text: name
-                        objectName: "demoText"
-                        font.family: "Avenir LT std"
-                        color: "#003da5"
-                        font.bold: true
-                        font.pointSize: convertDoubleToInt(applicationWindow.width * 0.012)
-                        wrapMode: Text.WordWrap
-                        horizontalAlignment: Text.AlignHCenter
-                        anchors.horizontalCenter: parent.horizontalCenter
+                    Rectangle {
+                        anchors.top: imageRect2.bottom
                         anchors.bottom: parent.bottom
+                        anchors.left: parent.left
+                        anchors.right: parent.right
+
+                        Text {
+                            text: name
+                            objectName: "demoText"
+                            font.family: "Avenir LT std"
+                            color: "#003da5"
+                            font.bold: true
+                            font.pointSize: convertDoubleToInt(applicationWindow.width * 0.012)
+                            wrapMode: Text.WordWrap
+                            horizontalAlignment: Text.AlignHCenter
+                            anchors.horizontalCenter: parent.horizontalCenter
+                            anchors.verticalCenter: parent.verticalCenter
+                        }
+
                     }
                 }
             }
