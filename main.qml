@@ -84,6 +84,7 @@ ApplicationWindow {
         anchors.bottom: parent.bottom
         anchors.left: parent.left
         anchors.top: parent.top
+
         Image {
             anchors.right: parent.right
             anchors.bottom: parent.bottom
@@ -117,7 +118,7 @@ ApplicationWindow {
             id: separator
             width: opacity ? convertDoubleToInt(applicationWindow.width * 0.005) : 0
             opacity: stackView.depth > 2 ? 0 : 1
-            color: "#f9b500"
+            color: "#c8c9c7"
             anchors.right: parent.right
             anchors.bottom: parent.bottom
             anchors.top: parent.top
@@ -142,10 +143,55 @@ ApplicationWindow {
         width: applicationWindow.width
         height: applicationWindow.height/7
 
+        Rectangle{
+            id: stripe1
+            anchors.top: parent.top
+            color: "#f9b500"
+            anchors.left: parent.left
+            width: convertDoubleToInt(applicationWindow.width * 0.2923)
+            height: convertDoubleToInt(applicationWindow.height * 0.008)
+        }
+
+        Rectangle{
+            id: stripe2
+            anchors.top: parent.top
+            color: "#928647"
+            anchors.left: stripe1.right
+            width: convertDoubleToInt(applicationWindow.width * 0.081)
+            height: convertDoubleToInt(applicationWindow.height * 0.008)
+        }
+        Rectangle{
+            id: stripe3
+            anchors.top: parent.top
+            color: "#7bb1db"
+            anchors.left: stripe2.right
+            width: convertDoubleToInt(applicationWindow.width * 0.2367)
+            height: convertDoubleToInt(applicationWindow.height * 0.008)
+        }
+        Rectangle{
+            id: stripe4
+            anchors.top: parent.top
+            color: "#6d9b46"
+            anchors.left: stripe3.right
+            width: convertDoubleToInt(applicationWindow.width * 0.1397)
+            height: convertDoubleToInt(applicationWindow.height * 0.008)
+        }
+        Rectangle{
+            id: stripe5
+            anchors.top: parent.top
+            color: "#c9d200"
+            anchors.left: stripe4.right
+            anchors.right: parent.right
+            height: convertDoubleToInt(applicationWindow.height * 0.008)
+        }
+
         Rectangle {
             id: toolBarBack
             color: "white"
-            anchors.fill: parent
+            anchors.left: parent.left
+            anchors.right: parent.right
+            anchors.top: stripe1.bottom
+            anchors.bottom: parent.bottom
 
             Rectangle {
                 id: backButton
@@ -171,6 +217,7 @@ ApplicationWindow {
                     onClicked: stackView.pop()
                 }
             }
+
             Text {
                 font.pointSize: convertDoubleToInt(applicationWindow.width * 0.035)
                 Behavior on x { NumberAnimation{ easing.type: Easing.OutCubic} }
@@ -182,44 +229,12 @@ ApplicationWindow {
             }
 
             Rectangle{
-                id: stripe1
+                id: stripe6
                 anchors.bottom: parent.bottom
-                color: "#f9b500"
+                color: "#c8c9c7"
                 anchors.left: parent.left
-                width: convertDoubleToInt(applicationWindow.width * 0.2923)
-                height: convertDoubleToInt(applicationWindow.height * 0.008)
-            }
-
-            Rectangle{
-                id: stripe2
-                anchors.bottom: parent.bottom
-                color: "#928647"
-                anchors.left: stripe1.right
-                width: convertDoubleToInt(applicationWindow.width * 0.081)
-                height: convertDoubleToInt(applicationWindow.height * 0.008)
-            }
-            Rectangle{
-                id: stripe3
-                anchors.bottom: parent.bottom
-                color: "#7bb1db"
-                anchors.left: stripe2.right
-                width: convertDoubleToInt(applicationWindow.width * 0.2367)
-                height: convertDoubleToInt(applicationWindow.height * 0.008)
-            }
-            Rectangle{
-                id: stripe4
-                anchors.bottom: parent.bottom
-                color: "#6d9b46"
-                anchors.left: stripe3.right
-                width: convertDoubleToInt(applicationWindow.width * 0.1397)
-                height: convertDoubleToInt(applicationWindow.height * 0.008)
-            }
-            Rectangle{
-                id: stripe5
-                anchors.bottom: parent.bottom
-                color: "#c9d200"
-                anchors.left: stripe4.right
                 anchors.right: parent.right
+                width: convertDoubleToInt(applicationWindow.width * 0.2923)
                 height: convertDoubleToInt(applicationWindow.height * 0.008)
             }
         }
