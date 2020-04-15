@@ -52,6 +52,7 @@
 
 #include <QtGui/QGuiApplication>
 #include <QtQml/QQmlApplicationEngine>
+#include <QtGlobal>
 #include <QFile>
 #include <QScreen>
 #include <QJsonParseError>
@@ -63,6 +64,7 @@
 #include <demo.h>
 #include <QFontDatabase>
 #include <QFont>
+#include <QDir>
 #include "mainwindow.h"
 
 void loadFonts(){
@@ -71,11 +73,45 @@ void loadFonts(){
     QFontDatabase::addApplicationFont(QStringLiteral(":/fonts/AvenirLTStd-Roman.otf"));
 }
 
+void myMessageOutput(QtMsgType type, const QMessageLogContext &context, const QString &msg)
+{
+    QByteArray localMsg = msg.toLocal8Bit();
+    const char *file = context.file ? context.file : "";
+    const char *function = context.function ? context.function : "";
+    switch (type) {
+    case QtDebugMsg:
+        fprintf(stderr, "Debug: %s (%s:%u, %s)\n", localMsg.constData(), file, context.line, function);
+        break;
+    case QtInfoMsg:
+        fprintf(stderr, "Info: %s (%s:%u, %s)\n", localMsg.constData(), file, context.line, function);
+        break;
+    case QtWarningMsg:
+        fprintf(stderr, "Warning: %s (%s:%u, %s)\n", localMsg.constData(), file, context.line, function);
+        break;
+    case QtCriticalMsg:
+        fprintf(stderr, "Critical: %s (%s:%u, %s)\n", localMsg.constData(), file, context.line, function);
+        break;
+    case QtFatalMsg:
+        fprintf(stderr, "Fatal: %s (%s:%u, %s)\n", localMsg.constData(), file, context.line, function);
+        abort();
+    }
+    QFile outFile(QDir::homePath() + "/.nxp-demo-experience/log");
+    outFile.open(QIODevice::WriteOnly | QIODevice::Append);
+    QTextStream ts(&outFile);
+    ts << localMsg << endl;
+}
+
 int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
+    qInstallMessageHandler(myMessageOutput);
     qmlRegisterType<Mainwindow>("Mainwindow", 1, 0, "Mainwindow");
     loadFonts();
+
+    //Remove log file
+    QFile outFile(QDir::homePath() + "/.nxp-demo-experience/log");
+    outFile.remove();
+
     QQmlApplicationEngine engine(QUrl("qrc:/main.qml"));
 
     if (engine.rootObjects().isEmpty())
