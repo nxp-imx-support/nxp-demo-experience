@@ -105,6 +105,9 @@ int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
     qInstallMessageHandler(myMessageOutput);
+
+    QCoreApplication::setApplicationName(QString("NXP Demo Experience"));
+
     qmlRegisterType<Mainwindow>("Mainwindow", 1, 0, "Mainwindow");
     loadFonts();
 
