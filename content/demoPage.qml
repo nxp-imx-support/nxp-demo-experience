@@ -128,7 +128,7 @@ Item {
                             objectName: "demoImage"
                             anchors.horizontalCenter: parent.horizontalCenter
                             anchors.verticalCenter: parent.verticalCenter
-                            width: parent.width * 0.8
+                            width: parent.width * 0.5
                             source: icon ? "file:" + icon : "file:" + homeDir + "/.nxp-demo-experience/icon/default-icon.svg"
                             visible: false
                             fillMode: Image.PreserveAspectFit
