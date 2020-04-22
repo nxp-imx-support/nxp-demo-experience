@@ -8,7 +8,7 @@
 
 This section describes all the demonstration available at the {NAME}.
 
-=== V1.0
+=== V2.0
 
 .Supported Demo List
 [width="100%",cols="15,15,15,25,30",options="header"]

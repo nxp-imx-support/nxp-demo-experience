@@ -5,46 +5,77 @@
 ////
 
 [[how_to_build]]
-== How to build NXP Demo Experience
+== How to build the {NAME} application
 
-To build using Yocto:
-
-1 - Follow the its instructions in the warrior branch:
-
+. Follow the next instructins to start with `{YOCTO_RELEASE}` releases:
++
+_Host GNU/Linux PC Terminal_
++
+[source,bash]
 ----
-https://source.codeaurora.org/external/imx/meta-fsl-bsp-release/tree/imx/README?h=warrior-4.19.35-1.1.0_ga
+$ mkdir ~/bin
+$ curl https://storage.googleapis.com/git-repo-download/repo > ~/bin/repo
+$ chmod a+x ~/bin/repo
+$ PATH=${PATH}:~/bin
 ----
-
-2 - Setup
-
++
+[CAUTION%autofit]
+====
+The above content is only required once.
+====
++
+. Setup the `{YOCTO_RELEASE}` branch from `{LINUX_LATEST}` release:
++
+_Host GNU/Linux PC Terminal_
++
+[source,bash]
+----
+repo init -u git://source.codeaurora.org/external/imx/imx-manifest.git -b imx-linux-warrior -m imx-4.19.35-1.1.0.xml
+repo sync
+----
++
+. Download the `{META}` layer:
++
+_Host GNU/Linux PC Terminal_
++
+[source,bash]
+----
+$ git clone https://source.codeaurora.org/external/imxsupport/meta-nxp-demo-experience sources/meta-nxp-demo-experience -b v2.0
+----
++
+. Create the build project folder:
++
+_Host GNU/Linux PC Terminal_
++
+[source,bash]
 ----
 DISTRO=fsl-imx-xwayland MACHINE=imx7ulpevk source fsl-setup-release.sh -b build-xwayland
 ----
-
-3 - Add on your conf/local.conf
-
++
+. Update the `bblayers.conf` file by adding the `{META}` layer on it:
++
+_Host GNU/Linux PC Terminal_
++
+[source,bash]
+----
+$ echo "BBLAYERS += \" \${BSPDIR}/sources/meta-nxp-demo-experience \"" >> conf/bblayers.conf
+----
++
+. Add the following content to the `conf/local.conf` as well:
++
+_Host GNU/Linux PC Terminal_
++
+[source,bash]
 ----
 IMAGE_INSTALL_append += "qtquickcontrols-qmlplugins "
 CORE_IMAGE_EXTRA_INSTALL += "nxp-demo-experience"
 ----
-
-4 - Download the meta-imx-demos:
-
-On source folder, download the meta-imx-demos meta layer:
-
-----
-cd ../sources
-git clone -b v2.0 https://source.codeaurora.org/external/imxsupport/meta-nxp-demo-experience
-----
-
-5 - Add the new meta layer to conf/bblayers.conf adding the following line:
-
-----
-BBLAYERS += "${BSPDIR}/sources/meta-nxp-demo-experience"
-----
-
-6 - Back to build folder, run bitbake:
-
++
+. Build the image as follows:
++
+_Host GNU/Linux PC Terminal_
++
+[source,bash]
 ----
 bitbake imx-image-full
 ----
