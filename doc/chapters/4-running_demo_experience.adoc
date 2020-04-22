@@ -1,7 +1,14 @@
 ////
   Copyright NXP 2020
   Author: Marco Franchi <marco.franchi@nxp.com>
+  Author: Pedro Jardim <pedro.jardim@nxp.com>
 ////
 
 [[running_demo_experience]]
 == Running NXP Demo Experience
+
+This section describes the process to run the demo experience program and to deploy one example demo.
+
+=== Opening the program
+=== Choosing a demo
+=== Deploying a demo
