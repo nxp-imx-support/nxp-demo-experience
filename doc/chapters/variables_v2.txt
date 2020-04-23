@@ -20,7 +20,9 @@
 :LINUX_LATEST: L4.19.35_1.1.0
 :LINUX_LATEST_LINK: https://www.nxp.com/support/developer-resources/software-development-tools/i.mx-developer-resources/i.mx-software-and-development-tool:IMX_SW
 :YOCTO_RELEASE: Warrior
-:DEMO_EXPERIENCE: https://bitbucket.sw.nxp.com/projects/IMXS/repos/nxp-demo-experience/browse
+:META: meta-nxp-demo-experience
+:DEMO_EXPERIENCE_LINK: https://source.codeaurora.org/external/imxsupport/nxp-demo-experience/about/?h=v2.0
+:DEMO_LIST_LINK: https://source.codeaurora.org/external/imxsupport/nxp-demo-experience-demos-list/about/?h=v2.0
 :BLOOM: https://source.codeaurora.org/external/imx/cafatgithub/gtec-demo-framework/tree/DemoApps/GLES2/Bloom?h=5.3.0
 :BLUR: https://source.codeaurora.org/external/imx/cafatgithub/gtec-demo-framework/tree/DemoApps/GLES2/Blur?h=5.3.0
 :DFGRAPHICSBASIC2D: https://source.codeaurora.org/external/imx/cafatgithub/gtec-demo-framework/tree/DemoApps/GLES2/DFGraphicsBasic2D?h=5.3.0
