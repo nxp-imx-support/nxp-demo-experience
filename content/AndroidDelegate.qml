@@ -59,11 +59,11 @@ Item {
     signal clicked
 
 
-
     Rectangle {
+        id: menuItemBox
         anchors.fill: parent
         color:"#f6f7f8"
-        visible: mouse.pressed
+        visible: false
     }
 
     Text {
@@ -90,6 +90,12 @@ Item {
         id: mouse
         anchors.fill: parent
         onClicked: root.clicked()
-
+        hoverEnabled: true
+        onEntered: {
+            menuItemBox.visible = true;
+        }
+        onExited: {
+            menuItemBox.visible = false;
+        }
     }
 }
