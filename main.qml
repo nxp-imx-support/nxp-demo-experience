@@ -199,24 +199,33 @@ ApplicationWindow {
                 width: opacity ? convertDoubleToInt(applicationWindow.width * 0.047) : 0
                 anchors.left: parent.left
                 anchors.leftMargin: 20
+                anchors.top: parent.top
+                anchors.bottom: stripe6.top
                 opacity: stackView.depth > 1 ? 1 : 0
                 anchors.verticalCenter: parent.verticalCenter
                 antialiasing: true
-                height: convertDoubleToInt(applicationWindow.height * 0.083)
                 radius: 4
-                color: backmouse.pressed ? "#222" : "transparent"
                 Behavior on opacity { NumberAnimation{} }
                 Image {
                     anchors.verticalCenter: parent.verticalCenter
+                    anchors.horizontalCenter: parent.horizontalCenter
                     source: "images/navigation_previous_item.svg"
                     width: convertDoubleToInt(applicationWindow.width * 0.030)
                     height: convertDoubleToInt(applicationWindow.height * 0.093)
+
                 }
                 MouseArea {
                     id: backmouse
                     anchors.fill: parent
                     anchors.margins: -10
                     onClicked: stackView.pop()
+                    hoverEnabled: true
+                    onEntered: {
+                        backButton.color = "#f6f7f8";
+                    }
+                    onExited: {
+                        backButton.color = "#FFFFFF";
+                    }
                 }
             }
 
