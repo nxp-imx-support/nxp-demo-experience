@@ -16,5 +16,7 @@
         <file>fonts/AvenirLTStd-Book.otf</file>
         <file>fonts/AvenirLTStd-Medium.otf</file>
         <file>fonts/AvenirLTStd-Roman.otf</file>
+        <file>images/navigation_next_item.svg</file>
+        <file>images/navigation_previous_item.svg</file>
     </qresource>
 </RCC>

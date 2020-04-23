@@ -114,7 +114,7 @@ Item {
                     height:  convertDoubleToInt(demoPage.height * 0.4)
                     anchors.horizontalCenter: parent.horizontalCenter
                     antialiasing: true
-                    color: buttonMouse.pressed ? "#003da5" : "transparent"
+                    color: buttonMouse.pressed ? "#f6f7f8" : "transparent"
                     opacity: buttonMouse.pressed ? 0.4 : 1
                     Rectangle{
                         id: imageRect2

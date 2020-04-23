@@ -208,7 +208,9 @@ ApplicationWindow {
                 Behavior on opacity { NumberAnimation{} }
                 Image {
                     anchors.verticalCenter: parent.verticalCenter
-                    source: "images/navigation_previous_item.png"
+                    source: "images/navigation_previous_item.svg"
+                    width: convertDoubleToInt(applicationWindow.width * 0.030)
+                    height: convertDoubleToInt(applicationWindow.height * 0.093)
                 }
                 MouseArea {
                     id: backmouse

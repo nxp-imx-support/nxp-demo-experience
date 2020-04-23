@@ -52,7 +52,7 @@ import QtQuick 2.2
 
 Item {
     id: root
-    width: applicationWindow.width * 0.422
+    width: applicationWindow.width * 0.415
     height: applicationWindow.height * 0.097
 
     property alias text: textitem.text
@@ -62,7 +62,7 @@ Item {
 
     Rectangle {
         anchors.fill: parent
-        color: "#FFFFFF"
+        color:"#f6f7f8"
         visible: mouse.pressed
     }
 
@@ -86,16 +86,6 @@ Item {
         height: 1
         color: "#FFFFFF"
     }
-
-    Image {
-        anchors.right: parent.right
-        anchors.rightMargin: 10
-        anchors.verticalCenter: parent.verticalCenter
-        source: "../images/navigation_next_item.png"
-        fillMode: Image.PreserveAspectFit
-        width: convertDoubleToInt(applicationWindow.width * 0.03)
-    }
-
     MouseArea {
         id: mouse
         anchors.fill: parent
