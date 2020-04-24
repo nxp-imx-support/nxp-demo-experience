@@ -10,5 +10,44 @@
 This section describes the process to run the demo experience program and to deploy one example demo.
 
 === Opening the program
+
+In order to open the Demo Experience program, click on the image on the upper left section of weston as shown in the image bellow:
+
+//TODO:imagem abrindo weston
+.Opening the program on Weston
+image::chapters/media/linux.png[alt=.Opening the program on Weston, pdfwidth=80%, title-align=center, align=center]
+
 === Choosing a demo
+
+After opening the program, first, select a category of the desired demo as shown in the images bellow:
+
+//TODO:imagem categoria
+.Selecting the demo category
+image::userguide2.png[alt=.Selecting the demo category, pdfwidth=80%, title-align=center, align=center]
+
+//TODO:imagem subcategoria
+In some cases, after choosing the category, it's needed to also choose the subcategory as shown in the image bellow:
+.Selecting the demo subcategory
+image::userguide3.png[alt=.Selecting the demo subcategory, pdfwidth=80%, title-align=center, align=center]
+
 === Deploying a demo
+
+After selecting the subcategory, choose the demo provided in the list, hover the mouse to the right side of the program and deploy the selected demo as shown bellow:
+
+.Selecting the demo 
+image::userguide4.png[alt=.Selecting the demo, pdfwidth=80%, title-align=center, align=center]
+
+.Deploying the demo
+image::userguide5.png[alt=.Deploying the demo, pdfwidth=80%, title-align=center, align=center]
+
+//TODO:imagem rodando demo
+.Deploying the demo
+image::linux.png[alt=.Deploying the demo, pdfwidth=80%, title-align=center, align=center]
+
+//TODO:verificar se a palavra ta certa
+In order to stop the demo from running, in the same button where it was deployed, now click the shown text "TERMINATE"
+
+[TIP%autofit]
+====
+In some cases, the screen of the demo launched is bigger than the demo experience screen. In this case, try to move the demo launched in order to be able to click the button to terminate the program 
+====
