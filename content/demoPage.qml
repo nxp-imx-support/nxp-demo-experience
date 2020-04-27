@@ -51,7 +51,7 @@
 ****************************************************************************/
 
 import QtQuick 2.2
-import QtQuick.Controls 1.2
+import QtQuick.Controls 2.14
 import QtQuick.Controls.Styles 1.1
 import Mainwindow 1.0
 import QtGraphicalEffects 1.12
@@ -259,25 +259,18 @@ Item {
                 anchors.centerIn: parent
                 width:  convertDoubleToInt(0.125 * demoPage.width)
                 height:  convertDoubleToInt(0.0645 * demoPage.height)
-                text: "Launch"
+                text: "<font color='#ffffff'>" + "Launch" + "</font>"
                 visible: false
                 onClicked: {
                     mainwindow.callDemo(execText);
                 }
-                style: ButtonStyle {
-                    label: Text {
-                        horizontalAlignment: Text.AlignHCenter
-                        verticalAlignment: Text.AlignVCenter
-                        font.pointSize: convertDoubleToInt(applicationWindow.width * 0.01)
-                        wrapMode: Text.WordWrap
-                        text: control.text
-                        color: "#003da5"
-                        font.bold: true
-                        font.family: "Avenir LT std"
-                    }
-                }
+                background: Rectangle {
+                            radius: 10
+                            color: "#c8c9c7"
+                        }
+                font.bold: true
+                font.family: "Avenir LT std"
             }
         }
-
     }
 }
