@@ -265,8 +265,8 @@ Item {
                     mainwindow.callDemo(execText);
                 }
                 background: Rectangle {
-                            radius: 10
-                            color: "#c8c9c7"
+                            radius: 3
+                            color: "#333F48"
                         }
                 font.bold: true
                 font.family: "Avenir LT std"
