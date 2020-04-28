@@ -17,8 +17,5 @@ include::chapters/2-demo_list.adoc[]
 include::chapters/3-how_to_build.adoc[]
 include::chapters/4-running_demo_experience.adoc[]
 include::chapters/5-how_to_add_new_demo.adoc[]
-
-== Appendix:
-
 include::chapters/6-qt5_setup.adoc[]
-include::chapters/7-source_code_overview.adoc[]
+//include::chapters/7-source_code_overview.adoc[]
