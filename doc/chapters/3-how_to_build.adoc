@@ -40,7 +40,7 @@ _Host GNU/Linux PC Terminal_
 +
 [source,bash]
 ----
-$ git clone https://source.codeaurora.org/external/imxsupport/meta-nxp-demo-experience sources/meta-nxp-demo-experience -b v2.0
+$ git clone https://source.codeaurora.org/external/imxsupport/meta-nxp-demo-experience sources/meta-nxp-demo-experience -b warrior-4.19.35-1.1.0
 ----
 +
 . Create the build project folder:
@@ -67,7 +67,6 @@ _Host GNU/Linux PC Terminal_
 +
 [source,bash]
 ----
-IMAGE_INSTALL_append += "qtquickcontrols-qmlplugins "
 CORE_IMAGE_EXTRA_INSTALL += "nxp-demo-experience"
 ----
 +
