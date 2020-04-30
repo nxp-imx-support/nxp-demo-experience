@@ -265,13 +265,17 @@ Item {
                     mainwindow.callDemo(execText);
                 }
                 style: ButtonStyle {
-                    label: Text {
+                    background: Rectangle {
+                                    color: "#333f48"
+                                    radius: 3
+                                }
+                     label: Text {
                         horizontalAlignment: Text.AlignHCenter
                         verticalAlignment: Text.AlignVCenter
                         font.pointSize: convertDoubleToInt(applicationWindow.width * 0.01)
                         wrapMode: Text.WordWrap
                         text: control.text
-                        color: "#003da5"
+                        color: "#FFFFFF"
                         font.bold: true
                         font.family: "Avenir LT std"
                     }
