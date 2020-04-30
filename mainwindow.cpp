@@ -43,7 +43,7 @@ void Mainwindow::callDemo(QString command)
 
     if(launchDemo_process->state() == launchDemo_process->NotRunning) {
         launchDemo_process->start("setsid " + command);
-        launchButton->setProperty("text", "Finish");
+        launchButton->setProperty("text", "FINISH");
     } else {
         QString temp = "kill -TERM -" + QString::number(launchDemo_process->pid());
         system(temp.toStdString().c_str());
@@ -57,7 +57,7 @@ void Mainwindow::startDemo()
 
 void Mainwindow::finishDemo(int exitCode, QProcess::ExitStatus exitStatus)
 {
-    launchButton->setProperty("text", "Launch");
+    launchButton->setProperty("text", "LAUNCH");
 }
 
 void Mainwindow::goToMainmenu()
