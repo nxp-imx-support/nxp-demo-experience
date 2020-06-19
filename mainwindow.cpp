@@ -45,7 +45,7 @@ void Mainwindow::callDemo(QString command)
         launchDemo_process->start("setsid " + command);
         launchButton->setProperty("text", "Finish");
     } else {
-        QString temp = "kill -TERM -" + QString::number(launchDemo_process->pid());
+        QString temp = "kill -INT -" + QString::number(launchDemo_process->pid());
         system(temp.toStdString().c_str());
     }
 }
