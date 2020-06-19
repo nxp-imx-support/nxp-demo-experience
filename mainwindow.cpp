@@ -101,7 +101,7 @@ void Mainwindow::goToDemo(QString submenuItem)
         }
     }
 
-    engineMain->rootContext()->setContextProperty("homeDir", QDir::homePath());
+    engineMain->rootContext()->setContextProperty("homeDir", "/home/root/");
     engineMain->rootContext()->setContextProperty("demoModel", QVariant::fromValue(currentModelDemo));
 }
 
@@ -136,7 +136,7 @@ void Mainwindow::loadJsonData()
         board = "imx7ulpevk";
 
     qDebug() << board;
-    jsonFile.setFileName(QDir::homePath() + "/.nxp-demo-experience/demos.json");
+    jsonFile.setFileName("/home/root/.nxp-demo-experience/demos.json");
     jsonFile.open(QIODevice::ReadOnly | QIODevice::Text);
     QJsonDocument jsonDocument = QJsonDocument::fromJson(jsonFile.readAll(),&jsonError1);
 
@@ -170,7 +170,7 @@ void Mainwindow::loadJsonData()
                     secondLevelMenu.append(secondLevel);
 
                     // Check if icon file exists, if not leave it blank to show default icon
-                    iconFileName = QDir::homePath() + "/.nxp-demo-experience/icon/" + ja2[k].toObject()["icon"].toString();
+                    iconFileName = "/home/root/.nxp-demo-experience/icon/" + ja2[k].toObject()["icon"].toString();
                     iconFile.setFileName(iconFileName);
                     qDebug() << iconFileName;
 
