@@ -69,7 +69,7 @@ Item {
     Text {
         id: textitem
         color: "Black"
-        font.family: "Avenir LT std"
+        font.family: "Nunito"
         font.pointSize: convertDoubleToInt(applicationWindow.width * 0.025)
         text: modelData
         anchors.verticalCenter: parent.verticalCenter

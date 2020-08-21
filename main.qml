@@ -236,7 +236,7 @@ ApplicationWindow {
                 anchors.verticalCenter: parent.verticalCenter
                 color: "Black"
                 text: "NXP Demo Experience"
-                font.family: "Avenir LT std"
+                font.family: "Nunito"
             }
 
             Rectangle{

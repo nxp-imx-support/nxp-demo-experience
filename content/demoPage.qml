@@ -165,7 +165,7 @@ Item {
                         Text {
                             text: name
                             objectName: "demoText"
-                            font.family: "Avenir LT std"
+                            font.family: "Nunito"
                             color: "#003da5"
                             font.bold: true
                             font.pointSize: convertDoubleToInt(applicationWindow.width * 0.012)
@@ -205,7 +205,7 @@ Item {
                 anchors.bottom: parent.bottom
                 color: "#000000"
                 text: qsTr("Select a demo ...")
-                font.family: "Avenir LT std"
+                font.family: "Nunito"
                 font.bold: true
                 font.pointSize: convertDoubleToInt(applicationWindow.width * 0.017)
                 wrapMode: Text.WordWrap
@@ -226,7 +226,7 @@ Item {
                 width:  convertDoubleToInt(0.36 * demoPage.width)
                 color: "#000000"
                 text: qsTr("")
-                font.family: "Avenir LT std"
+                font.family: "Nunito"
                 wrapMode: Text.WordWrap
                 font.bold: false
                 horizontalAlignment: Text.AlignLeft
@@ -277,7 +277,7 @@ Item {
                         text: control.text
                         color: "#FFFFFF"
                         font.bold: true
-                        font.family: "Avenir LT std"
+                        font.family: "Nunito"
                     }
                 }
             }

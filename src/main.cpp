@@ -62,16 +62,8 @@
 #include <QVariant>
 #include <QQmlContext>
 #include <demo.h>
-#include <QFontDatabase>
-#include <QFont>
 #include <QDir>
 #include "mainwindow.h"
-
-void loadFonts(){
-    QFontDatabase::addApplicationFont(QStringLiteral(":/fonts/AvenirLTStd-Book.otf"));
-    QFontDatabase::addApplicationFont(QStringLiteral(":/fonts/AvenirLTStd-Medium.otf"));
-    QFontDatabase::addApplicationFont(QStringLiteral(":/fonts/AvenirLTStd-Roman.otf"));
-}
 
 void myMessageOutput(QtMsgType type, const QMessageLogContext &context, const QString &msg)
 {
@@ -109,7 +101,6 @@ int main(int argc, char *argv[])
     QCoreApplication::setApplicationName(QString("NXP Demo Experience"));
 
     qmlRegisterType<Mainwindow>("Mainwindow", 1, 0, "Mainwindow");
-    loadFonts();
 
     //Remove log file
     QFile outFile(QDir::homePath() + "/.nxp-demo-experience/log");
