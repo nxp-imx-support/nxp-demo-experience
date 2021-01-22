@@ -110,7 +110,7 @@ title_page:
     font_size: $base_font_size_large
     font_color: 181818
   revision:
-    margin_top: $base_font_size * 1.25  
+    margin_top: $base_font_size * 1.25
 ################################################################################
 block:
   margin_top: 0
@@ -257,10 +257,10 @@ header:
   line-height: 1
   recto:
     center:
-      content: '© 2019 NXP Semiconductor Rev {revnumber} {docdate}'
+      content: '© 2021 NXP Semiconductor Rev {revnumber} {docdate}'
   verso:
     center:
-      content: '© 2019 NXP Semiconductor Rev {revnumber} {docdate}'
+      content: '© 2021 NXP Semiconductor Rev {revnumber} {docdate}'
 #################################################################################
 footer:
   font_color: 787877
@@ -274,9 +274,8 @@ footer:
   vertical_align: top
   recto:
     right:
-      content: '{chapter-title} © 2019 NXP Semiconductor, Inc. All rights reserved | {page-number}'
+      content: '{chapter-title} © 2021 NXP Semiconductor, Inc. All rights reserved | {page-number}'
   verso:
     right:
-      content: '{chapter-title} © 2019 NXP Semiconductor, Inc. All rights reserved | {page-number}'
+      content: '{chapter-title} © 2021 NXP Semiconductor, Inc. All rights reserved | {page-number}'
 #################################################################################
-

@@ -1,0 +1,48 @@
+////
+  Copyright NXP 2021
+  Author: Michael Pontikes <michael.pontikes_1@nxp.com>
+////
+
+[[setting_up_cameras]]
+== Setting up cameras on i.MX 8M Plus
+
+To use demos that require cameras, you must first set up the cameras. To do this, follow the instructions below. You only need to do this once.
+
+*Required Materials*
+
+* A host machine and board
+* A microUSB cord that can connect to your host machine
+* A terminal that can communicate over a COM port, such as https://ttssh2.osdn.jp/index.html.en[Tera Term]
+* https://ftdichip.com/drivers/d2xx-drivers/[COM Drivers] (https://ftdichip.com/drivers/d2xx-drivers/)
+
+=== Setting up the host computer
+1. Download and install the COM Drivers and terminal (if not installed already)
+2. In the terminal, set the communication speed to 155200
+3. Open the terminal and have it communicate with the COM port
+
+=== Setting up the board
+[IMPORTANT]
+Do not plug-in or remove the Mini-SAS devices while the board is powered on! This may cause damage to the board and devices.
+
+1. Turn off the board
+2. Attach the MicroUSB cord between the DEBUG port on the board and your host machine
+3. Attach the cameras to the board
+a. If using one camera, connect it to the first CSI MIPI port.
+b. If using both the OV5640 and Basler cameras, connect the Basler camera to the first CSI port and OV5640 camera to the second CSI port
+
+[WARNING]
+The Basler camera requires assembly. Follow the directions included in the box to assemble the camera. When connecting the MIPI strip, make sure that the blue side of the connector is facing AWAY from the device.
+
+=== Setting up the cameras
+1. After turning on the board, quickly hold enter on the host machine’s COM terminal until you get into the U-Boot command line.
+2. Type “edit fdt_file” into the COM terminal and hit enter
+3. Edit the line of text based on your camera setup, and then hit enter
+a. If you are using only the OV5640 camera, then change it to “imx8mp-evk.dtb”
+b. If you are using only the Basler camera, then then change it to “imx8mp-evk-basler.dtb”
+c. If you are using both the OV5640 and the Basler camera, then change it to “imx8mp-evk-basler-ov5640.dtb”
+4. Type “save” and hit enter. Then, type “boot” and hit enter
+
+[NOTE]
+If the terminal displays “imx8mpevk login” during step 1, restart the board and try again. You may not be pressing enter early enough.
+
+<<<

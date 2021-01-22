@@ -1,6 +1,6 @@
 = NXP Demo Experience Documentation
 :title-logo-image: image:../../themes/media/nxplogo.png[pdfwidth=40%, align=right]
-© 2019-2020 NXP Semiconductors, Inc. All rights reserved.
+© 2019-2021 NXP Semiconductors, Inc. All rights reserved.
 REV 2.0, March, 2020
 :doctype: book
 :reproducible:
@@ -18,4 +18,5 @@ include::chapters/3-how_to_build.adoc[]
 include::chapters/4-running_demo_experience.adoc[]
 include::chapters/5-how_to_add_new_demo.adoc[]
 include::chapters/6-qt5_setup.adoc[]
+include::chapters/8_setting_up_cameras.adoc[]
 //include::chapters/7-source_code_overview.adoc[]
