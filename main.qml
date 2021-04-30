@@ -16,12 +16,12 @@ import "gui"
 ApplicationWindow {
     id: appWindow
     visible: true
-    width: 1200//swidth
-    height: 900//sheight
-    //maximumWidth: swidth
-    //maximumHeight: sheight
-    //minimumWidth: swidth
-    //minimumHeight: sheight
+    width: swidth
+    height: sheight
+    maximumWidth: swidth
+    maximumHeight: sheight
+    minimumWidth: swidth
+    minimumHeight: sheight
 
     title: "NXP Demo Experience"
 
