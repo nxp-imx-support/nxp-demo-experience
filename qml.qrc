@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/">
+        <file>gui/ColorBar.qml</file>
+        <file>gui/DefaultButton.qml</file>
+        <file>gui/DemoDetails.qml</file>
+        <file>gui/DemoGrid.qml</file>
+        <file>gui/DemoPage.qml</file>
+        <file>gui/LeftMenu.qml</file>
+        <file>gui/MainMenu.qml</file>
+        <file>main.qml</file>
+        <file>assets/bars-solid.svg</file>
+        <file>assets/chevron-left-solid.svg</file>
+        <file>assets/cube-solid.svg</file>
+        <file>assets/nxp.png</file>
+        <file>assets/plus-solid.svg</file>
+    </qresource>
+</RCC>
