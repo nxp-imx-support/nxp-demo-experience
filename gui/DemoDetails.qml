@@ -49,7 +49,7 @@ import QtQuick.Controls 2.12
                 leftPadding: convertDoubleToInt(appWindow.width * 0.01)
                 topPadding: convertDoubleToInt(appWindow.height * 0.01)
             }
-            Label{
+            Text{
                 id:titleinfo
                 text: demoqmlmodule.listDemos[currentSel][0]
                 color: "Black"
@@ -61,6 +61,8 @@ import QtQuick.Controls 2.12
                 leftPadding: convertDoubleToInt(appWindow.width * 0.01)
                 topPadding: convertDoubleToInt(appWindow.height * 0.0139)
                 bottomPadding: convertDoubleToInt(appWindow.height * 0.0278)
+                width: convertDoubleToInt(appWindow.width * 0.32)
+                wrapMode: Text.WordWrap
             }
             Text{
                 id:desinfo

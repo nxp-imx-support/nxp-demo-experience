@@ -1,3 +1,11 @@
+/****************************************************************************
+**
+** Copyright (C) 2021 NXP
+**
+** SPDX-License-Identifier: BSD-2-Clause
+**
+****************************************************************************/
+
 #ifndef DEMOPAGE_H
 #define DEMOPAGE_H
 
@@ -37,6 +45,7 @@ public:
 
 private:
     DemoModel *modelDemo = new DemoModel;
+    QString DEMOPATH = "/home/root/.nxp-demo-experience";
 
 };
 

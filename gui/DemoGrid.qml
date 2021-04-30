@@ -69,7 +69,6 @@ Rectangle{
                             colorOverlay.color = "#7bb1db";
                             myIcon.width = convertDoubleToInt(appWindow.width * 0.09);
                         }
-
                     }
                 }
                 ColorOverlay{

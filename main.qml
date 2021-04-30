@@ -1,6 +1,6 @@
 /****************************************************************************
 **
-** Copyright 2020 NXP
+** Copyright 2021 NXP
 **
 ** SPDX-License-Identifier: BSD-2-Clause
 **
@@ -16,8 +16,15 @@ import "gui"
 ApplicationWindow {
     id: appWindow
     visible: true
-    width: 1280
-    height: 720
+    width: 1200//swidth
+    height: 900//sheight
+    //maximumWidth: swidth
+    //maximumHeight: sheight
+    //minimumWidth: swidth
+    //minimumHeight: sheight
+
+    title: "NXP Demo Experience"
+
 
     function convertDoubleToInt (x) {
         return x < 0 ? Math.ceil(x) : Math.floor(x);

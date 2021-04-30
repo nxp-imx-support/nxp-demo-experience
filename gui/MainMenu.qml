@@ -3,7 +3,6 @@ import QtQuick.Layouts 1.12
 import QtQuick.Controls 2.12
 
 ToolBar {
-    property int textMargin: 5
     id: toolBarBack
     anchors.left: parent.left
     anchors.right: parent.right
@@ -34,20 +33,28 @@ ToolBar {
             background: Rectangle {
                 color: "white"
             }
+            Rectangle{
+                id:spacer
+                visible: true
+                width: 20
+
+            }
+
             Image {
                 id: logo
                 anchors.top: parent.top
-                anchors.left: parent.left
+                anchors.left: spacer.right
                 anchors.right: textItem1.left
                 anchors.verticalCenter: parent.verticalCenter
                 source: "../assets/nxp.png"
                 width: convertDoubleToInt(appWindow.width * 0.15)
                 height: convertDoubleToInt(appWindow.height * 0.18)
                 fillMode: Image.PreserveAspectFit
+
             }
             Text {
                 id: textItem1
-                font.pointSize: convertDoubleToInt(appWindow.width * 0.032)
+                font.pointSize: convertDoubleToInt(appWindow.height * 0.040)
                 font.bold: true
                 anchors.left: logo.right
                 anchors.right: parent.right
@@ -55,6 +62,7 @@ ToolBar {
                 color: "#20272D"
                 text: "Demo Experience"
                 font.family: "Nunito"
+                padding: convertDoubleToInt(appWindow.height * 0.020)
             }
         }
     }

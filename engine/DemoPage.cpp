@@ -1,3 +1,11 @@
+/****************************************************************************
+**
+** Copyright (C) 2021 NXP
+**
+** SPDX-License-Identifier: BSD-2-Clause
+**
+****************************************************************************/
+
 #include <QFile>
 #include <QTextStream>
 #include <QProcess>
@@ -110,7 +118,7 @@ void DemoPage::loadJsonData()
     // If Demo Launcher is not running on i.MX board, set it to 7ulp
     if (!board.contains("imx"))
         board = "imx7ulpevk";
-    jsonFile.setFileName("/home/root/.nxp-demo-experience/demos.json");
+    jsonFile.setFileName(DEMOPATH + "/demos.json");
     jsonFile.open(QIODevice::ReadOnly | QIODevice::Text);
     QJsonDocument jsonDocument = QJsonDocument::fromJson(jsonFile.readAll(),&jsonError1);
 
@@ -144,14 +152,14 @@ void DemoPage::loadJsonData()
                     secondLevelMenu.append(secondLevel);
 
                     // Check if icon file exists, if not leave it blank to show default icon
-                    iconFileName = "/home/root/.nxp-demo-experience/icon/" + ja2[k].toObject()["icon"].toString();
+                    iconFileName = DEMOPATH + "/icon/" + ja2[k].toObject()["icon"].toString();
                     iconFile.setFileName(iconFileName);
 
                     if (!iconFile.exists() || ja2[k].toObject()["icon"].toString().isEmpty())
                         iconFileName = "";
 
                     // Check if screenshot file exists, if not leave it blank
-                    screenshotFileName = "/home/root/.nxp-demo-experience/screenshot/" + ja2[k].toObject()["screenshot"].toString();
+                    screenshotFileName = DEMOPATH + "/screenshot/" + ja2[k].toObject()["screenshot"].toString();
                     screenshotFile.setFileName(screenshotFileName);
 
                     if (!screenshotFile.exists() || ja2[k].toObject()["screenshot"].toString().isEmpty())

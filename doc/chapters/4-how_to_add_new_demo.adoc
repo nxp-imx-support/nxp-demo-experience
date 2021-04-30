@@ -6,6 +6,11 @@
 [[add_new_demo]]
 == How to Add a New Demo
 
+[NOTE%autofit]
+====
+Instructions on how to add demos to the {NAME} and the full demo list can be found at https://source.codeaurora.org/external/imxsupport/nxp-demo-experience-demos-list[the nxp-demo-experience-demos-list repo].
+====
+
 Add the new demo on file `demos.json`.
 
 * name: Name of the demo.

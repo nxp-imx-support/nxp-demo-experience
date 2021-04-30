@@ -113,7 +113,7 @@ Rectangle {
                         Image {
                             id: backIcon
                             anchors.verticalCenter: parent.verticalCenter
-                            source: modelData == "Back" ? "../../icons/chevron-left-solid.svg" : ""
+                            source: modelData == "Back" ? "../assets/chevron-left-solid.svg" : ""
                             width: convertDoubleToInt(appWindow.width * 0.02)
                             fillMode: Image.PreserveAspectFit
                             x: convertDoubleToInt(appWindow.width * 0.01)

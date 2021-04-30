@@ -3,7 +3,7 @@
   Author: Michael Pontikes <michael.pontikes_1@nxp.com>
 ////
 
-[[setting_up_cameras]]
+[appendix]
 == Setting up cameras on i.MX 8M Plus
 
 To use demos that require cameras, you must first set up the cameras. To do this, follow the instructions below. You only need to do this once.

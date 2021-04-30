@@ -1,39 +1,37 @@
 ////
-  Copyright NXP 2019-2020
+  Copyright NXP 2019-2021
   Author: Marco Franchi <marco.franchi@nxp.com>
+  Author: Michael Pontikes <michael.pontikes_1@nxp.com>
 ////
 
-include::variables_v2.txt[]
+include::variables_v3.txt[]
 
 [[introduction]]
 == Introduction
 
 The {DEMO_EXPERIENCE_LINK}[{NAME}] is an interface that enable the user to launch any NXP demonstration
-without command line. With this approach, by using the BSP Yocto support, the user is able 
-to run the available demos using only a mouse connected to the board, or the touch screen support, if the display has it.
+without command line. With this approach, the user is able 
+to run the available demos using only a mouse connected to the board, or the touch screen support if the display has it.
 
-It contains the list of all the {DEMO_LIST_LINK}[supported demos], including Multimedia, GPU, and AI/ML, and how to add new demos on it; the process to build the application and running some examples; and those who want to modify or contribute on it, the appendix contains all the process to setup the `QtCreator` in order to change and deploy the application to the device and all the source code details.
+It contains the process to build the application, how to run some examples, and an appendix that contains all the steps to setup the https://www.qt.io/[QtCreator] in order to develop and deploy the application to the device.
+
+For a list of all demos that are included in the {NAME}, please see the documentation included in that README.md located at {DEMO_LIST_LINK}[the demo list repository].
 
 === Application Resolution
 
-The {name} was designed to support HD resolution (1280x720). However, the {7ULP_LONG} only
+The {NAME} was designed to support HD resolution (1280x720). However, the {7ULP_LONG} only
 supports 640x480 resolution. So, by default, when the user runs the application, it checks the resolution
-and if it is less then HD, the interface opens in 640x480.
-
-=== Supported Devices
-
-* {7ULP_LONG}
-* {QXP_LONG}
-* {MQ_LONG}
+and if it is less then HD, the interface attempts to open a lower resolution of itself.
 
 === Release History
 
-.Release history
+.Documentation Release history
 [width="100%",cols="25,25,50",options="header"]
 |===
-|Version   |Release Data    |Description
-|v2.0	   |Apr 2020		|Warrior support
-|v1.0      |Mai 2019	    |Initial release.
+|Version   |Release Date  |Description
+|v3.0      |May 2021      |Gatesgarth support
+|v2.0	     |Apr 2020		  |Warrior support
+|v1.0      |May 2019	    |Initial release.
 |===
 
 <<<

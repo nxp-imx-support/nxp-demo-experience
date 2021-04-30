@@ -2,6 +2,7 @@
   Copyright NXP 2020
   Author: Rogerio Silva <rogerio.silva@nxp.com>
   Author: Marco Franchi <marco.franchi@nxp.com>
+  Author: Michael Pontikes <michael.pontikes_1@nxp.com
 ////
 
 [appendix]
@@ -12,7 +13,7 @@ https://community.nxp.com/docs/DOC-340527 by Frank Wang and Steve Liu
 
 === Overview
 
-Qt is a cross-platform application framework that is widely used for developing application software that can be run on various software and hardware platforms with little or no change in the underlying codebase, while still being a native application with native capabilities and speed. It is running in TV, Car, HMI, 3D Printer, almost covering all of the embedded areas. This blog introduces how to setup the development environment to build Qt application, deploy to NXP's i.MX8QXP board, and run application on the Linux BSP.
+Qt is a cross-platform application framework that is widely used for developing application software that can be run on various software and hardware platforms with little or no change in the underlying codebase, while still being a native application with native capabilities and speed. It is running in TV, Car, HMI, 3D Printer, almost covering all of the embedded areas. This blog introduces how to setup the development environment to build Qt application, deploy to the board, and run application on the Linux BSP.
 
 *Hardware Requirement*
 
@@ -43,8 +44,8 @@ Online or offline installer for Linux version can be found on: https://www.qt.io
 Grant the executable permission to this binary, and run it.
 
 ----
-$ chmod +x qt-unified-linux-x64-2.0.4-online.run
-$ ./qt-unified-linux-x64-2.0.4-online.run
+$ chmod +x qt-unified-linux-x86_64-4.1.0-online.run
+$ ./qt-unified-linux-x86_64-4.1.0-online.run
 ----
 
 If you do not have a QT account, just create one. Otherwise login with your account, then "Next".
@@ -57,9 +58,8 @@ $ <Qt install dir>/Tools/QtCreator/bin/qtcreator
 
 You would be able to open the examples in the Qt5.x source code and quickly use the HOST toolchain to build and run a example on PC.
 
-=== i.MX8QXP Yocto BSP
+=== Setting up the Yocto BSP
 
-Yocto build
 First make sure that git is set up properly with the commands below.
 
 ----
@@ -77,17 +77,18 @@ directory called imx-yocto-bsp is created for the project. Any name can be used 
 ----
 $ mkdir imx-yocto-bsp
 $ cd imx-yocto-bsp
-$ repo init -u git://source.codeaurora.org/external/imx/imx-manifest.git -b imx-linux-warrior -m imx-4.19.35-1.1.0.xml
+repo init -u https://source.codeaurora.org/external/imx/imx-manifest
+-b imx-linux-gatesgarth -m imx-5.10.9-1.0.0.xml
 $ repo sync
 ----
 
 === Setup environment
 
-----
-$ DISTRO=fsl-imx-wayland MACHINE=imx8qxpmek source fsl-setup-release.sh -b build-wayland -b <build dir>
-----
+The command below specifies the name of the build directory created by the imx-setup-release.sh script.
 
-specifies the name of the build directory created by the fsl-setup-release.sh script.
+----
+$ DISTRO=fsl-imx-xwayland MACHINE=<machine name> source  imx-setup-release.sh -b build-wayland
+----
 
 After the script runs, the working directory is the one just created by the script, specified with the -b option. A conf folder is
 created containing the files bblayers.conf and local.conf.
@@ -102,7 +103,7 @@ CORE_IMAGE_EXTRA_INSTALL += "openssh-sftp openssh-sftp-server"
 === Build rootfs
 
 ----
-$ bitbake fsl-image-qt5-validation-imx
+$ bitbake imx-image-full
 ----
 
 === Build toolchain
@@ -115,29 +116,18 @@ $ bitbake meta-toolchain-qt5
 
 === Deploy SDcard image
 
-Deploy the rootfs, and install the cross compile toolchain, cross Qt5 library into HOST used by Qt Creator:
-
-----
-$ sh ~/imx-yocto-bsp/build-wayland/tmp/deploy/sdk/fsl-imx-wayland-glibc-x86_64-meta-toolchain-qt5-aarch64-toolchain-4.9.51-mx8-ga.sh
-----
+Deploy the rootfs onto the board, and install the cross compile toolchain used by Qt Creator onto the host computer. The install script for the cross compile toolchain can be found under: ~/imx-yocto-bsp/build-wayland/tmp/deploy/sdk
 
 You can change the target directory for sdk if you want.
 
-You will find the i.MX8QXP  image under: ~/imx-yocto-bsp/build-wayland/tmp/deploy/images/imx8qxpmek/ . You need to unzip the file: fsl-image-qt5-validation-imx-imx8qxpmek-20180413072339.rootfs.sdcard.bz2
-
-----
-$ bunzip2 fsl-image-qt5-validation-imx-imx8qxpmek-20180413072339.rootfs.sdcard.bz2
-----
-
-Prepare your SD card, and use the following dd command to deploy whole images:
-
-----
-$ sudo dd if=~/imx-yocto-bsp/build-wayland/tmp/deploy/images/imx8qxpmek/fsl-image-qt5-validation-imx-imx8qxpmek-20180413072339.rootfs.sdcard of=/dev/<sdcard dev>
-----
-
-The Qt5 cross compile tools are installed under: /opt/fsl-imx-wayland/4.9.51-mx8-ga/sysroots/x86_64-pokysdk-linux/. The target configuration files, includes and libs are under opt/fsl-imx-wayland/4.9.51-mx8-ga/sysroots/aarch64-poky-linux/
+You will find the board image under: ~/imx-yocto-bsp/build-wayland/tmp/deploy/images/<board name>/. Flash the imx-image-full-imx8mpevk.wic.bz2 file onto the board.
 
 === Qt Creator configure
+
+[NOTE%autofit]
+====
+The following steps contain various code snippets. Be aware that these code snippets may vary depending on your local setup and the version used.
+====
 
 Launch Qt Creator, create one project or use the example project and open it. In this example, I extracted the SDK to ~/opt, not the default.
 

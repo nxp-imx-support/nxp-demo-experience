@@ -1,3 +1,11 @@
+/****************************************************************************
+**
+** Copyright (C) 2021 NXP
+**
+** SPDX-License-Identifier: BSD-2-Clause
+**
+****************************************************************************/
+
 #include "DemoManager.h"
 qint64 DemoManager::demoRun = -1;
 QHash<qint64, QProcess *> DemoManager::processes;

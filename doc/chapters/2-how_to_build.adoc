@@ -1,0 +1,101 @@
+////
+  Copyright NXP 2021
+  Author: Rogerio Silva <rogerio.silva@nxp.com>
+  Author: Marco Franchi <marco.franchi@nxp.com>
+  Author: Michael Pontikes <michael.pontikes_1@nxp.com>
+////
+
+[[how_to_build]]
+== How to build the {NAME} application
+[NOTE%autofit]
+====
+The {NAME} is now available in our prebuilt images. There prebuilt images can be found on https://www.nxp.com/design/software/embedded-software/i-mx-software/embedded-linux-for-i-mx-applications-processors:IMXLINUX?tab=In-Depth_Tab[our website].
+====
+. Follow the next instructions to start with `{YOCTO_RELEASE}` releases:
++
+_Host GNU/Linux PC Terminal_
++
+[source,bash]
+----
+$ mkdir ~/bin
+$ curl https://storage.googleapis.com/git-repo-download/repo > ~/bin/repo
+$ chmod a+x ~/bin/repo
+$ PATH=${PATH}:~/bin
+----
++
+[CAUTION%autofit]
+====
+The above content is only required once.
+====
++
+. Setup the `{YOCTO_RELEASE}` branch from `{LINUX_LATEST}` release:
++
+_Host GNU/Linux PC Terminal_
++
+[source,bash]
+----
+$ mkdir imx-yocto-bsp
+$ cd imx-yocto-bsp
+$ repo init -u https://source.codeaurora.org/external/imx/imx-manifest -b imx-linux-gatesgarth -m imx-5.10.9-1.0.0.xml
+$ repo sync
+----
++
+. Create the build project folder. Machine names can be found https://www.nxp.com/docs/en/user-guide/IMX_YOCTO_PROJECT_USERS_GUIDE.pdf[here]:
++
+_Host GNU/Linux PC Terminal_
++
+[source,bash]
+----
+$ DISTRO=fsl-imx-xwayland MACHINE=<machine name> source imx-setup-release.sh -b build-xwayland
+----
++
+. Build the image as follows:
++
+_Host GNU/Linux PC Terminal_
++
+[source,bash]
+----
+$ bitbake imx-image-full
+----
+
+=== Manually adding the {NAME} source files
+
+As of L5.4.47_2.2.0, the {NAME} should be downloaded and included when building the image. To add the {NAME} to those builds that do not include it, follow the instructions below after step 3 above.
+
+. Download the `{META}` layer:
++
+_Host GNU/Linux PC Terminal_
++
+[source,bash]
+----
+$ git clone https://source.codeaurora.org/external/imxsupport/meta-nxp-demo-experience ../sources/meta-nxp-demo-experience -b imx_5.10.y
+----
++
+. Update the `bblayers.conf` file by adding the `{META}` layer on it:
++
+_Host GNU/Linux PC Terminal_
++
+[source,bash]
+----
+$ echo "BBLAYERS += \" \${BSPDIR}/sources/meta-nxp-demo-experience \"" >> conf/bblayers.conf
+----
++
+. Add the following content to the `conf/local.conf` as well:
++
+_Host GNU/Linux PC Terminal_
++
+[source,bash]
+----
+CORE_IMAGE_EXTRA_INSTALL += "nxp-demo-experience"
+----
++
+. Build the image as follows:
++
+_Host GNU/Linux PC Terminal_
++
+[source,bash]
+----
+$ bitbake imx-image-full
+----
+
+<<<
