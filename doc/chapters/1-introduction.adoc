@@ -19,7 +19,7 @@ For a list of all demos that are included in the {NAME}, please see the document
 
 === Application Resolution
 
-The {NAME} was designed to support HD resolution (1280x720). However, the {7ULP_LONG} only
+The {NAME} was designed to support HD resolution (1280x720). However, the imx7ulpevk only
 supports 640x480 resolution. So, by default, when the user runs the application, it checks the resolution
 and if it is less then HD, the interface attempts to open a lower resolution of itself.
 
@@ -29,7 +29,7 @@ and if it is less then HD, the interface attempts to open a lower resolution of 
 [width="100%",cols="25,25,50",options="header"]
 |===
 |Version   |Release Date  |Description
-|v3.0      |May 2021      |Gatesgarth support
+|v3.0      |May 2021      |5.10.y support
 |v2.0	     |Apr 2020		  |Warrior support
 |v1.0      |May 2019	    |Initial release.
 |===
