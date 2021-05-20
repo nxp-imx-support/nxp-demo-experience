@@ -31,7 +31,7 @@ In order to generates the NXP Demo Experience documentation file, go to the `doc
 ```bash
 $ cd doc
 $ sudo apt-get install ruby
-$ sudo gem install bundler -v 1.13.3
+$ sudo gem install bundler
 $ bundle install
 $ ./doc-generator
 ```
