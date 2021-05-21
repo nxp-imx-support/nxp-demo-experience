@@ -1,8 +1,8 @@
 ////
-  Copyright NXP 2020
+  Copyright NXP 2020-2021
   Author: Rogerio Silva <rogerio.silva@nxp.com>
   Author: Marco Franchi <marco.franchi@nxp.com>
-  Author: Michael Pontikes <michael.pontikes_1@nxp.com
+  Author: Michael Pontikes <michael.pontikes_1@nxp.com>
 ////
 
 [appendix]

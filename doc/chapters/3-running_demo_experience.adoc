@@ -1,5 +1,5 @@
 ////
-  Copyright NXP 2021
+  Copyright NXP 2020-2021
   Author: Marco Franchi <marco.franchi@nxp.com>
   Author: Pedro Jardim <pedro.jardim@nxp.com>
   Author: Michael Pontikes <michael.pontikes_1@nxp.com>
