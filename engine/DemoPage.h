@@ -1,6 +1,6 @@
 /****************************************************************************
 **
-** Copyright (C) 2021 NXP
+** Copyright 2021 NXP
 **
 ** SPDX-License-Identifier: BSD-2-Clause
 **
