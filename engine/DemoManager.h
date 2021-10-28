@@ -23,7 +23,7 @@ public:
     qint64 runProcess(QString command);
     QString demoButtonText();
     static qint64 demoRun;
-    static QHash<qint64, QProcess *> processes;
+    static QMap<qint64, QProcess *> processes;
 
 public slots:
     void startDemo();

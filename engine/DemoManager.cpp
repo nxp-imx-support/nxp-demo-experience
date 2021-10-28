@@ -8,7 +8,7 @@
 
 #include "DemoManager.h"
 qint64 DemoManager::demoRun = -1;
-QHash<qint64, QProcess *> DemoManager::processes;
+QMap<qint64, QProcess *> DemoManager::processes;
 
 qint64 DemoManager::runProcess(QString command){
     QStringList args = command.split(" ");
