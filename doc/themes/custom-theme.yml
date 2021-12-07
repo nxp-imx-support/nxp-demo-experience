@@ -3,16 +3,11 @@
 ################################################################################
 font:
   catalog:
-    Noto Serif:
-      normal: notoserif-regular-subset.ttf
-      bold: notoserif-bold-subset.ttf
-      italic: notoserif-italic-subset.ttf
-      bold_italic: notoserif-bold_italic-subset.ttf
-    M+ 1mn:
-      normal: mplus1mn-regular-subset.ttf
-      bold: mplus1mn-regular-subset.ttf 
-      italic: mplus1mn-italic-subset.ttf
-      bold_italic: mplus1mn-italic-subset.ttf
+    Montserrat:
+      normal: Montserrat-Regular.ttf
+      bold: Montserrat-Bold.ttf
+      italic: Montserrat-Italic.ttf
+      bold_italic: Montserrat-BoldItalic.ttf
 ################################################################################
 page:
   background_color: ffffff
@@ -26,7 +21,7 @@ page:
 base:
   align: justify
   font_color: 333333
-  font_family: Noto Serif
+  font_family: Montserrat
   font_size: 9
   line_height_length: 10
   line_height: $base_line_height_length / $base_font_size
@@ -50,11 +45,11 @@ vertical_spacing: $vertical_rhythm
 ################################################################################
 link:
   font_color: 428bca
-# literal is currently used for inline monospaced in prose and table cells
+# literal is currently used for inline monospaced in prose and table cells M+ 1mn
 ################################################################################
 literal:
   font_color: 30913d
-  font_family: M+ 1mn
+  font_family: Montserrat
 ################################################################################
 button:
   content: "[\u2009%s\u2009]"
@@ -252,20 +247,20 @@ footnotes:
 header:
   font_color: 787877
   font_size: $base_font_size_small
-  font-family: Noto Serif
+  font-family: Montserrat
   height: 0.5in
   line-height: 1
   recto:
     center:
-      content: '© 2021 NXP Semiconductor Rev {revnumber} {docdate}'
+      content: '© 2022 NXP Semiconductor Rev {revnumber} {docdate}'
   verso:
     center:
-      content: '© 2021 NXP Semiconductor Rev {revnumber} {docdate}'
+      content: '© 2022 NXP Semiconductor Rev {revnumber} {docdate}'
 #################################################################################
 footer:
   font_color: 787877
   font_size: $base_font_size_small
-  font-family: Noto Serif
+  font-family: Montserrat
   border_color: dddddd
   border_width: 5
   height: $base_line_height_length * 2.5
@@ -274,8 +269,8 @@ footer:
   vertical_align: top
   recto:
     right:
-      content: '{chapter-title} © 2021 NXP Semiconductor, Inc. All rights reserved | {page-number}'
+      content: '{chapter-title} © 2022 NXP Semiconductor, Inc. All rights reserved | {page-number}'
   verso:
     right:
-      content: '{chapter-title} © 2021 NXP Semiconductor, Inc. All rights reserved | {page-number}'
+      content: '{chapter-title} © 2022 NXP Semiconductor, Inc. All rights reserved | {page-number}'
 #################################################################################

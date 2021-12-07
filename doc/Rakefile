@@ -1,6 +1,6 @@
 namespace :build do
 task :pdf do
-`bundle exec asciidoctor-pdf -apdf-style=themes/custom-theme.yml -a pdf-fontsdir=themes/fonts NXPDemoExperience.adoc -o output/NXPDemoExperience.pdf`
+`bundle exec asciidoctor-pdf -a pdf-themesdir=themes -a pdf-theme=custom -a pdf-fontsdir=themes/fonts NXPDemoExperience.adoc -o output/NXPDemoExperience.pdf`
 end
 task :html do
 `bundle exec asciidoctor NXPDemoExperience.adoc -o output/NXPDemoExperience.html`
