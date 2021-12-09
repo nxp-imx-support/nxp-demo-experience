@@ -58,7 +58,6 @@ Rectangle {
     id:homeBkgnd
     anchors.bottom: parent.bottom
     anchors.top: parent.top
-    anchors.topMargin: convertDoubleToInt(appWindow.height * 0.02)
     anchors.left: parent.left
     width: convertDoubleToInt(appWindow.width)
 
