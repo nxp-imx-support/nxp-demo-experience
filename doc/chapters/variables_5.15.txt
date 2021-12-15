@@ -1,5 +1,5 @@
 ////
-  Copyright NXP 2022
+  Copyright NXP 2021
   Author: Michael Pontikes <michael.pontikes_1@nxp.com>
 ////
 

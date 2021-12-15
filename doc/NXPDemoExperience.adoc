@@ -1,6 +1,6 @@
 = NXP Demo Experience Documentation
 :title-logo-image: image:../../themes/media/nxplogo.png[pdfwidth=40%, align=right]
-© 2019-2022 NXP Semiconductors, Inc. All rights reserved.
+© 2019-2021 NXP Semiconductors, Inc. All rights reserved.
 REV 4.0, March 2022
 :doctype: book
 :reproducible:

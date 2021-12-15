@@ -114,10 +114,13 @@ void DemoPage::loadJsonData()
     QJsonValue jv, jv1, jv2, jv3, jv4;
     QJsonObject jo, jo1, jo2;
     QString board = QHostInfo::localHostName().toLocal8Bit();
-
     // If Demo Launcher is not running on i.MX board, set it to 7ulp
     if (!board.contains("imx"))
         board = "imx7ulpevk";
+    if (board.contains("-"))
+        board = board.split("-")[0];
+    else if (board.endsWith("evk"))
+        board = board.remove("evk");
     jsonFile.setFileName(DEMOPATH + "/demos.json");
     jsonFile.open(QIODevice::ReadOnly | QIODevice::Text);
     QJsonDocument jsonDocument = QJsonDocument::fromJson(jsonFile.readAll(),&jsonError1);
