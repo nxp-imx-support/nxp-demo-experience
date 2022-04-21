@@ -17,7 +17,7 @@ class Demo
 {
 public:
     Demo(const QString &name, const QString &firstmenu, const QString &secondmenu, const QString &executable, const QString &source, const QString &icon,
-         const QString &screenshot, const QString &compatible, const QString &description);
+         const QString &screenshot, const QString &compatible, const QString &description, const QString &id);
 
     QString name() const;
     QString firstmenu() const;
@@ -28,6 +28,7 @@ public:
     QString screenshot() const;
     QString compatible() const;
     QString description() const;
+    QString id() const;
 
 private:
 
@@ -40,6 +41,7 @@ private:
     QString m_screenshot;
     QString m_compatible;
     QString m_description;
+    QString m_id;
 
 };
 

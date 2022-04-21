@@ -9,7 +9,7 @@
 #include "Demo.h"
 
 Demo::Demo(const QString &name, const QString &firstmenu, const QString &secondmenu, const QString &executable, const QString &source, const QString &icon, const QString &screenshot,const QString &compatible,
-           const QString &description) : m_name(name), m_firstmenu(firstmenu), m_secondmenu(secondmenu), m_executable(executable), m_source(source), m_icon(icon), m_screenshot(screenshot), m_compatible(compatible), m_description(description)
+           const QString &description, const QString &id) : m_name(name), m_firstmenu(firstmenu), m_secondmenu(secondmenu), m_executable(executable), m_source(source), m_icon(icon), m_screenshot(screenshot), m_compatible(compatible), m_description(description), m_id(id)
 {
 
 }
@@ -58,6 +58,12 @@ QString Demo::description() const
 {
     return m_description;
 }
+
+QString Demo::id() const
+{
+    return m_id;
+}
+
 
 DemoModel::DemoModel(QObject *parent)
     : QAbstractListModel(parent)

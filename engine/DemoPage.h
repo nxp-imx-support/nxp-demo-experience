@@ -10,6 +10,7 @@
 #define DEMOPAGE_H
 
 #include <QObject>
+#include <QMap>
 #include "Demo.h"
 
 class DemoPage : public QObject
@@ -38,6 +39,7 @@ public:
     QVariantList currentDemosList;
     QString currentFirstMenuItem;
     QString currentSecondMenuItem;
+    QMap<QString, QStringList> commandList;
 
     QStringList firstLevelMenu;
     QStringList secondLevelMenu;

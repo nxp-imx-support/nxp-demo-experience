@@ -32,10 +32,14 @@ DemoPage::DemoPage(QObject *parent) : QObject(parent)
     QList<Demo> demoList = modelDemo->demoData();
 
     demosList.clear();
+    commandList.clear();
     foreach(Demo demo, demoList){
         QStringList demoItem = {demo.name(), demo.firstmenu(), demo.secondmenu(), demo.executable(),
                                 demo.source(), demo.icon(), demo.screenshot(), demo.compatible(), demo.description()};
         demosList.append(demoItem);
+        if(demo.id() != ""){
+            commandList.insert(demo.id(),demoItem);
+        }
     }
 }
 
@@ -172,7 +176,7 @@ void DemoPage::loadJsonData()
                     modelDemo->addDemo(Demo(ja2[k].toObject()["name"].toString(), firstLevel,
                     secondLevel, ja2[k].toObject()["executable"].toString(), ja2[k].toObject()["source"].toString(),
                     iconFileName, screenshotFileName, ja2[k].toObject()["compatible"].toString(),
-                    ja2[k].toObject()["description"].toString()));
+                    ja2[k].toObject()["description"].toString(),ja2[k].toObject()["id"].toString()));
                 }
             }
             firstLevelMenu.removeDuplicates();

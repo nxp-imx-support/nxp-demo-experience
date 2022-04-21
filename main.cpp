@@ -58,9 +58,35 @@
 #include "engine/DemoManager.h"
 #include <QQmlContext>
 #include <QScreen>
+#include <iostream>
+#include <string>
+#include <QStringList>
+#include <QMap>
 
 int main(int argc, char *argv[])
 {
+    if (argc > 1) {
+        std::string arg_string = argv[1];
+        if (arg_string.compare("run") == 0){
+            DemoPage* demoPage = new DemoPage();
+            if(!demoPage->commandList.contains(argv[2])){
+                std::cout << "Avaliable CLI demos: ";
+                QStringList demos = demoPage->commandList.keys();
+                for (int i = 0; i < demos.count(); i++){
+                    std::cout << demos.at(i).toLocal8Bit().toStdString() << " ";
+                }
+                std::cout << '\n';
+                return 0;
+            }
+            QString command = demoPage->commandList.value(argv[2])[3];
+            for(int i = 3; i < argc; i++){
+                command.append(" ");
+                command.append(argv[i]);
+            }
+            system(command.toLocal8Bit().constData());
+            return 0;
+        }
+    }
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
     QGuiApplication app(argc, argv);
