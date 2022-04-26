@@ -1,0 +1,11 @@
+NXP Software Content Register
+
+Package:                   NXP Demo Experience Source Code
+Outgoing License:          BSD-2-Clause
+License File:              LICENSE
+Package Category:          Demo application
+Type of content:           Source code
+Description and comments:  i.MX demo programs source code
+Release Location:          https://source.codeaurora.org/external/imxsupport/nxp-demo-experience
+Origin:                    NXP (BSD-2-Clause)
+                           The Qt Company Ltd. (BSD-3-Clause)
