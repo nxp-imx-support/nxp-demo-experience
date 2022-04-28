@@ -6,7 +6,7 @@ The NXP Demo Experience is an interface that enable the user to launch any NXP d
 
 For details on supported boards and how to get the NXP Demo Experience, please refer to the README on [meta-nxp-demo-experience](https://source.codeaurora.org/external/imxsupport/meta-nxp-demo-experience) or refer to Chapter 3 of the documentation for a manual install.
 
-To see what demos are avalible and add demos to the NXP Demo Experience, please refer to the README.md on [nxp-demo-experience-demos-list](https://source.codeaurora.org/external/imxsupport/nxp-demo-experience-demos-list/).
+To see what demos are available and add demos to the NXP Demo Experience, please refer to the README.md on [nxp-demo-experience-demos-list](https://source.codeaurora.org/external/imxsupport/nxp-demo-experience-demos-list/).
 
 ## Developing the NXP Demo Experience
 
@@ -25,6 +25,8 @@ After downloading, ensure that `DEMOPATH` in `engine/DemoPage.h` is the path of 
 
 
 ## How to Generates the NXP Demo Experience Documentation using AsciiDoc
+
+Please note that these documents are no longer be updated and removed in the next update. For documentation, please visit https://github.com/NXP/nxp-demo-experience-assets/releases.
 
 In order to generates the NXP Demo Experience documentation file, go to the `doc` directory and use the following commands:
 
