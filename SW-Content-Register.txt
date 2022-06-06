@@ -9,3 +9,4 @@ Description and comments:  i.MX demo programs source code
 Release Location:          https://source.codeaurora.org/external/imxsupport/nxp-demo-experience
 Origin:                    NXP (BSD-2-Clause)
                            The Qt Company Ltd. (BSD-3-Clause)
+                           The Montserrat Project Authors (OFL-1.1)
