@@ -62,9 +62,15 @@
 #include <string>
 #include <QStringList>
 #include <QMap>
+#include "tui/TUIWindow.h"
 
 int main(int argc, char *argv[])
 {
+    int mode = system("wayland-info | grep -m 1 \"wl_output\" -q");
+    if(mode != 0){
+        int ret = startTUI();
+        return ret;
+    }
     if (argc > 1) {
         std::string arg_string = argv[1];
         if (arg_string.compare("run") == 0){
@@ -85,6 +91,10 @@ int main(int argc, char *argv[])
             }
             system(command.toLocal8Bit().constData());
             return 0;
+        }
+        else if (arg_string.compare("tui") == 0) {
+            int ret = startTUI();
+            return ret;
         }
     }
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
