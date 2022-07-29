@@ -93,7 +93,7 @@ int startTUI(){
         if(i >= (int)demo_names.size()){
             break;
         }
-        mvwprintw(menu_win, 2+i, 3, demo_names[i].c_str());
+        mvwprintw(menu_win, 2+i, 3, "%s", demo_names[i].c_str());
         pageSize++;
     }
 
@@ -109,7 +109,7 @@ int startTUI(){
     int curDemo = -1;
     int curPage = 1;
     int totalPage = (int)(std::ceil((float)demo_names.size()/(float)pageSize));
-    mvwprintw(menu_win, LINES-3, (maxLen-8)/2, (" Page " + std::to_string(curPage) + " of " + std::to_string(totalPage) + " ").c_str());
+    mvwprintw(menu_win, LINES-3, (maxLen-8)/2, "%s", (" Page " + std::to_string(curPage) + " of " + std::to_string(totalPage) + " ").c_str());
     while(TRUE){
         //printw(std::to_string(ch).c_str());
         if (ch == 113 || ch == KEY_RESIZE){
@@ -118,7 +118,7 @@ int startTUI(){
             def_prog_mode();
             endwin();
             printf("\n");
-            printf(("Starting " + demoPage->demosList.at(curDemo).toStringList().at(0).toStdString() + "!\n").c_str());
+            printf("%s", ("Starting " + demoPage->demosList.at(curDemo).toStringList().at(0).toStdString() + "!\n").c_str());
             printf("Quit the demo (Ctrl-C) to get back to demo select.\n\n");
             system(demoPage->demosList.at(curDemo).toStringList().at(3).toStdString().c_str());
             reset_prog_mode();
@@ -149,7 +149,7 @@ int startTUI(){
         if(curDemo != selectDemo){
             werase(sub_win);
             box(sub_win, 0, 0);
-            mvwprintw(sub_win, 2, 2, demoPage->demosList.at(selectDemo).toStringList().at(0).toStdString().c_str());
+            mvwprintw(sub_win, 2, 2, "%s", demoPage->demosList.at(selectDemo).toStringList().at(0).toStdString().c_str());
             mvwprintw(sub_win, LINES-5, 2, "Press Enter to launch");
             mvwprintw(sub_win, LINES-3, COLS-maxLen-20, " H - Help ");
             std::string des = demoPage->demosList.at(selectDemo).toStringList().at(8).toStdString();
@@ -186,7 +186,7 @@ int startTUI(){
                     line.replace(line.length()-3,3,"...");
                     progress = (int)des.length();
                 }
-                mvwprintw(sub_win, lineCount + 4, 2, line.c_str());
+                mvwprintw(sub_win, lineCount + 4, 2, "%s", line.c_str());
                 lineCount++;
             }
             curDemo = selectDemo;
@@ -203,12 +203,12 @@ int startTUI(){
             mvwaddch(menu_win, 0, maxLen + 5, ACS_TTEE);
             mvwaddch(menu_win, LINES-3, maxLen + 5, ACS_BTEE);
             mvwprintw(menu_win, 0, (maxLen-14)/2, " NXP Demo Experience ");
-            mvwprintw(menu_win, LINES-3, (maxLen-8)/2, (" Page " + std::to_string(curPage) + " of " + std::to_string(totalPage) + " ").c_str());
+            mvwprintw(menu_win, LINES-3, (maxLen-8)/2, "%s", (" Page " + std::to_string(curPage) + " of " + std::to_string(totalPage) + " ").c_str());
             for(int i = (curPage-1)*(LINES-6); i < (curPage)*(LINES-6); i++){
                 if(i >= (int)demo_names.size()){
                     break;
                 }
-                mvwprintw(menu_win, 2+i-((curPage-1)*(LINES-6)), 3, demo_names[i].c_str());
+                mvwprintw(menu_win, 2+i-((curPage-1)*(LINES-6)), 3, "%s", demo_names[i].c_str());
             }
             wmove(menu_win, 2+(selectDemo%(LINES-6)), 2);
             wchgat(menu_win, maxLen + 2 , A_STANDOUT, 2, NULL);
