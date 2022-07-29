@@ -8,7 +8,8 @@ SOURCES += \
         main.cpp \
         engine/Demo.cpp \
         engine/DemoManager.cpp \
-        engine/DemoPage.cpp
+        engine/DemoPage.cpp \
+        tui/TUIWindow.cpp
 
 RESOURCES += qml.qrc
 
@@ -27,4 +28,7 @@ DISTFILES += \
 HEADERS += \
     engine/Demo.h \
     engine/DemoManager.h \
-    engine/DemoPage.h
+    engine/DemoPage.h \
+    tui/TUIWindow.h
+
+LIBS += -lcurses -lmenu -lpanel
