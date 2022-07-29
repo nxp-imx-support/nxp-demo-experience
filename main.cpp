@@ -68,7 +68,7 @@ int main(int argc, char *argv[])
 {
     int mode = system("wayland-info | grep -m 1 \"wl_output\" -q");
     if(mode != 0){
-        int ret = startTUI();
+        int ret = startTui();
         return ret;
     }
     if (argc > 1) {
@@ -93,7 +93,7 @@ int main(int argc, char *argv[])
             return 0;
         }
         else if (arg_string.compare("tui") == 0) {
-            int ret = startTUI();
+            int ret = startTui();
             return ret;
         }
     }
