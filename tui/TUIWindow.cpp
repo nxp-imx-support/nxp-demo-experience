@@ -109,7 +109,7 @@ int startTui(void){
     int totalPage = (int)(std::ceil((float)demo_names.size()/(float)pageSize));
     mvwprintw(menu_win, LINES-3, (maxLen-8)/2, "%s", (" Page " + std::to_string(curPage) + " of " + std::to_string(totalPage) + " ").c_str());
     do {
-        if (ch == 113 || ch == KEY_RESIZE){
+        if (ch == 113 || ch == 81 || ch == KEY_RESIZE){
             break;
         } else if (ch == 10) {
             def_prog_mode();
@@ -136,7 +136,7 @@ int startTui(void){
                 wmove(menu_win, 2+(selectDemo%(LINES-6)), 2);
                 wchgat(menu_win, maxLen + 2 , A_STANDOUT, 2, NULL);
             }
-        } else if (ch == 104) {
+        } else if (ch == 104 || ch == 72) {
             show_panel(helpPanel);
             update_panels();
             doupdate();
