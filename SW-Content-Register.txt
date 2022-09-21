@@ -6,7 +6,7 @@ License File:              LICENSE
 Package Category:          Demo application
 Type of content:           Source code
 Description and comments:  i.MX demo programs source code
-Release Location:          https://source.codeaurora.org/external/imxsupport/nxp-demo-experience
+Release Location:          https://github.com/nxp-imx-support/nxp-demo-experience
 Origin:                    NXP (BSD-2-Clause)
                            The Qt Company Ltd. (BSD-3-Clause)
                            The Montserrat Project Authors (OFL-1.1)
