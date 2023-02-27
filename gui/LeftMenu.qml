@@ -3,7 +3,7 @@
 ** Copyright (C) 2016 The Qt Company Ltd.
 ** Contact: https://www.qt.io/licensing/
 **
-** Copyright 2021 NXP
+** Copyright 2023 NXP
 **
 ** This file is part of the examples of the Qt Toolkit.
 **
@@ -227,7 +227,7 @@ Rectangle {
         height: 50
         Text {
             anchors.fill: parent
-            text: " Version 4.3\n Copyright 2022 NXP\n Uses LGPL-3.0 libraries"
+            text: " Version 4.4\n Copyright 2023 NXP\n Uses LGPL-3.0 libraries"
             color: "Black"
             font.family: "Nunito"
             font.pointSize: convertDoubleToInt(appWindow.width * 0.01)
