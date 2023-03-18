@@ -3,7 +3,7 @@
 ** Copyright (C) 2016 The Qt Company Ltd.
 ** Contact: https://www.qt.io/licensing/
 **
-** Copyright 2021 NXP
+** Copyright 2023 NXP
 **
 ** This file is part of the examples of the Qt Toolkit.
 **
@@ -72,7 +72,7 @@ import QtQuick.Controls 2.12
             anchors.left: parent.left
             anchors.right: parent.right
             anchors.top: parent.top
-            anchors.bottom: parent.bottom
+            height: parent.height * 0.9
 
             Text{
                 text:"Select a demo from the table..."
@@ -117,18 +117,24 @@ import QtQuick.Controls 2.12
                 width: convertDoubleToInt(appWindow.width * 0.32)
                 wrapMode: Text.WordWrap
             }
-            Text{
-                id:desinfo
-                text: demoqmlmodule.listDemos[currentSel][8]
-                color: "Black"
-                font.family: "Nunito"
-                font.pointSize: convertDoubleToInt(appWindow.width * 0.012)
-                anchors.top: titleinfo.bottom
-                leftPadding: convertDoubleToInt(appWindow.width * 0.01)
-                anchors.right: appWindow.right
-                rightPadding: convertDoubleToInt(appWindow.width * 0.04)
-                width: convertDoubleToInt(appWindow.width * 0.35)
-                wrapMode: Text.WordWrap
+            ScrollView{
+                id:view
+                clip: true
+                anchors.fill: parent
+                TextArea{
+                    id:desinfo
+                    y: 130
+                    enabled: false
+                    text: demoqmlmodule.listDemos[currentSel][8]
+                    color: "Black"
+                    font.family: "Nunito"
+                    font.pointSize: convertDoubleToInt(appWindow.width * 0.012)
+                    leftPadding: convertDoubleToInt(appWindow.width * 0.01)
+                    anchors.right: appWindow.right
+                    rightPadding: convertDoubleToInt(appWindow.width * 0.04)
+                    width: convertDoubleToInt(appWindow.width * 0.35)
+                    wrapMode: Text.WordWrap
+                }
             }
         }
 
