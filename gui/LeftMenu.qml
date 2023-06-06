@@ -220,6 +220,30 @@ Rectangle {
         }
     }
     Rectangle{
+        id: quit
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.bottom: licWarn.top
+        height: 50
+        Button {
+            id: quitButton
+            anchors.fill: parent
+            contentItem: Text {
+                anchors.fill: parent
+                text: " Quit"
+                color: "Black"
+                font.family: "Nunito"
+                font.pointSize: convertDoubleToInt(appWindow.width * 0.02)
+            }
+            onClicked: {
+                Qt.callLater(Qt.quit)
+            }
+            background: Rectangle {
+                id:rec
+            }
+        }
+    }
+    Rectangle{
         id: licWarn
         anchors.left: parent.left
         anchors.right: parent.right
@@ -230,7 +254,7 @@ Rectangle {
             text: " Version 4.5\n Copyright 2023 NXP\n Uses LGPL-3.0 libraries"
             color: "Black"
             font.family: "Nunito"
-            font.pointSize: convertDoubleToInt(appWindow.width * 0.01)
+            font.pointSize: convertDoubleToInt(10)
         }
     }
 }
