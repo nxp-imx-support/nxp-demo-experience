@@ -9,4 +9,4 @@ Description and comments:   i.MX demo programs source code
 Release Location:           https://github.com/nxp-imx-support/nxp-demo-experience
 Origin:                     NXP (BSD-2-Clause)
                             Font Awesome (CC-BY-4.0) https://fontawesome.com/icons
-                            The Qt Company Ltd. (BSD-3-Clause, LGPL-3.0-only)
+                            The Qt Company Ltd. (BSD-3-Clause)
