@@ -1,9 +1,21 @@
 # NXP Demo Experience
 
-## Description
+[![GitHub](https://img.shields.io/github/license/nxp-imx-support/nxp-demo-experience)](./LICENSE)
 
-The NXP Demo Experience is an interface that enable the user to launch any NXP demonstration without command line. With this approach, by using the BSP Yocto support, the user is able to run the available demos using only a mouse connected to the board, or the touch screen support, if the display has it. 
+The NXP Demo Experience is a user-friendly interface that allows you to launch preselected demonstrations included in
+the Linux Board Support Package (BSP) that NXP provides.
 
-For details on how to run the NXP Demo Experience and it's supported demos, please refer to https://www.nxp.com/docs/en/user-guide/DEXPUG.pdf
+The NXP Demo Experience is for the ones who are interested in showcasing various features and capabilities of the SoCs
+provided by NXP. The demos included in this application are meant to be easy to run for users of all skill levels,
+making complex use cases accessible to anyone. Users need some knowledge when it comes to setting up equipment on
+Evaluation Kits (EVKs), such as changing Device Tree Blob (DTB) files.
 
-For details on supported boards and which demos are included on those boards, please refer to https://github.com/NXP/nxp-demo-experience-assets/releases
+More information about the demos included in this package can be found at [DEXPUG.pdf](https://www.nxp.com/docs/en/user-guide/DEXPUG.pdf).
+
+## List of Demos
+
+The list of available demos for a certain i.MX EVK can be found at [nxp-demo-experience-assets](https://github.com/NXP/nxp-demo-experience-assets/releases).
+
+## Licensing
+
+Please see the LICENSE file for more information.
