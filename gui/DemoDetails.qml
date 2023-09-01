@@ -72,7 +72,7 @@ import QtQuick.Controls 2.12
             anchors.left: parent.left
             anchors.right: parent.right
             anchors.top: parent.top
-            height: parent.height * 0.9
+            anchors.bottom: parent.bottom
 
             Text{
                 text:"Select a demo from the table..."
@@ -92,8 +92,6 @@ import QtQuick.Controls 2.12
             Label{
                 id:catinfo
                 text: demoqmlmodule.listDemos[currentSel][1] + " - "+ demoqmlmodule.listDemos[currentSel][2]
-
-
                 color: "Black"
                 font.family: "Nunito"
                 font.pointSize: convertDoubleToInt(appWindow.width * 0.015)
@@ -120,10 +118,12 @@ import QtQuick.Controls 2.12
             ScrollView{
                 id:view
                 clip: true
-                anchors.fill: parent
+                anchors.top: titleinfo.bottom
+                anchors.left: parent.left
+                anchors.right: parent.right
+                anchors.bottom: parent.bottom
                 TextArea{
                     id:desinfo
-                    y: 130
                     enabled: false
                     text: demoqmlmodule.listDemos[currentSel][8]
                     color: "Black"
