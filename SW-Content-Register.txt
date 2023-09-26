@@ -2,7 +2,7 @@ NXP Software Content Register
 
 Package:                    NXP Demo Experience Source Code
 Outgoing License:           BSD-2-Clause
-License File:               LICENSE
+License File:               LICENSE.txt
 Package Category:           Demo application
 Type of content:            Source code
 Description and comments:   i.MX demo programs source code

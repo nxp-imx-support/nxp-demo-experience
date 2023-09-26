@@ -1,6 +1,6 @@
 # NXP Demo Experience
 
-[![GitHub](https://img.shields.io/github/license/nxp-imx-support/nxp-demo-experience)](./LICENSE)
+[![GitHub](https://img.shields.io/github/license/nxp-imx-support/nxp-demo-experience)](./LICENSE.txt)
 
 The NXP Demo Experience is a user-friendly interface that allows you to launch preselected demonstrations included in
 the Linux Board Support Package (BSP) that NXP provides.
