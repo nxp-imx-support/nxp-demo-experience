@@ -67,7 +67,7 @@ ApplicationWindow {
     minimumWidth: swidth
     minimumHeight: sheight
 
-    title: "NXP Demo Experience"
+    title: "GoPoint for i.MX Application Processors"
 
 
     function convertDoubleToInt (x) {

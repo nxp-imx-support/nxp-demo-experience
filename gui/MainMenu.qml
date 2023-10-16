@@ -112,7 +112,7 @@ ToolBar {
                 anchors.right: parent.right
                 anchors.verticalCenter: parent.verticalCenter
                 color: "#20272D"
-                text: "Demo Experience"
+                text: "GoPoint for i.MX Application Processors"
                 font.family: "Nunito"
                 padding: convertDoubleToInt(appWindow.height * 0.020)
             }

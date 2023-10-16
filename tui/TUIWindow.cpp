@@ -80,7 +80,7 @@ int startTui(void){
     box(menu_win, 0, 0);
     mvwaddch(menu_win, 0, maxLen + 5, ACS_TTEE);
     mvwaddch(menu_win, LINES-3, maxLen + 5, ACS_BTEE);
-    mvwprintw(menu_win, 0, (maxLen-14)/2, " NXP Demo Experience ");
+    mvwprintw(menu_win, 0, (maxLen-14)/2, " GoPoint ");
 
     if ((int)demo_names.size() == 0) {
         mvwprintw(menu_win, 2, 3, "No demos!");

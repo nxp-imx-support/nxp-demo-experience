@@ -1,11 +1,12 @@
 # NXP Demo Experience
+### NOTE: The NXP Demo Experience is now GoPoint for i.MX Application Processors
 
 [![GitHub](https://img.shields.io/github/license/nxp-imx-support/nxp-demo-experience)](./LICENSE.txt)
 
-The NXP Demo Experience is a user-friendly interface that allows you to launch preselected demonstrations included in
+GoPoint for i.MX Application Processors Demo List is a user-friendly interface that allows you to launch preselected demonstrations included in
 the Linux Board Support Package (BSP) that NXP provides.
 
-The NXP Demo Experience is for the ones who are interested in showcasing various features and capabilities of the SoCs
+GoPoint for i.MX Application Processors Demo List is for the ones who are interested in showcasing various features and capabilities of the SoCs
 provided by NXP. The demos included in this application are meant to be easy to run for users of all skill levels,
 making complex use cases accessible to anyone. Users need some knowledge when it comes to setting up equipment on
 Evaluation Kits (EVKs), such as changing Device Tree Blob (DTB) files.
