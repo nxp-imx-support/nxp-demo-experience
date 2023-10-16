@@ -1,6 +1,6 @@
 NXP Software Content Register
 
-Package:                    NXP Demo Experience Source Code
+Package:                    GoPoint for i.MX Application Processors Source Code
 Outgoing License:           BSD-2-Clause
 License File:               LICENSE.txt
 Package Category:           Demo application
