@@ -1,4 +1,4 @@
-# NXP Demo Experience
+# GoPoint for i.MX Application Processors
 ### NOTE: The NXP Demo Experience is now GoPoint for i.MX Application Processors
 
 [![GitHub](https://img.shields.io/github/license/nxp-imx-support/nxp-demo-experience)](./LICENSE.txt)
