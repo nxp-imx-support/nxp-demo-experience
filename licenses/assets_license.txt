@@ -1,0 +1,5 @@
+The ../assets/license.json file describes the license that all images with the
+extension "*.svg" in the same directory is covered by.
+
+NXP and the NXP logo are trademarks of NXP B.V. All other product or service
+names are the property of their respective owners. © 2023 NXP B.V.

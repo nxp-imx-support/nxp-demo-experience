@@ -19,4 +19,4 @@ The list of available demos for a certain i.MX EVK can be found at [nxp-demo-exp
 
 ## Licensing
 
-Please see the LICENSE file for more information.
+Please see the LICENSE.txt file for more information.
