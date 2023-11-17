@@ -91,24 +91,11 @@ ToolBar {
                 width: 20
 
             }
-
-            Image {
-                id: logo
-                anchors.top: parent.top
-                anchors.left: spacer.right
-                anchors.right: textItem1.left
-                anchors.verticalCenter: parent.verticalCenter
-                source: "../assets/nxp.png"
-                width: convertDoubleToInt(appWindow.width * 0.15)
-                height: convertDoubleToInt(appWindow.height * 0.18)
-                fillMode: Image.PreserveAspectFit
-
-            }
             Text {
                 id: textItem1
                 font.pointSize: convertDoubleToInt(appWindow.height * 0.040)
                 font.bold: true
-                anchors.left: logo.right
+                anchors.left: rectLogo.right
                 anchors.right: parent.right
                 anchors.verticalCenter: parent.verticalCenter
                 color: "#20272D"
