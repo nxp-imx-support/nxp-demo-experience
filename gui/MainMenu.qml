@@ -95,7 +95,7 @@ ToolBar {
                 id: textItem1
                 font.pointSize: convertDoubleToInt(appWindow.height * 0.040)
                 font.bold: true
-                anchors.left: rectLogo.right
+                anchors.left: parent.left
                 anchors.right: parent.right
                 anchors.verticalCenter: parent.verticalCenter
                 color: "#20272D"
