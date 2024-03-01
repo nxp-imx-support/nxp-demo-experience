@@ -251,7 +251,7 @@ Rectangle {
         height: 50
         Text {
             anchors.fill: parent
-            text: " Version 4.6\n Copyright 2023 NXP\n Uses LGPL-3.0 libraries"
+            text: " Version 4.8\n Copyright 2019-2024 NXP\n Uses LGPL-3.0 libraries"
             color: "Black"
             font.family: "Nunito"
             font.pointSize: convertDoubleToInt(10)

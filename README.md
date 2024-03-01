@@ -1,17 +1,19 @@
-# GoPoint for i.MX Application Processors
-### NOTE: The NXP Demo Experience is now GoPoint for i.MX Application Processors
+# GoPoint for i.MX Applications Processors
 
-[![GitHub](https://img.shields.io/github/license/nxp-imx-support/nxp-demo-experience)](./LICENSE.txt)
+[![License badge](https://img.shields.io/badge/License-BSD_2_Clause-green)](./LICENSE.txt)
+[![Target badge](https://img.shields.io/badge/Target-i.MX_Applications_Processors-blue)](https://www.nxp.com/products/processors-and-microcontrollers/arm-processors/i-mx-applications-processors:IMX_HOME)
 
-GoPoint for i.MX Application Processors Demo List is a user-friendly interface that allows you to launch preselected demonstrations included in
-the Linux Board Support Package (BSP) that NXP provides.
+> **NOTE:** The NXP Demo Experience is now GoPoint for i.MX Applications Processors.
 
-GoPoint for i.MX Application Processors Demo List is for the ones who are interested in showcasing various features and capabilities of the SoCs
-provided by NXP. The demos included in this application are meant to be easy to run for users of all skill levels,
-making complex use cases accessible to anyone. Users need some knowledge when it comes to setting up equipment on
-Evaluation Kits (EVKs), such as changing Device Tree Blob (DTB) files.
+NXP's *GoPoint for i.MX Applications Processors* unlocks a world of possibilities. This user-friendly app launches
+pre-built applications packed with the Linux BSP, giving you hands-on experience with your i.MX SoC's capabilities.
+It is for the ones who are interested in showcasing various features and capabilities of the SoCs provided by NXP.
+The application examples included in GoPoint are meant to be easy to run for users of all skill levels,
+making complex use cases accessible to anyone. Users might need some basic knowledge when it comes to setting up
+equipment on Evaluation Kits (EVKs), such as changing Device Tree Blob (DTB) files.
 
-More information about the demos included in this package can be found at [DEXPUG.pdf](https://www.nxp.com/docs/en/user-guide/DEXPUG.pdf).
+For more information about GoPoint, please refer to
+[GoPoint for i.MX Applications Processors User's Guide](https://www.nxp.com/docs/en/user-guide/GPNTUG.pdf).
 
 ## List of Demos
 
@@ -19,4 +21,4 @@ The list of available demos for a certain i.MX EVK can be found at [nxp-demo-exp
 
 ## Licensing
 
-Please see the LICENSE.txt file for more information.
+This repository is licensed under the [BSD-2-Clause](https://opensource.org/license/bsd-2-clause/) license.
